@@ -136,7 +136,8 @@
         width: auto;
         height: auto;
         cursor: pointer;
-        &.active a {
+        &.active a,
+        a:hover {
           background-color: $mainColor;
           color: #fff;
         }

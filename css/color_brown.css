@@ -1262,7 +1262,8 @@ header .logo a img {
   height: auto;
   cursor: pointer;
 }
-.indexMain .tabBar .swiperBox .swiper-slide.active a {
+.indexMain .tabBar .swiperBox .swiper-slide.active a,
+.indexMain .tabBar .swiperBox .swiper-slide a:hover {
   background-color: #843612;
   color: #fff;
 }
@@ -1721,7 +1722,8 @@ header .logo a img {
   height: auto;
   cursor: pointer;
 }
-.topMenu .swiperBox .swiper-slide.active a {
+.topMenu .swiperBox .swiper-slide.active a,
+.topMenu .swiperBox .swiper-slide a:hover {
   background-color: #843612;
   color: #fff;
 }
