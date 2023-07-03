@@ -1,7 +1,7 @@
 const MenuContent = `
         <div class="container">
           <h1 class="logo">
-            <a href="#"><img src="./images/logo.svg" alt="" /></a>
+            <a href="#"><img src="./images/logo.png" alt="" /></a>
           </h1>
           <div class="mainMenu">
             <button class="mobileBtn"></button>

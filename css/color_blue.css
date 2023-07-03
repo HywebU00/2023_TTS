@@ -694,9 +694,6 @@ header .logo a img {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  position: absolute;
-  left: -200px;
-  filter: drop-shadow(200px 0 0 #006ab6);
 }
 
 .menuOpen .mainMenu {
