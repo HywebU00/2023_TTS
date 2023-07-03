@@ -102,7 +102,7 @@ new WOW({
 
   css.attributes.href.nodeValue = `css/color_${cookieCss || 'red'}.css`;
 
-  demo.forEach((item, index) => {
+  demo?.forEach((item, index) => {
     item.classList.remove('active');
     item.addEventListener('click', () => {
       demo.forEach((v) => v.classList.remove('active'));
@@ -113,5 +113,5 @@ new WOW({
     });
   });
   const nowActive = document.querySelector(`.${String(cookieCss)}`);
-  nowActive.classList.add('active');
+  nowActive?.classList.add('active');
 })();
