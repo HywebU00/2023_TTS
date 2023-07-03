@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex" />
+    <!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>2023_TTS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/color_red.css" id="css" />
+  </head>
+  <body class="">
+    <div class="wrapper innerPage suppliersPage">
+      <header>
+        <script src="./include/Menu.js"></script>
+      </header>
+
+      <main class="suppliersBox">
+        <div class="breadcrumbs wow fadeInUp" data-wow-delay="0s">
+          <div class="container">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li>Suppliers</li>
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+          <div class="topMenu wow fadeInUp" data-wow-delay="0.2s">
+            <div class="swiperBox">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide active"><a class="item">INTELLECTUAL PROPERTY</a></div>
+                  <div class="swiper-slide"><a class="item">LICENSED MERCHANDISE</a></div>
+                  <div class="swiper-slide"><a class="item">ANIMATION</a></div>
+                  <div class="swiper-slide"><a class="item">LICENSED MERCHANDISE</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="suppliers">
+          <div class="container">
+            <div class="listBox">
+              <div class="item">
+                <div class="pic"><img src="./images/suppliers05.jpg" alt="" /></div>
+                <div class="infoBox">
+                  <h2 class="title">Acer Gadget Inc.</h2>
+                  <ul>
+                    <li class="address">Hall 9.0 F28</li>
+                  </ul>
+                  <a class="more" href="#">
+                    MORE <svg><use xlink:href="#arrow2" /></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pic"><img src="./images/suppliers05.jpg" alt="" /></div>
+                <div class="infoBox">
+                  <h2 class="title">Acer Gadget Inc.</h2>
+                  <ul>
+                    <li class="address">Hall 9.0 F28</li>
+                  </ul>
+                  <a class="more" href="#">
+                    MORE <svg><use xlink:href="#arrow2" /></svg>
+                  </a>
+                </div>
+              </div>
+              <div class="item">
+                <div class="pic"><img src="./images/suppliers05.jpg" alt="" /></div>
+                <div class="infoBox">
+                  <h2 class="title">Acer Gadget Inc.</h2>
+                  <ul>
+                    <li class="address">Hall 9.0 F28</li>
+                  </ul>
+                  <a class="more" href="#">
+                    MORE <svg><use xlink:href="#arrow2" /></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <script src="./include/Footer.js"></script>
+      </footer>
+    </div>
+
+    <script src="./include/Icon.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./plugins/WOW-master/dist/wow.min.js"></script>
+    <script src="./plugins/_base.js"></script>
+    <script>
+      let swiper = new Swiper(`.swiperBox .swiper`, {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        navigation: {
+          nextEl: `.swiperBox .swiper-button-next`,
+          prevEl: `.swiperBox .swiper-button-prev`,
+        },
+        // slideToClickedSlide: true,
+      });
+
+      const observer = new ResizeObserver(function (entries) {
+        if (entries[0].contentRect.width <= 767) {
+        } else {
+        }
+      });
+    </script>
+  </body>
+</html>

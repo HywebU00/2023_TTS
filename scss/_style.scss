@@ -1,0 +1,514 @@
+body {
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 90;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    pointer-events: none;
+    @include transition(all, 0.3);
+  }
+  &.searchOpen,
+  &.menuOpen {
+    &::before {
+      opacity: 0.5;
+      pointer-events: unset;
+    }
+    .mainMenu ul a:hover {
+      color: #fff;
+      background: darken($mainColor, 20%);
+    }
+    .officeLink a::after {
+      background: darken($mainColor, 20%);
+    }
+  }
+  a {
+    color: $mainColor;
+  }
+}
+.pic {
+  line-height: 0;
+  position: relative;
+  isolation: isolate;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $mainColor;
+    z-index: 100;
+    display: block;
+    transition: all 0.5s ease-in-out;
+  }
+  &::after {
+    background-color: #fff;
+    transition-delay: 0.35s;
+    z-index: 99;
+  }
+  &.scrollOver {
+    &::after,
+    &::before {
+      width: 0;
+      visibility: hidden;
+    }
+  }
+}
+.pageTitle {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 40px;
+  color: $mainColor;
+  font-size: rem(42);
+  @include screen('tablet') {
+    font-size: rem(32);
+  }
+  @include screen('mobile') {
+    font-size: rem(28);
+  }
+}
+
+header {
+  width: 100%;
+  z-index: 99;
+  background: #fff;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include screen('tablet') {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    h1 {
+      margin: 0 auto 0 0;
+      @include screen('tablet') {
+        margin: 0 auto;
+      }
+    }
+  }
+  .logo {
+    @include screen('tablet') {
+      padding: 20px 0;
+      margin: 0 auto;
+    }
+    a {
+      display: block;
+      width: 200px;
+      height: 160px;
+      position: relative;
+      @include screen('tablet') {
+        height: 20px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        left: -200px;
+        filter: drop-shadow(200px 0 0 $mainColor);
+      }
+    }
+  }
+}
+
+.menuOpen {
+  .mainMenu {
+    left: 0;
+  }
+}
+
+.mainMenu {
+  margin: 0;
+  z-index: 40;
+  @include transition(all, 0.3);
+  @include screen('tablet') {
+    width: 50%;
+    height: calc(100% - 60px);
+    padding: 20px 0;
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    background: $mainColor;
+    * {
+      flex-direction: column;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  ul {
+    display: flex;
+    @include screen('tablet') {
+      margin-bottom: 10%;
+      width: 100%;
+    }
+    li {
+      margin: 0 20px;
+      font-size: rem(24);
+      @include screenWidth('1200') {
+        margin: 0 10px;
+        font-size: rem(20);
+      }
+      @include screen('tablet') {
+        margin: 0px;
+      }
+    }
+    a {
+      display: block;
+      padding: 10px;
+      color: $textDarken;
+      @include screen('tablet') {
+        text-align: center;
+        color: #fff;
+        border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+      }
+      &:hover {
+        color: $secColor;
+      }
+    }
+  }
+  .mobileBtn {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+    min-width: auto;
+    min-height: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    z-index: 100;
+    display: none;
+    @include screen('tablet') {
+      display: block;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 2px;
+      background: $mainColor;
+      box-shadow: $mainColor 0 6px 0 0, $mainColor 0 -6px 0 0;
+      transition: 0.2s linear;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 2px;
+      background: $mainColor;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: 0.2s linear;
+    }
+    &.active {
+      &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+        box-shadow: none;
+      }
+      &::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.officeLink {
+  @include screen('tablet') {
+    width: 100%;
+  }
+  a {
+    text-align: center;
+    display: block;
+    height: 46px;
+    padding: 10px;
+    line-height: 1.8;
+    color: #fff;
+    background: $mainColor;
+    position: relative;
+    isolation: isolate;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: block;
+      background: $secColor;
+      z-index: -1;
+      @include transition(all, 0.3);
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
+.topSearch {
+  display: flex;
+  position: relative;
+  margin: 0 0 0 20px;
+  z-index: 50;
+  @include screen('tablet') {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  .searchBtn {
+    width: 46px;
+    aspect-ratio: 1;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    @include screen('tablet') {
+      background: none;
+      width: 60px;
+    }
+    svg {
+      width: 25px;
+      aspect-ratio: 1;
+      position: absolute;
+      fill: #fff;
+      @include screen('tablet') {
+        fill: $mainColor;
+      }
+    }
+  }
+  .searchInput {
+    width: 300px;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #000;
+    z-index: 50;
+    overflow: hidden;
+    @include transition(all, 0.3);
+    @include screen('tablet') {
+      position: fixed;
+      top: 60px;
+    }
+    .content {
+      padding: 5px 10px;
+      display: flex;
+      height: 100%;
+    }
+    .close {
+      background: none;
+      margin: 0 10px 0 0;
+      &::before {
+        content: '\d7';
+        color: #fff;
+        font-size: rem(28);
+      }
+    }
+    .search {
+      // width: 30px;
+      // aspect-ratio: 1;
+      // overflow: hidden;
+      // position: relative;
+      // background: none;
+      // svg {
+      //   aspect-ratio: 1;
+      //   position: absolute;
+      //   fill: #fff;
+      //   use {
+      //     transform: scale(0.85);
+      //   }
+      // }
+      background: none;
+      color: #ffff;
+    }
+    input {
+      background: none;
+      border: none;
+      color: #d0d0d0;
+    }
+    &.active {
+      height: 60px;
+    }
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0px;
+  box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.1);
+  .logo {
+    a {
+      @include screen('tabletMin') {
+        height: 80px;
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////
+.footerBox {
+  background: $mainColor;
+  padding: 3% 0;
+  font-weight: 600;
+  @include screen('tablet') {
+    padding: 30px 0;
+  }
+  @include screen('mobile') {
+    font-weight: 400;
+  }
+  .logo {
+    margin: 0 0 3%;
+    @include screen('tablet') {
+      margin: 0 0 30px;
+    }
+    a {
+      width: 200px;
+      height: 50px;
+      margin: 0 auto;
+      display: block;
+      mask: url('../images/logo.svg') center no-repeat;
+      background: #fff;
+    }
+  }
+  nav {
+    max-width: 540px;
+    margin: 0 auto 3%;
+    @include screen('tablet') {
+      margin: 0 auto 30px;
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      @include screen('tablet') {
+        margin: 0 0 30px;
+      }
+      @include screen('mobile') {
+        flex-direction: column;
+        align-items: center;
+      }
+      li {
+        font-size: rem(20);
+        @include screen('mobile') {
+          padding: 10px;
+          font-size: rem(16);
+        }
+        a {
+          font-weight: 400;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    color: #fff;
+    font-size: rem(16);
+    font-weight: 400;
+    @include screen('mobile') {
+      font-size: rem(13);
+    }
+  }
+}
+
+.breadcrumbs {
+  margin-bottom: 5%;
+  ul {
+    display: flex;
+    align-items: center;
+    color: #303030;
+    font-size: rem(20);
+    @include screen('mobile') {
+      font-size: rem(16);
+    }
+    li {
+      display: flex;
+      align-items: center;
+      & + li {
+        &::before {
+          content: '/';
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+.innerPage {
+  main {
+    padding-bottom: 10%;
+  }
+}
+
+/////////////////////////////////////////////////////
+.demoBox {
+  position: fixed;
+  top: 30%;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px 0 0 10px;
+  padding: 15px;
+  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+  li {
+    cursor: pointer;
+    width: 16px;
+    aspect-ratio: 1;
+    box-sizing: content-box;
+    border: 2px solid transparent;
+    &:hover,
+    &.active {
+      border-color: white;
+      box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    }
+    & + li {
+      margin-top: 10px;
+    }
+    &.red {
+      background: #bb2668;
+    }
+    &.blue {
+      background: #037cc3;
+    }
+    &.green {
+      background: #4c9c23;
+    }
+    &.yellow {
+      background: #fa9111;
+    }
+    &.cyan {
+      background: #058296;
+    }
+    &.brown {
+      background: #853512;
+    }
+    &.purple {
+      background: #7f51b4;
+    }
+    &.gray {
+      background: #444444;
+    }
+  }
+}

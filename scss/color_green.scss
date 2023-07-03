@@ -1,0 +1,16 @@
+$mainColor: #4c9c23;
+$secColor: #6e990b;
+$textDarken: #222;
+$textLighten: #555;
+
+// 資料庫
+@import './partials/shared';
+@import './style.scss';
+@import './index.scss';
+@import './lp.scss';
+@import './cp.scss';
+
+body {
+  font-family: $Jost;
+  color: $textDarken;
+}

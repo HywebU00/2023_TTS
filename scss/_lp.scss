@@ -1,0 +1,199 @@
+.topMenu {
+  top: 0;
+  max-width: 1160px;
+  margin: 0 auto 5%;
+  z-index: 5;
+  position: relative;
+  padding: 0 50px;
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $mainColor;
+    width: 30px;
+    height: 30px;
+    margin-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+    &::after {
+      font-size: 30px;
+    }
+  }
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+  .swiperBox {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0;
+    .item {
+      border: 1px solid $mainColor;
+      font-size: rem(22);
+      color: $mainColor;
+      padding: 7px 10px;
+      display: inline-block;
+      line-height: 1.5;
+    }
+    .swiper-slide {
+      width: auto;
+      height: auto;
+      cursor: pointer;
+      &.active a {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: block;
+    }
+  }
+}
+
+.suppliersPage {
+  .suppliers {
+    .container {
+      max-width: 1160px;
+      margin: 0 auto 2.5%;
+      padding: 0;
+    }
+    .listBox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      @include screen('tablet') {
+        gap: 30px;
+      }
+    }
+    .item {
+      width: 100%;
+      display: flex;
+      background: #f7f7f7;
+      position: relative;
+      @include screen('mobile') {
+        width: calc((100% - 30px) / 2);
+        flex-direction: column;
+      }
+      @include screen('xs_mobile') {
+        width: 100%;
+        flex-direction: column;
+      }
+      .pic {
+        width: 40%;
+        @include screen('mobile') {
+          width: 100%;
+        }
+      }
+      .infoBox {
+        width: 60%;
+        padding: 5% 5% 5% 60px;
+        @include screen('mobile') {
+          width: 100%;
+          padding: 20px 20px 70px 20px;
+        }
+      }
+      .title {
+        font-size: rem(32);
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        margin: 0 0 40px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        @include screen('tablet') {
+          font-size: rem(28);
+          margin: 0 0 20px;
+        }
+        @include screen('mobile') {
+          font-size: rem(22);
+        }
+      }
+      ul {
+        font-size: rem(28);
+        padding: 40px 0 0;
+        border-top: $mainColor 2px solid;
+        @include screen('tablet') {
+          font-size: rem(18);
+          padding-top: 20px;
+        }
+        li {
+          position: relative;
+          padding: 0 0 0 30px;
+          line-height: 1.2;
+          &::before {
+            content: '';
+            width: 22px;
+            height: 22px;
+            left: 0;
+            top: 5px;
+            position: absolute;
+            @include screen('tablet') {
+              top: 0px;
+            }
+          }
+        }
+      }
+      .address {
+        &::before {
+          background: url('../images/icon/icon_address.svg') center no-repeat;
+        }
+      }
+      .more {
+        width: 175px;
+        text-align: center;
+        display: block;
+        padding: 12px 15px 10px;
+        border: 1px solid $mainColor;
+        background: $mainColor;
+        font-weight: rem(22);
+        color: #fff;
+        margin: 30px auto 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        isolation: isolate;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include screen('mobile') {
+          width: 100%;
+        }
+        @include transition(all, 0.3);
+        svg {
+          content: '';
+          width: 16px;
+          aspect-ratio: 1;
+          fill: #fff;
+          display: block;
+          margin: 0 0 0 10px;
+          @include transition(all, 0.3);
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          width: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          display: block;
+          background: #fff;
+          z-index: -1;
+          @include transition(all, 0.3);
+        }
+        &:hover {
+          color: $mainColor;
+          svg {
+            fill: $mainColor;
+          }
+          &::before {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
