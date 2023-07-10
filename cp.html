@@ -228,58 +228,7 @@
     <script src="./plugins/main.js"></script>
     <script>
       (function () {
-        let slideWrapper = $('.bigPic .listBox');
-        // let lazyCounter = 0;
-
-        // function postMessageToPlayer(player, command) {
-        //   if (player == null || command == null) return;
-        //   player.contentWindow.postMessage(JSON.stringify(command), '*');
-        // }
-
-        // function playPauseVideo(slick, control) {
-        //   let currentSlide = slick.find('.slick-current .item');
-        //   let slideType = currentSlide.attr('class').split(' ')[1];
-        //   let player = currentSlide.find('iframe').get(0);
-        //   let startTime = currentSlide.data('video-start');
-
-        //   if (slideType === 'youtube') {
-        //     switch (control) {
-        //       case 'play':
-        //         postMessageToPlayer(player, {
-        //           event: 'command',
-        //           func: 'mute',
-        //         });
-        //         postMessageToPlayer(player, {
-        //           event: 'command',
-        //           func: 'playVideo',
-        //         });
-        //         break;
-        //       case 'pause':
-        //         postMessageToPlayer(player, {
-        //           event: 'command',
-        //           func: 'pauseVideo',
-        //         });
-        //         break;
-        //     }
-        //   }
-        // }
-
-        // slideWrapper.on('init', function (slick) {
-        //   slick = $(slick.currentTarget);
-        //   setTimeout(function () {
-        //     playPauseVideo(slick, 'play');
-        //   }, 1000);
-        // });
-        // slideWrapper.on('beforeChange', function (event, slick) {
-        //   slick = $(slick.$slider);
-        //   playPauseVideo(slick, 'pause');
-        // });
-        // slideWrapper.on('afterChange', function (event, slick) {
-        //   slick = $(slick.$slider);
-        //   playPauseVideo(slick, 'play');
-        // });
-
-        slideWrapper.slick({
+        $('.bigPic .listBox').slick({
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
