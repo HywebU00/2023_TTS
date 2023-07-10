@@ -1489,12 +1489,49 @@ header .logo a.logo_S {
     font-size: 1.375rem;
   }
 }
-@media screen and (max-width: 767px) {
+.indexMain .newsBox .tabListContentBox .slick-arrow {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .newsBox .tabListContentBox .slick-arrow {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+}
+.indexMain .newsBox .tabListContentBox .slick-arrow svg {
+  width: 50px;
+  height: 50px;
+  fill: #fff;
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .newsBox .tabListContentBox .slick-arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.indexMain .newsBox .tabListContentBox .slick-arrow svg use {
+  transform: scale(1);
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .newsBox .tabListContentBox .slick-arrow svg use {
+    transform: scale(0.62);
+  }
+}
+.indexMain .newsBox .tabListContentBox .slick-arrow.slick-prev {
+  left: -60px;
+}
+.indexMain .newsBox .tabListContentBox .slick-arrow.slick-next {
+  right: -60px;
+}
+@media screen and (max-width: 1000px) {
   .indexMain .newsBox .tabListContentBox .slick-arrow.slick-prev {
-    left: 10px;
+    left: 0px;
   }
   .indexMain .newsBox .tabListContentBox .slick-arrow.slick-next {
-    right: 10px;
+    right: 0px;
   }
 }
 .indexMain .suppliersBox {
@@ -1785,6 +1822,7 @@ header .logo a.logo_S {
     width: 135px;
     height: 22px;
     transform: translateY(0);
+    filter: none;
   }
   .indexMain .suppliersBox .bottomBox .control .slick-arrow::after {
     content: "";
