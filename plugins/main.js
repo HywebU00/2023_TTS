@@ -43,6 +43,7 @@ new WOW({
     body.classList.toggle('searchOpen');
     body.classList.remove('menuOpen');
   });
+
   searchClose.addEventListener('click', () => {
     searchInput.classList.remove('active');
     mobileBtn.classList.remove('active');
@@ -55,6 +56,21 @@ new WOW({
     searchInput.classList.remove('active');
     body.classList.remove('searchOpen');
   });
+
+  const observer = new ResizeObserver(function (entries) {
+    if (entries[0].contentRect.width === 1000) {
+      mobileBtn.classList.remove('active');
+      searchInput.classList.remove('active');
+      body.classList.remove('menuOpen');
+      body.classList.remove('searchOpen');
+    } else {
+      mobileBtn.classList.remove('active');
+      searchInput.classList.remove('active');
+      body.classList.remove('menuOpen');
+      body.classList.remove('searchOpen');
+    }
+  });
+  observer.observe(body);
 })();
 
 //偵測位置
@@ -115,3 +131,37 @@ new WOW({
   const nowActive = document.querySelector(`.${String(cookieCss)}`);
   nowActive?.classList.add('active');
 })();
+
+$(function () {
+  $('.mainMenu li').has('ul').addClass('nextLv').append('<span class="toggleBtn"></span>');
+
+  $('.nextLv').hover(
+    function () {
+      if ($(window).outerWidth() > 1000) {
+        $(this).children('ul').stop().off().slideDown('fast');
+        $(this).addClass('active');
+      }
+    },
+    function () {
+      if ($(window).outerWidth() > 1000) {
+        $(this).children('ul').stop().off().slideUp('fast');
+        $(this).removeClass('active');
+      }
+    }
+  );
+  $('.nextLv a').on('click', function () {
+    if ($(window).outerWidth() <= 1000 && $(this).attr('href') === '#') {
+      $(this).siblings('.toggleBtn').trigger('click');
+    }
+  });
+  $('.nextLv .toggleBtn').on('click', function () {
+    $(this).parents('li').siblings('li').not($(this).parents('li')).children('ul').slideUp('fast');
+    $(this).siblings('ul').stop().slideToggle('fast');
+    $(this).parent('li').toggleClass('active');
+  });
+});
+
+$(window).on('load resize', function () {
+  $('.mainMenu li').removeClass('active');
+  $('.mainMenu ul').attr('style', null);
+});

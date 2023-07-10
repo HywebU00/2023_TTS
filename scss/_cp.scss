@@ -1,30 +1,36 @@
 .suppliersPage {
-  .swiper-slide {
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #fff;
-    margin-top: unset;
-    top: 50%;
-    transform: translateY(-50%);
+  .slick-arrow {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
     @include screen('tablet') {
       display: block;
-      width: 16px;
+      width: 30px;
       height: 30px;
-      &::after,
-      &::after {
-        font-size: 30px;
+    }
+    svg {
+      width: 50px;
+      height: 50px;
+      fill: #fff;
+      @include screen('tablet') {
+        width: 30px;
+        height: 30px;
+      }
+      use {
+        transform: scale(1);
+        @include screen('tablet') {
+          transform: scale(0.62);
+        }
       }
     }
-    &::after {
-      text-shadow: -2px 6px 5px rgba(0, 0, 0, 0.3);
+    &.slick-prev {
+      left: 20px;
+    }
+    &.slick-next {
+      right: 20px;
     }
   }
+
   .suppliersDetail {
     .topBox {
       background: #f7f7f7;
@@ -43,20 +49,21 @@
         @include screenWidth('1200') {
           width: 50%;
         }
-        @include screen('tablet') {
+        @include screen('mobile') {
           width: 100%;
         }
         .bigPic {
           width: 100%;
           aspect-ratio: 1;
-          margin-bottom: 30px;
-          @include screenWidth('1200') {
+          margin-bottom: 28px;
+          position: relative;
+          @include screen('tablet') {
             margin-bottom: 20px;
           }
           @include screen('mobile') {
-            margin-bottom: 12px;
+            margin-bottom: 6px;
           }
-          .swiper-slide {
+          .item {
             aspect-ratio: 1;
           }
           .pic,
@@ -67,6 +74,13 @@
           }
         }
         .picNav {
+          margin: 0 -14px;
+          @include screen('tablet') {
+            margin: 0 -10px;
+          }
+          @include screen('mobile') {
+            margin: 0 -6px;
+          }
           i {
             content: '';
             position: absolute;
@@ -76,7 +90,14 @@
             background: url('../images/icon/icon_play.svg') center no-repeat;
           }
           .pic {
+            margin: 0 14px;
             cursor: pointer;
+            @include screen('tablet') {
+              margin: 0 10px;
+            }
+            @include screen('mobile') {
+              margin: 0 6px;
+            }
           }
         }
       }
@@ -188,21 +209,23 @@
         font-size: rem(22);
       }
     }
+
     .productBox {
       margin-bottom: 8%;
-      .swiperBox {
+      .sliderBox {
         margin: 0 -60px;
         padding: 0 60px;
         position: relative;
 
         &:hover {
-          .swiper-slide::before {
-            inset: 0;
+          .item::before {
+            inset: 0 8px;
             opacity: 0.5;
           }
         }
-        .swiper-slide {
+        .item {
           cursor: pointer;
+          position: relative;
           &::before {
             content: '';
             position: absolute;
@@ -217,6 +240,20 @@
               inset: 50%;
               opacity: 0;
             }
+          }
+          .pic {
+            margin: 0 8px;
+            @include screen('mobile') {
+              margin: 0 5px;
+            }
+          }
+        }
+        .slick-arrow {
+          &.slick-prev {
+            left: -60px;
+          }
+          &.slick-next {
+            right: -60px;
           }
         }
       }

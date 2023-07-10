@@ -1,54 +1,40 @@
 .topMenu {
   top: 0;
-  max-width: 1160px;
-  margin: 0 auto 5%;
+  max-width: 1134px;
   z-index: 5;
   position: relative;
   padding: 0 50px;
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: $mainColor;
-    width: 30px;
-    height: 30px;
-    margin-top: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9;
-    &::after {
-      font-size: 30px;
-    }
+  margin: 0 auto 2.5%;
+  @include screen('mobile') {
+    padding: 0 30px;
   }
-  .swiper-button-prev {
-    left: 0;
-  }
-  .swiper-button-next {
-    right: 0;
-  }
-  .swiperBox {
-    max-width: 1050px;
-    margin: 0 auto;
-    padding: 0;
-    .item {
+  .item {
+    a {
+      padding: 0;
+      background: none;
       border: 1px solid $mainColor;
       font-size: rem(22);
       color: $mainColor;
       padding: 7px 10px;
-      display: inline-block;
-      line-height: 1.5;
-    }
-    .swiper-slide {
-      width: auto;
-      height: auto;
-      cursor: pointer;
-      &.active a,
-      a:hover {
-        background-color: $mainColor;
-        color: #fff;
-      }
-    }
-    .swiper-button-prev,
-    .swiper-button-next {
       display: block;
+      line-height: 1.5;
+      margin: 0 8px;
+    }
+    &.active button,
+    a:hover {
+      background-color: $mainColor;
+      color: #fff;
+    }
+  }
+  .slick-arrow {
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: $mainColor;
+      filter: none;
+      use {
+        transform: scale(0.62);
+      }
     }
   }
 }

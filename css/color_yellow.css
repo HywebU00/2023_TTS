@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("../plugins/WOW-master/css/libs/animate.css");
+@import url("../plugins/slick/1.8.1/slick/slick.css");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -447,23 +448,6 @@ figure {
   position: relative;
 }
 
-.container {
-  position: relative;
-  width: calc(100% - 120px);
-  max-width: 1320px;
-  padding-right: 60px;
-  padding-left: 60px;
-  margin: 0 auto;
-  box-sizing: content-box;
-}
-@media screen and (max-width: 1000px) {
-  .container {
-    width: calc(100% - 40px);
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-}
-
 section {
   position: relative;
 }
@@ -576,6 +560,51 @@ button:focus {
   line-height: 1.6;
 }
 
+.col-12.full {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  box-sizing: border-box;
+}
+.col-12.full .container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.col-12 {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+@media screen and (max-width: 1000px) {
+  .col-12 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.col-10 {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+@media screen and (max-width: 1000px) {
+  .col-10 {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+.slick-slide {
+  line-height: 0;
+}
+
 body::before {
   content: "";
   position: absolute;
@@ -590,11 +619,53 @@ body.searchOpen::before, body.menuOpen::before {
   opacity: 0.5;
   pointer-events: unset;
 }
-body.searchOpen .mainMenu ul a:hover, body.menuOpen .mainMenu ul a:hover {
-  color: #fff;
-  background: #a25a03;
+body.menuOpen .mainMenu ul {
+  width: 100%;
+  margin: 0;
+  text-align: left;
 }
-body.searchOpen .officeLink a::after, body.menuOpen .officeLink a::after {
+body.menuOpen .mainMenu ul li {
+  margin: 0;
+}
+body.menuOpen .mainMenu ul li a {
+  color: #fff !important;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+body.menuOpen .mainMenu ul li ul {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+body.menuOpen .mainMenu ul li ul li a {
+  border: none;
+  padding: 5px 5px 5px 30px;
+}
+body.menuOpen .mainMenu ul li ul li ul {
+  padding: 0;
+  border: none;
+}
+body.menuOpen .mainMenu ul li ul li ul li a {
+  background: #fb9d2a;
+  padding: 5px 5px 5px 50px;
+}
+body.menuOpen .mainMenu ul li.nextLv > a::before {
+  width: 10px;
+  height: 10px;
+  border-color: #fff;
+  border-width: 0 3px 3px 0;
+  right: 15px;
+  transform: translateY(-50%) rotate(45deg);
+}
+body.menuOpen .mainMenu ul li.nextLv.active > a::before {
+  border-color: #fff;
+  transform: translateY(-50%) rotate(225deg);
+}
+body.menuOpen .officeLink {
+  margin: 0;
+}
+body.menuOpen .officeLink a {
+  text-align: left;
+}
+body.menuOpen .officeLink a::after {
   background: #a25a03;
 }
 body a {
@@ -662,6 +733,7 @@ header .container {
     padding: 0;
     margin: 0;
     width: 100%;
+    height: 60px;
   }
 }
 header .container h1 {
@@ -674,7 +746,7 @@ header .container h1 {
 }
 @media screen and (max-width: 1000px) {
   header .logo {
-    padding: 20px 0;
+    padding: 10px 0;
     margin: 0 auto;
   }
 }
@@ -686,7 +758,10 @@ header .logo a {
 }
 @media screen and (max-width: 1000px) {
   header .logo a {
-    height: 20px;
+    height: 40px;
+  }
+  header .logo a.logo_L {
+    display: none;
   }
 }
 header .logo a img {
@@ -694,6 +769,14 @@ header .logo a img {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+header .logo a.logo_S {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  header .logo a.logo_S {
+    display: block;
+  }
 }
 
 .menuOpen .mainMenu {
@@ -723,46 +806,102 @@ header .logo a img {
   display: flex;
   align-items: center;
 }
-.mainMenu ul {
+.mainMenu nav > ul {
   display: flex;
 }
-@media screen and (max-width: 1000px) {
-  .mainMenu ul {
-    margin-bottom: 10%;
-    width: 100%;
-  }
-}
-.mainMenu ul li {
-  margin: 0 20px;
+.mainMenu nav > ul > li {
+  margin: 0 10px;
   font-size: 1.5rem;
+  position: relative;
 }
 @media screen and (max-width: 1200px) {
-  .mainMenu ul li {
+  .mainMenu nav > ul > li {
     margin: 0 10px;
     font-size: 1.25rem;
   }
 }
-@media screen and (max-width: 1000px) {
-  .mainMenu ul li {
-    margin: 0px;
-  }
-}
-.mainMenu ul a {
+.mainMenu nav > ul > li > a {
   display: block;
-  padding: 10px;
+  padding: 10px 20px;
   color: #222;
+  position: relative;
 }
-@media screen and (max-width: 1000px) {
-  .mainMenu ul a {
-    text-align: center;
-    color: #fff;
-    border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
-  }
-}
-.mainMenu ul a:hover {
+.mainMenu nav > ul > li > a:hover {
   color: #919c1a;
 }
-.mainMenu .mobileBtn {
+.mainMenu nav > ul > li.nextLv > a::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-color: #222;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.8;
+}
+.mainMenu nav > ul > li.nextLv.active > a::before {
+  border-color: #fa9111;
+}
+.mainMenu nav > ul ul {
+  display: none;
+  text-align: center;
+}
+@media screen and (min-width: 1000px) {
+  .mainMenu nav > ul ul {
+    position: absolute;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+  }
+}
+.mainMenu nav > ul ul li {
+  position: relative;
+}
+.mainMenu nav > ul ul li a {
+  padding: 5px;
+  position: relative;
+  display: block;
+  color: #222;
+}
+.mainMenu nav > ul ul li a:hover {
+  color: #fff;
+  background: #fa9111;
+}
+.mainMenu nav > ul ul li.nextLv > a::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-color: #222;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  opacity: 0.8;
+}
+.mainMenu nav > ul ul li.nextLv.active {
+  background: #fa9111;
+}
+.mainMenu nav > ul ul li.nextLv.active > a {
+  color: #fff;
+}
+.mainMenu nav > ul ul li.nextLv.active > a::before {
+  border-color: #fff;
+}
+.mainMenu nav > ul ul ul {
+  left: 100%;
+  transform: translateX(0);
+  top: 0;
+}
+
+.mobileBtn {
   width: 60px;
   height: 60px;
   position: fixed;
@@ -780,11 +919,11 @@ header .logo a img {
   display: none;
 }
 @media screen and (max-width: 1000px) {
-  .mainMenu .mobileBtn {
+  .mobileBtn {
     display: block;
   }
 }
-.mainMenu .mobileBtn::before {
+.mobileBtn::before {
   position: absolute;
   content: "";
   left: 50%;
@@ -796,7 +935,7 @@ header .logo a img {
   box-shadow: #fa9111 0 6px 0 0, #fa9111 0 -6px 0 0;
   transition: 0.2s linear;
 }
-.mainMenu .mobileBtn::after {
+.mobileBtn::after {
   position: absolute;
   content: "";
   width: 20px;
@@ -808,15 +947,18 @@ header .logo a img {
   opacity: 0;
   transition: 0.2s linear;
 }
-.mainMenu .mobileBtn.active::before {
+.mobileBtn.active::before {
   transform: translate(-50%, -50%) rotate(45deg);
   box-shadow: none;
 }
-.mainMenu .mobileBtn.active::after {
+.mobileBtn.active::after {
   opacity: 1;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
+.officeLink {
+  margin: 0 0 0 20px;
+}
 @media screen and (max-width: 1000px) {
   .officeLink {
     width: 100%;
@@ -1103,16 +1245,37 @@ header .logo a img {
   background: #444444;
 }
 
-.swiper .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+.slick-arrow {
+  background: none;
+  margin-top: unset;
+  top: 50%;
+  padding: 0;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 50;
+  line-height: 0;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
 }
-.swiper .swiper-button-prev,
-.swiper .swiper-button-next {
-  display: flex !important;
-  align-items: center;
+.slick-arrow svg {
+  width: 30px;
+  height: 30px;
+  fill: #fa9111;
+  filter: none;
+}
+.slick-arrow svg use {
+  transform: scale(0.62);
+}
+.slick-arrow.slick-prev {
+  left: 0px;
+  transform: translateY(-50%) scaleX(-1);
+}
+.slick-arrow.slick-next {
+  right: 0px;
+}
+.slick-arrow.slick-disabled {
+  opacity: 0.2;
 }
 
 .indexMain {
@@ -1138,30 +1301,14 @@ header .logo a img {
 @media screen and (max-width: 575px) {
   .indexMain .sectionTitle {
     font-size: 1.875rem;
-  }
-}
-.indexMain .indexBanner .container,
-.indexMain .container {
-  position: relative;
-}
-@media screen and (max-width: 1000px) {
-  .indexMain .indexBanner .container,
-  .indexMain .container {
-    padding: 0;
-    width: 100%;
+    margin: 30px 0 20px;
   }
 }
 .indexMain .indexBanner {
   isolation: isolate;
 }
-.indexMain .indexBanner .swiper-slide {
-  line-height: 0;
-}
-.indexMain .indexBanner .swiper-slide img {
+.indexMain .indexBanner img {
   width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 .indexMain .indexBanner .slogan {
   position: absolute;
@@ -1176,6 +1323,7 @@ header .logo a img {
   font-size: 4.6875rem;
   padding: 0 60px;
   text-align: center;
+  line-height: 1.4;
 }
 @media screen and (max-width: 1000px) {
   .indexMain .indexBanner .slogan {
@@ -1187,30 +1335,49 @@ header .logo a img {
     font-size: 1.875rem;
   }
 }
-.indexMain .indexBanner .swiper-button-next,
-.indexMain .indexBanner .swiper-button-prev {
-  color: #fff;
-  display: none;
-  margin-top: unset;
-  top: 50%;
-  transform: translateY(-50%);
+.indexMain .indexBanner .slick-arrow {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
 }
 @media screen and (max-width: 1000px) {
-  .indexMain .indexBanner .swiper-button-next,
-  .indexMain .indexBanner .swiper-button-prev {
+  .indexMain .indexBanner .slick-arrow {
     display: block;
-    width: 16px;
+    width: 30px;
     height: 30px;
   }
 }
-.indexMain .indexBanner .swiper-button-next::after,
-.indexMain .indexBanner .swiper-button-prev::after {
-  text-shadow: -2px 6px 5px rgba(0, 0, 0, 0.3);
+.indexMain .indexBanner .slick-arrow svg {
+  width: 50px;
+  height: 50px;
+  fill: #fff;
 }
 @media screen and (max-width: 1000px) {
-  .indexMain .indexBanner .swiper-button-next::after,
-  .indexMain .indexBanner .swiper-button-prev::after {
-    font-size: 30px;
+  .indexMain .indexBanner .slick-arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.indexMain .indexBanner .slick-arrow svg use {
+  transform: scale(1);
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .indexBanner .slick-arrow svg use {
+    transform: scale(0.62);
+  }
+}
+.indexMain .indexBanner .slick-arrow.slick-prev {
+  left: 20px;
+}
+.indexMain .indexBanner .slick-arrow.slick-next {
+  right: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .indexBanner .slick-arrow.slick-prev {
+    left: 0px;
+  }
+  .indexMain .indexBanner .slick-arrow.slick-next {
+    right: 0px;
   }
 }
 .indexMain .tabBar {
@@ -1221,63 +1388,40 @@ header .logo a img {
   padding: 0 50px;
   margin: 0 auto 2.5%;
 }
-.indexMain .tabBar .swiper-button-prev,
-.indexMain .tabBar .swiper-button-next {
-  color: #fa9111;
-  width: 30px;
-  height: 30px;
-  margin-top: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 9;
+@media screen and (max-width: 767px) {
+  .indexMain .tabBar {
+    padding: 0 30px;
+  }
 }
-.indexMain .tabBar .swiper-button-prev::after,
-.indexMain .tabBar .swiper-button-next::after {
-  font-size: 30px;
-}
-.indexMain .tabBar .swiper-button-prev {
-  left: 0;
-}
-.indexMain .tabBar .swiper-button-next {
-  right: 0;
-}
-.indexMain .tabBar .swiperBox {
-  max-width: 1050px;
-  margin: 0 auto;
+.indexMain .tabBar .item button {
   padding: 0;
-}
-.indexMain .tabBar .swiperBox .item {
+  background: none;
   border: 1px solid #fa9111;
   font-size: 1.375rem;
   color: #fa9111;
   padding: 7px 10px;
-  display: inline-block;
+  display: block;
   line-height: 1.5;
+  margin: 0 8px;
 }
-.indexMain .tabBar .swiperBox .swiper-slide {
-  width: auto;
-  height: auto;
-  cursor: pointer;
-}
-.indexMain .tabBar .swiperBox .swiper-slide.active a,
-.indexMain .tabBar .swiperBox .swiper-slide a:hover {
+.indexMain .tabBar .item.active button,
+.indexMain .tabBar .item a:hover {
   background-color: #fa9111;
   color: #fff;
 }
-.indexMain .tabBar .swiperBox .swiper-button-prev,
-.indexMain .tabBar .swiperBox .swiper-button-next {
-  display: block;
+.indexMain .tabBar .slick-arrow svg {
+  width: 30px;
+  height: 30px;
+  fill: #fa9111;
+  filter: none;
+}
+.indexMain .tabBar .slick-arrow svg use {
+  transform: scale(0.62);
 }
 .indexMain .tabListContentBox {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 60px;
   position: relative;
-}
-@media screen and (max-width: 1000px) {
-  .indexMain .tabListContentBox {
-    padding: 30px;
-  }
 }
 @media screen and (max-width: 767px) {
   .indexMain .tabListContentBox {
@@ -1290,44 +1434,41 @@ header .logo a img {
 .indexMain .tabListContentBox .tabListContent.active {
   display: block;
 }
-.indexMain .tabListContentBox .tabListContent .swiper-button-prev,
-.indexMain .tabListContentBox .tabListContent .swiper-button-next {
-  color: #fff;
-  width: 60px;
-  height: 50px;
-  margin-top: 0;
-  text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 9;
+.indexMain .tabListContentBox .tabListContent .slick-arrow {
+  width: 50px;
 }
 @media screen and (max-width: 1000px) {
-  .indexMain .tabListContentBox .tabListContent .swiper-button-prev,
-  .indexMain .tabListContentBox .tabListContent .swiper-button-next {
+  .indexMain .tabListContentBox .tabListContent .slick-arrow {
     width: 30px;
     height: 30px;
   }
 }
-.indexMain .tabListContentBox .tabListContent .swiper-button-prev::after,
-.indexMain .tabListContentBox .tabListContent .swiper-button-next::after {
-  text-shadow: -2px 6px 5px rgba(0, 0, 0, 0.3);
-  font-size: 50px;
+.indexMain .tabListContentBox .tabListContent .slick-arrow svg {
+  fill: #fff;
 }
-@media screen and (max-width: 1000px) {
-  .indexMain .tabListContentBox .tabListContent .swiper-button-prev::after,
-  .indexMain .tabListContentBox .tabListContent .swiper-button-next::after {
-    font-size: 30px;
-  }
+.indexMain .tabListContentBox .tabListContent .slick-arrow.slick-prev {
+  left: -50px;
 }
-.indexMain .tabListContentBox .tabListContent .swiper-button-prev {
-  left: 0;
-}
-.indexMain .tabListContentBox .tabListContent .swiper-button-next {
-  right: 0;
+.indexMain .tabListContentBox .tabListContent .slick-arrow.slick-next {
+  right: -50px;
 }
 @media screen and (max-width: 767px) {
   .indexMain .newsBox .tabListContentBox {
-    padding: 30px 20px 0;
+    padding: 30px 0px 0;
+  }
+}
+.indexMain .newsBox .tabListContentBox a {
+  display: block;
+  margin: 0 15px;
+}
+@media screen and (max-width: 767px) {
+  .indexMain .newsBox .tabListContentBox a {
+    margin: 0 5px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .indexMain .newsBox .tabListContentBox a {
+    margin: 0px;
   }
 }
 .indexMain .newsBox .tabListContentBox .pic {
@@ -1341,14 +1482,28 @@ header .logo a img {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  line-height: 1.4;
 }
 @media screen and (max-width: 767px) {
   .indexMain .newsBox .tabListContentBox .title {
     font-size: 1.375rem;
   }
 }
+@media screen and (max-width: 767px) {
+  .indexMain .newsBox .tabListContentBox .slick-arrow.slick-prev {
+    left: 10px;
+  }
+  .indexMain .newsBox .tabListContentBox .slick-arrow.slick-next {
+    right: 10px;
+  }
+}
 .indexMain .suppliersBox {
   margin: 0 0 5%;
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .suppliersBox .tabBar {
+    margin: 0 20px 2.5%;
+  }
 }
 .indexMain .suppliersBox .more {
   width: 130px;
@@ -1356,7 +1511,7 @@ header .logo a img {
   display: block;
   padding: 12px 15px 8px;
   border: 1px solid #fa9111;
-  font-weight: 1.375rem;
+  font-size: 1.375rem;
   color: #fa9111;
   margin: 30px 0 0;
   isolation: isolate;
@@ -1403,14 +1558,14 @@ header .logo a img {
 .indexMain .suppliersBox .listBox > .item:nth-child(even) .pic {
   order: -1;
 }
-.indexMain .suppliersBox .listBox > .item.active .bottomBox {
-  padding: 60px 0;
-  height: 420px;
+.indexMain .suppliersBox .listBox > .item.active .more {
+  color: #fff;
+  background: #fff;
+  border-color: #fa9111;
 }
-@media screen and (max-width: 767px) {
-  .indexMain .suppliersBox .listBox > .item.active .bottomBox {
-    padding: 30px 0;
-  }
+.indexMain .suppliersBox .listBox > .item.active .more::after {
+  width: 100%;
+  left: 0;
 }
 .indexMain .suppliersBox .tabListContentBox {
   max-width: none;
@@ -1536,23 +1691,24 @@ header .logo a img {
   }
 }
 .indexMain .suppliersBox .bottomBox {
+  display: none;
   background: #dddddd;
-  height: 0;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
 }
 .indexMain .suppliersBox .bottomBox .productsList {
-  display: flex;
-}
-.indexMain .suppliersBox .bottomBox .swiperBox {
   max-width: 1440px;
-  padding: 0 60px;
+  padding: 60px;
   margin: 0 auto;
   position: relative;
 }
 @media screen and (max-width: 767px) {
-  .indexMain .suppliersBox .bottomBox .swiperBox {
-    padding: 0px 30px;
+  .indexMain .suppliersBox .bottomBox .productsList {
+    padding: 30px 0px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .indexMain .suppliersBox .bottomBox .productsList {
+    max-width: 330px;
   }
 }
 .indexMain .suppliersBox .bottomBox .item {
@@ -1560,7 +1716,22 @@ header .logo a img {
   isolation: isolate;
   position: relative;
 }
-.indexMain .suppliersBox .bottomBox .item::before {
+.indexMain .suppliersBox .bottomBox .item a {
+  display: block;
+  margin: 0 20px;
+  position: relative;
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .suppliersBox .bottomBox .item a {
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .indexMain .suppliersBox .bottomBox .item a {
+    margin: 0 0px;
+  }
+}
+.indexMain .suppliersBox .bottomBox .item a::before {
   content: "";
   position: absolute;
   z-index: 2;
@@ -1581,14 +1752,16 @@ header .logo a img {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   z-index: 3;
+  line-height: 1.4;
 }
 @media screen and (max-width: 767px) {
   .indexMain .suppliersBox .bottomBox .title {
     font-size: 1.375rem;
   }
 }
-.indexMain .suppliersBox .bottomBox .swiper-pagination {
-  display: none;
+.indexMain .suppliersBox .bottomBox .control {
+  top: 0;
+  width: 100%;
 }
 @media screen and (max-width: 767px) {
   .indexMain .suppliersBox .bottomBox .control {
@@ -1596,32 +1769,93 @@ header .logo a img {
     justify-content: center;
     align-items: center;
   }
-  .indexMain .suppliersBox .bottomBox .swiper-pagination {
-    display: block;
-    top: auto;
-    bottom: auto;
+}
+.indexMain .suppliersBox .bottomBox .control .slick-arrow.slick-prev {
+  left: 0px;
+}
+.indexMain .suppliersBox .bottomBox .control .slick-arrow.slick-next {
+  right: 0px;
+}
+@media screen and (max-width: 767px) {
+  .indexMain .suppliersBox .bottomBox .control .slick-arrow {
     position: relative;
-    width: 80px;
-  }
-  .indexMain .suppliersBox .bottomBox .swiper-button-next,
-  .indexMain .suppliersBox .bottomBox .swiper-button-prev {
-    position: relative;
     top: auto;
-    left: auto;
-    right: auto;
+    left: auto !important;
+    right: auto !important;
     width: 135px;
     height: 22px;
     transform: translateY(0);
   }
-  .indexMain .suppliersBox .bottomBox .swiper-button-next::after,
-  .indexMain .suppliersBox .bottomBox .swiper-button-prev::after {
+  .indexMain .suppliersBox .bottomBox .control .slick-arrow::after {
     content: "";
     width: 135px;
     height: 22px;
+    display: block;
     background: url("../images/icon/icon_arrow3.svg") no-repeat;
   }
-  .indexMain .suppliersBox .bottomBox .swiper-button-next {
+  .indexMain .suppliersBox .bottomBox .control .slick-arrow svg {
+    display: none;
+  }
+  .indexMain .suppliersBox .bottomBox .control .slick-arrow.slick-next {
     transform: translateY(0) scaleX(-1);
+  }
+}
+.indexMain .suppliersBox .bottomBox .control .count {
+  display: none;
+  top: auto;
+  bottom: auto;
+  position: relative;
+  text-align: center;
+  width: 80px;
+}
+@media screen and (max-width: 767px) {
+  .indexMain .suppliersBox .bottomBox .control .count {
+    display: block;
+  }
+}
+.indexMain .suppliersBox .bottomBox .slick-arrow {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .suppliersBox .bottomBox .slick-arrow {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+}
+.indexMain .suppliersBox .bottomBox .slick-arrow svg {
+  width: 50px;
+  height: 50px;
+  fill: #fff;
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .suppliersBox .bottomBox .slick-arrow svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.indexMain .suppliersBox .bottomBox .slick-arrow svg use {
+  transform: scale(1);
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .suppliersBox .bottomBox .slick-arrow svg use {
+    transform: scale(0.62);
+  }
+}
+.indexMain .suppliersBox .bottomBox .slick-arrow.slick-prev {
+  left: 20px;
+}
+.indexMain .suppliersBox .bottomBox .slick-arrow.slick-next {
+  right: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .indexMain .suppliersBox .bottomBox .slick-arrow.slick-prev {
+    left: 0px;
+  }
+  .indexMain .suppliersBox .bottomBox .slick-arrow.slick-next {
+    right: 0px;
   }
 }
 .indexMain .suppliersMore {
@@ -1673,60 +1907,44 @@ header .logo a img {
   width: 100%;
   left: 0;
 }
+
 .topMenu {
   top: 0;
-  max-width: 1160px;
-  margin: 0 auto 5%;
+  max-width: 1134px;
   z-index: 5;
   position: relative;
   padding: 0 50px;
+  margin: 0 auto 2.5%;
 }
-.topMenu .swiper-button-prev,
-.topMenu .swiper-button-next {
-  color: #fa9111;
-  width: 30px;
-  height: 30px;
-  margin-top: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 9;
+@media screen and (max-width: 767px) {
+  .topMenu {
+    padding: 0 30px;
+  }
 }
-.topMenu .swiper-button-prev::after,
-.topMenu .swiper-button-next::after {
-  font-size: 30px;
-}
-.topMenu .swiper-button-prev {
-  left: 0;
-}
-.topMenu .swiper-button-next {
-  right: 0;
-}
-.topMenu .swiperBox {
-  max-width: 1050px;
-  margin: 0 auto;
+.topMenu .item a {
   padding: 0;
-}
-.topMenu .swiperBox .item {
+  background: none;
   border: 1px solid #fa9111;
   font-size: 1.375rem;
   color: #fa9111;
   padding: 7px 10px;
-  display: inline-block;
+  display: block;
   line-height: 1.5;
+  margin: 0 8px;
 }
-.topMenu .swiperBox .swiper-slide {
-  width: auto;
-  height: auto;
-  cursor: pointer;
-}
-.topMenu .swiperBox .swiper-slide.active a,
-.topMenu .swiperBox .swiper-slide a:hover {
+.topMenu .item.active button,
+.topMenu .item a:hover {
   background-color: #fa9111;
   color: #fff;
 }
-.topMenu .swiperBox .swiper-button-prev,
-.topMenu .swiperBox .swiper-button-next {
-  display: block;
+.topMenu .slick-arrow svg {
+  width: 30px;
+  height: 30px;
+  fill: #fa9111;
+  filter: none;
+}
+.topMenu .slick-arrow svg use {
+  transform: scale(0.62);
 }
 
 .suppliersPage .suppliers .container {
@@ -1889,35 +2107,42 @@ header .logo a img {
   left: 0;
 }
 
-.suppliersPage .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.suppliersPage .swiper-button-next,
-.suppliersPage .swiper-button-prev {
-  color: #fff;
-  margin-top: unset;
-  top: 50%;
-  transform: translateY(-50%);
+.suppliersPage .slick-arrow {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
 }
 @media screen and (max-width: 1000px) {
-  .suppliersPage .swiper-button-next,
-  .suppliersPage .swiper-button-prev {
+  .suppliersPage .slick-arrow {
     display: block;
-    width: 16px;
+    width: 30px;
     height: 30px;
   }
-  .suppliersPage .swiper-button-next::after, .suppliersPage .swiper-button-next::after,
-  .suppliersPage .swiper-button-prev::after,
-  .suppliersPage .swiper-button-prev::after {
-    font-size: 30px;
+}
+.suppliersPage .slick-arrow svg {
+  width: 50px;
+  height: 50px;
+  fill: #fff;
+}
+@media screen and (max-width: 1000px) {
+  .suppliersPage .slick-arrow svg {
+    width: 30px;
+    height: 30px;
   }
 }
-.suppliersPage .swiper-button-next::after,
-.suppliersPage .swiper-button-prev::after {
-  text-shadow: -2px 6px 5px rgba(0, 0, 0, 0.3);
+.suppliersPage .slick-arrow svg use {
+  transform: scale(1);
+}
+@media screen and (max-width: 1000px) {
+  .suppliersPage .slick-arrow svg use {
+    transform: scale(0.62);
+  }
+}
+.suppliersPage .slick-arrow.slick-prev {
+  left: 20px;
+}
+.suppliersPage .slick-arrow.slick-next {
+  right: 20px;
 }
 .suppliersPage .suppliersDetail .topBox {
   background: #f7f7f7;
@@ -1944,7 +2169,7 @@ header .logo a img {
     width: 50%;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 767px) {
   .suppliersPage .suppliersDetail .topBox .picBox {
     width: 100%;
   }
@@ -1952,19 +2177,20 @@ header .logo a img {
 .suppliersPage .suppliersDetail .topBox .picBox .bigPic {
   width: 100%;
   aspect-ratio: 1;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
+  position: relative;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
   .suppliersPage .suppliersDetail .topBox .picBox .bigPic {
     margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 767px) {
   .suppliersPage .suppliersDetail .topBox .picBox .bigPic {
-    margin-bottom: 12px;
+    margin-bottom: 6px;
   }
 }
-.suppliersPage .suppliersDetail .topBox .picBox .bigPic .swiper-slide {
+.suppliersPage .suppliersDetail .topBox .picBox .bigPic .item {
   aspect-ratio: 1;
 }
 .suppliersPage .suppliersDetail .topBox .picBox .bigPic .pic,
@@ -1973,6 +2199,19 @@ header .logo a img {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.suppliersPage .suppliersDetail .topBox .picBox .picNav {
+  margin: 0 -14px;
+}
+@media screen and (max-width: 1000px) {
+  .suppliersPage .suppliersDetail .topBox .picBox .picNav {
+    margin: 0 -10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .suppliersPage .suppliersDetail .topBox .picBox .picNav {
+    margin: 0 -6px;
+  }
 }
 .suppliersPage .suppliersDetail .topBox .picBox .picNav i {
   content: "";
@@ -1983,7 +2222,18 @@ header .logo a img {
   background: url("../images/icon/icon_play.svg") center no-repeat;
 }
 .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic {
+  margin: 0 14px;
   cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic {
+    margin: 0 10px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic {
+    margin: 0 6px;
+  }
 }
 .suppliersPage .suppliersDetail .topBox .infoBox {
   flex-grow: 1;
@@ -2105,19 +2355,20 @@ header .logo a img {
 .suppliersPage .suppliersDetail .productBox {
   margin-bottom: 8%;
 }
-.suppliersPage .suppliersDetail .productBox .swiperBox {
+.suppliersPage .suppliersDetail .productBox .sliderBox {
   margin: 0 -60px;
   padding: 0 60px;
   position: relative;
 }
-.suppliersPage .suppliersDetail .productBox .swiperBox:hover .swiper-slide::before {
-  inset: 0;
+.suppliersPage .suppliersDetail .productBox .sliderBox:hover .item::before {
+  inset: 0 8px;
   opacity: 0.5;
 }
-.suppliersPage .suppliersDetail .productBox .swiperBox .swiper-slide {
+.suppliersPage .suppliersDetail .productBox .sliderBox .item {
   cursor: pointer;
+  position: relative;
 }
-.suppliersPage .suppliersDetail .productBox .swiperBox .swiper-slide::before {
+.suppliersPage .suppliersDetail .productBox .sliderBox .item::before {
   content: "";
   position: absolute;
   z-index: 9;
@@ -2126,9 +2377,23 @@ header .logo a img {
   opacity: 0;
   transition: all 0.3s ease;
 }
-.suppliersPage .suppliersDetail .productBox .swiperBox .swiper-slide:hover::before {
+.suppliersPage .suppliersDetail .productBox .sliderBox .item:hover::before {
   inset: 50%;
   opacity: 0;
+}
+.suppliersPage .suppliersDetail .productBox .sliderBox .item .pic {
+  margin: 0 8px;
+}
+@media screen and (max-width: 767px) {
+  .suppliersPage .suppliersDetail .productBox .sliderBox .item .pic {
+    margin: 0 5px;
+  }
+}
+.suppliersPage .suppliersDetail .productBox .sliderBox .slick-arrow.slick-prev {
+  left: -60px;
+}
+.suppliersPage .suppliersDetail .productBox .sliderBox .slick-arrow.slick-next {
+  right: -60px;
 }
 .suppliersPage .suppliersDetail .bottomBox .listBox {
   display: flex;

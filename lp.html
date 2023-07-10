@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>2023_TTS</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/color_red.css" id="css" />
   </head>
   <body class="">
@@ -17,7 +16,7 @@
       </header>
 
       <main class="suppliersBox">
-        <div class="breadcrumbs wow fadeInUp" data-wow-delay="0s">
+        <div class="breadcrumbs wow fadeInUp col-12" data-wow-delay="0s">
           <div class="container">
             <ul>
               <li><a href="#">Home</a></li>
@@ -27,17 +26,11 @@
         </div>
         <div class="container">
           <div class="topMenu wow fadeInUp" data-wow-delay="0.2s">
-            <div class="swiperBox">
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide active"><a class="item">INTELLECTUAL PROPERTY</a></div>
-                  <div class="swiper-slide"><a class="item">LICENSED MERCHANDISE</a></div>
-                  <div class="swiper-slide"><a class="item">ANIMATION</a></div>
-                  <div class="swiper-slide"><a class="item">LICENSED MERCHANDISE</a></div>
-                </div>
-              </div>
+            <div class="listBox">
+              <div class="item active"><a href="#">INTELLECTUAL PROPERTY</a></div>
+              <div class="item"><a href="#">LICENSED MERCHANDISE</a></div>
+              <div class="item"><a href="#">ANIMATION</a></div>
+              <div class="item"><a href="#">LICENSED MERCHANDISE</a></div>
             </div>
           </div>
         </div>
@@ -91,24 +84,18 @@
     </div>
 
     <script src="./include/Icon.js"></script>
-    <script src="./plugins/swiper-master/swiper-bundle.min.js"></script>
+    <script src="./plugins/jquery.min.js"></script>
+    <script src="./plugins/slick/slick.js"></script>
     <script src="./plugins/WOW-master/dist/wow.min.js"></script>
     <script src="./plugins/main.js"></script>
     <script>
-      let swiper = new Swiper(`.swiperBox .swiper`, {
-        slidesPerView: 'auto',
-        spaceBetween: 10,
-        navigation: {
-          nextEl: `.swiperBox .swiper-button-next`,
-          prevEl: `.swiperBox .swiper-button-prev`,
-        },
-        // slideToClickedSlide: true,
-      });
-
-      const observer = new ResizeObserver(function (entries) {
-        if (entries[0].contentRect.width <= 767) {
-        } else {
-        }
+      $(`.topMenu .listBox`).slick({
+        slidesToShow: 1,
+        variableWidth: true,
+        infinite: true,
+        appendArrows: $(`.topMenu`),
+        prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
+        nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
       });
     </script>
   </body>

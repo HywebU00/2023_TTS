@@ -1,15 +1,34 @@
-.swiper {
-  .swiper-slide {
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+.slick-arrow {
+  background: none;
+  margin-top: unset;
+  top: 50%;
+  padding: 0;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 50;
+  line-height: 0;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: $mainColor;
+    filter: none;
+    use {
+      transform: scale(0.62);
     }
   }
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: flex !important;
-    align-items: center;
+  &.slick-prev {
+    left: 0px;
+    transform: translateY(-50%) scaleX(-1);
+  }
+  &.slick-next {
+    right: 0px;
+  }
+  &.slick-disabled {
+    opacity: 0.2;
   }
 }
 
@@ -30,27 +49,15 @@
     }
     @include screen('xs_mobile') {
       font-size: rem(30);
-    }
-  }
-  .indexBanner .container,
-  .container {
-    position: relative;
-    @include screen('tablet') {
-      padding: 0;
-      width: 100%;
+      margin: 30px 0 20px;
     }
   }
 
   ////////////////////////////////////////////////////////////////////////////
   .indexBanner {
     isolation: isolate;
-    .swiper-slide {
-      line-height: 0;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
+    img {
+      width: 100%;
     }
     .slogan {
       position: absolute;
@@ -65,6 +72,7 @@
       font-size: rem(75);
       padding: 0 60px;
       text-align: center;
+      line-height: 1.4;
       @include screen('tablet') {
         font-size: rem(50);
       }
@@ -72,22 +80,42 @@
         font-size: rem(30);
       }
     }
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: #fff;
-      display: none;
-      margin-top: unset;
-      top: 50%;
-      transform: translateY(-50%);
+    .slick-arrow {
+      width: 50px;
+      height: 50px;
+      filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
       @include screen('tablet') {
         display: block;
-        width: 16px;
+        width: 30px;
         height: 30px;
       }
-      &::after {
-        text-shadow: -2px 6px 5px rgba(0, 0, 0, 0.3);
+      svg {
+        width: 50px;
+        height: 50px;
+        fill: #fff;
         @include screen('tablet') {
-          font-size: 30px;
+          width: 30px;
+          height: 30px;
+        }
+        use {
+          transform: scale(1);
+          @include screen('tablet') {
+            transform: scale(0.62);
+          }
+        }
+      }
+      &.slick-prev {
+        left: 20px;
+      }
+      &.slick-next {
+        right: 20px;
+      }
+      @include screen('tablet') {
+        &.slick-prev {
+          left: 0px;
+        }
+        &.slick-next {
+          right: 0px;
         }
       }
     }
@@ -101,50 +129,36 @@
     position: relative;
     padding: 0 50px;
     margin: 0 auto 2.5%;
-    .swiper-button-prev,
-    .swiper-button-next {
-      color: $mainColor;
-      width: 30px;
-      height: 30px;
-      margin-top: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 9;
-      &::after {
-        font-size: 30px;
-      }
+    @include screen('mobile') {
+      padding: 0 30px;
     }
-    .swiper-button-prev {
-      left: 0;
-    }
-    .swiper-button-next {
-      right: 0;
-    }
-    .swiperBox {
-      max-width: 1050px;
-      margin: 0 auto;
-      padding: 0;
-      .item {
+    .item {
+      button {
+        padding: 0;
+        background: none;
         border: 1px solid $mainColor;
         font-size: rem(22);
         color: $mainColor;
         padding: 7px 10px;
-        display: inline-block;
-        line-height: 1.5;
-      }
-      .swiper-slide {
-        width: auto;
-        height: auto;
-        cursor: pointer;
-        &.active a,
-        a:hover {
-          background-color: $mainColor;
-          color: #fff;
-        }
-      }
-      .swiper-button-prev,
-      .swiper-button-next {
         display: block;
+        line-height: 1.5;
+        margin: 0 8px;
+      }
+      &.active button,
+      a:hover {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
+    .slick-arrow {
+      svg {
+        width: 30px;
+        height: 30px;
+        fill: $mainColor;
+        filter: none;
+        use {
+          transform: scale(0.62);
+        }
       }
     }
   }
@@ -152,11 +166,7 @@
   .tabListContentBox {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 60px;
     position: relative;
-    @include screen('tablet') {
-      padding: 30px;
-    }
     @include screen('mobile') {
       padding: 0px;
     }
@@ -165,33 +175,21 @@
       &.active {
         display: block;
       }
-      .swiper-button-prev,
-      .swiper-button-next {
-        color: #fff;
-        width: 60px;
-        height: 50px;
-        margin-top: 0;
-        text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.3);
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 9;
+      .slick-arrow {
+        width: 50px;
         @include screen('tablet') {
           width: 30px;
           height: 30px;
         }
-        &::after {
-          text-shadow: -2px 6px 5px rgba(0, 0, 0, 0.3);
-          font-size: 50px;
-          @include screen('tablet') {
-            font-size: 30px;
-          }
+        svg {
+          fill: #fff;
         }
-      }
-      .swiper-button-prev {
-        left: 0;
-      }
-      .swiper-button-next {
-        right: 0;
+        &.slick-prev {
+          left: -50px;
+        }
+        &.slick-next {
+          right: -50px;
+        }
       }
     }
   }
@@ -200,7 +198,17 @@
   .newsBox {
     .tabListContentBox {
       @include screen('mobile') {
-        padding: 30px 20px 0;
+        padding: 30px 0px 0;
+      }
+      a {
+        display: block;
+        margin: 0 15px;
+        @include screen('mobile') {
+          margin: 0 5px;
+        }
+        @include screenWidth('550') {
+          margin: 0px;
+        }
       }
       .pic {
         line-height: 0;
@@ -213,8 +221,19 @@
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        line-height: 1.4;
         @include screen('mobile') {
           font-size: rem(22);
+        }
+      }
+      @include screen('mobile') {
+        .slick-arrow {
+          &.slick-prev {
+            left: 10px;
+          }
+          &.slick-next {
+            right: 10px;
+          }
         }
       }
     }
@@ -223,13 +242,18 @@
   ////////////////////////////////////////////////////////////////////////////
   .suppliersBox {
     margin: 0 0 5%;
+    @include screen('tablet') {
+      .tabBar {
+        margin: 0 20px 2.5%;
+      }
+    }
     .more {
       width: 130px;
       text-align: center;
       display: block;
       padding: 12px 15px 8px;
       border: 1px solid $mainColor;
-      font-weight: rem(22);
+      font-size: rem(22);
       color: $mainColor;
       margin: 30px 0 0;
       isolation: isolate;
@@ -282,13 +306,22 @@
           }
         }
         &.active {
-          .bottomBox {
-            padding: 60px 0;
-            height: 420px;
-            @include screen('mobile') {
-              padding: 30px 0;
+          .more {
+            color: #fff;
+            background: #fff;
+            border-color: $mainColor;
+            &::after {
+              width: 100%;
+              left: 0;
             }
           }
+          // .bottomBox {
+          //   padding: 60px 0;
+          //   // height: 540px;
+          //   @include screen('mobile') {
+          //     padding: 30px 0;
+          //   }
+          // }
         }
       }
     }
@@ -396,33 +429,45 @@
       }
     }
     .bottomBox {
+      display: none;
       background: #dddddd;
-      height: 0;
+      // height: 0;
       overflow: hidden;
-      transition: all 0.5s ease-in-out;
+      // transition: all 0.5s ease-in-out;
       .productsList {
-        display: flex;
-      }
-      .swiperBox {
         max-width: 1440px;
-        padding: 0 60px;
+        padding: 60px;
         margin: 0 auto;
         position: relative;
         @include screen('mobile') {
-          padding: 0px 30px;
+          padding: 30px 0px;
+        }
+        @include screenWidth('550') {
+          max-width: 330px;
         }
       }
       .item {
         display: block;
         isolation: isolate;
         position: relative;
-        &::before {
-          content: '';
-          position: absolute;
-          z-index: 2;
+        a {
           display: block;
-          inset: 70% 0 0px;
-          background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+          margin: 0 20px;
+          position: relative;
+          @include screen('tablet') {
+            margin: 0 10px;
+          }
+          @include screenWidth('550') {
+            margin: 0 0px;
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            display: block;
+            inset: 70% 0 0px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+          }
         }
       }
       .title {
@@ -438,45 +483,99 @@
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         z-index: 3;
+        line-height: 1.4;
         @include screen('mobile') {
           font-size: rem(22);
         }
       }
-      .swiper-pagination {
-        display: none;
-      }
-      @include screen('mobile') {
-        .control {
+      .control {
+        top: 0;
+        width: 100%;
+        @include screen('mobile') {
           display: flex;
           justify-content: center;
           align-items: center;
         }
-        .swiper-pagination {
-          display: block;
+        .slick-arrow {
+          &.slick-prev {
+            left: 0px;
+          }
+          &.slick-next {
+            right: 0px;
+          }
+          @include screen('mobile') {
+            position: relative;
+            top: auto;
+            left: auto !important;
+            right: auto !important;
+            width: 135px;
+            height: 22px;
+            transform: translateY(0);
+            &::after {
+              content: '';
+              width: 135px;
+              height: 22px;
+              display: block;
+              background: url('../images/icon/icon_arrow3.svg') no-repeat;
+            }
+            svg {
+              display: none;
+            }
+
+            &.slick-next {
+              transform: translateY(0) scaleX(-1);
+            }
+          }
+        }
+        .count {
+          display: none;
           top: auto;
           bottom: auto;
           position: relative;
+          text-align: center;
           width: 80px;
-        }
-        .swiper-button-next,
-        .swiper-button-prev {
-          position: relative;
-          top: auto;
-          left: auto;
-          right: auto;
-          width: 135px;
-          height: 22px;
-          transform: translateY(0);
-          &::after {
-            content: '';
-            width: 135px;
-            height: 22px;
-            background: url('../images/icon/icon_arrow3.svg') no-repeat;
+          @include screen('mobile') {
+            display: block;
           }
         }
-
-        .swiper-button-next {
-          transform: translateY(0) scaleX(-1);
+      }
+      .slick-arrow {
+        width: 50px;
+        height: 50px;
+        filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
+        @include screen('tablet') {
+          display: block;
+          width: 30px;
+          height: 30px;
+        }
+        svg {
+          width: 50px;
+          height: 50px;
+          fill: #fff;
+          @include screen('tablet') {
+            width: 30px;
+            height: 30px;
+          }
+          use {
+            transform: scale(1);
+            @include screen('tablet') {
+              transform: scale(0.62);
+            }
+          }
+        }
+        &.slick-prev {
+          left: 20px;
+        }
+        &.slick-next {
+          right: 20px;
+        }
+        @include screen('tablet') {
+          &.slick-prev {
+            left: 0px;
+          }
+          &.slick-next {
+            right: 0px;
+          }
         }
       }
     }
@@ -528,8 +627,6 @@
         width: 100%;
         left: 0;
       }
-    }
-    .bottomBox {
     }
   }
 }
