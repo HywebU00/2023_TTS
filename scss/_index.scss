@@ -1,578 +1,91 @@
-.slick-arrow {
-  background: none;
-  margin-top: unset;
-  top: 50%;
-  padding: 0;
-  transform: translateY(-50%);
-  position: absolute;
-  z-index: 50;
-  line-height: 0;
-  overflow: hidden;
-  width: 30px;
-  height: 30px;
-
-  svg {
+.tts {
+  .slick-arrow {
+    background: none;
+    margin-top: unset;
+    top: 50%;
+    padding: 0;
+    transform: translateY(-50%);
+    position: absolute;
+    z-index: 50;
+    line-height: 0;
+    overflow: hidden;
     width: 30px;
     height: 30px;
-    fill: $mainColor;
-    filter: none;
-    use {
-      transform: scale(0.62);
+
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: $mainColor;
+      filter: none;
+      use {
+        transform: scale(0.62);
+      }
     }
-  }
-  &.slick-prev {
-    left: 0px;
-    transform: translateY(-50%) scaleX(-1);
-  }
-  &.slick-next {
-    right: 0px;
-  }
-  &.slick-disabled {
-    opacity: 0.2;
-  }
-}
-
-.indexMain {
-  background: url('../images/bg.jpg') center top repeat-y;
-
-  .section {
-    margin-bottom: 6%;
-    @include screen('mobile') {
-      margin-bottom: 80px;
+    &.slick-prev {
+      left: 0px;
+      transform: translateY(-50%) scaleX(-1);
+    }
+    &.slick-next {
+      right: 0px;
+    }
+    &.slick-disabled {
+      opacity: 0.2;
     }
   }
 
-  .sectionTitle {
-    text-align: center;
-    font-size: rem(55);
-    font-weight: 600;
-    color: $mainColor;
-    margin: 0 0 4%;
-    @include screen('tablet') {
-      font-size: rem(40);
-    }
-    @include screen('mobile') {
-      margin: 0 0 50px;
-    }
-    @include screen('xs_mobile') {
-      font-size: rem(30);
-      margin: 30px 0 20px;
-    }
-  }
+  .indexMain {
+    background: url('../images/bg.jpg') center top repeat-y;
 
-  ////////////////////////////////////////////////////////////////////////////
-  .indexBanner {
-    isolation: isolate;
-    img {
-      width: 100%;
+    .section {
+      margin-bottom: 6%;
+      @include screen('mobile') {
+        margin-bottom: 80px;
+      }
     }
-    .slogan {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      color: #fff;
-      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+    .sectionTitle {
+      text-align: center;
+      font-size: rem(55);
       font-weight: 600;
-      font-size: rem(75);
-      padding: 0 60px;
-      text-align: center;
-      line-height: 1.4;
-      @include screen('tablet') {
-        font-size: rem(50);
-      }
-      @include screen('mobile') {
-        font-size: rem(30);
-      }
-    }
-    .slick-arrow {
-      width: 50px;
-      height: 50px;
-      filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
-      @include screen('tablet') {
-        display: block;
-        width: 30px;
-        height: 30px;
-      }
-      svg {
-        width: 50px;
-        height: 50px;
-        fill: #fff;
-        @include screen('tablet') {
-          width: 30px;
-          height: 30px;
-        }
-        use {
-          transform: scale(1);
-          @include screen('tablet') {
-            transform: scale(0.62);
-          }
-        }
-      }
-      &.slick-prev {
-        left: 20px;
-      }
-      &.slick-next {
-        right: 20px;
-      }
-      @include screen('tablet') {
-        &.slick-prev {
-          left: 0px;
-        }
-        &.slick-next {
-          right: 0px;
-        }
-      }
-    }
-  }
-
-  ////////////////////////////////////////////////////////////////////////////
-  .tabBar {
-    top: 0;
-    max-width: 1134px;
-    z-index: 5;
-    position: relative;
-    padding: 0 50px;
-    margin: 0 auto 2.5%;
-    @include screen('mobile') {
-      padding: 0 30px;
-    }
-    .item {
-      button {
-        padding: 0;
-        background: none;
-        border: 1px solid $mainColor;
-        font-size: rem(22);
-        color: $mainColor;
-        padding: 7px 10px;
-        display: block;
-        line-height: 1.5;
-        margin: 0 8px;
-      }
-      &.active button,
-      a:hover {
-        background-color: $mainColor;
-        color: #fff;
-      }
-    }
-    .slick-arrow {
-      svg {
-        width: 30px;
-        height: 30px;
-        fill: $mainColor;
-        filter: none;
-        use {
-          transform: scale(0.62);
-        }
-      }
-    }
-  }
-
-  .tabListContentBox {
-    max-width: 1440px;
-    margin: 0 auto;
-    position: relative;
-    @include screen('mobile') {
-      padding: 0px;
-    }
-    .tabListContent {
-      display: none;
-      &.active {
-        display: block;
-      }
-      .slick-arrow {
-        width: 50px;
-        @include screen('tablet') {
-          width: 30px;
-          height: 30px;
-        }
-        svg {
-          fill: #fff;
-        }
-        &.slick-prev {
-          left: -50px;
-        }
-        &.slick-next {
-          right: -50px;
-        }
-      }
-    }
-  }
-
-  ////////////////////////////////////////////////////////////////////////////
-  .newsBox {
-    .tabListContentBox {
-      @include screen('mobile') {
-        padding: 30px 0px 0;
-      }
-      a {
-        display: block;
-        margin: 0 15px;
-        @include screen('mobile') {
-          margin: 0 5px;
-        }
-        @include screenWidth('550') {
-          margin: 0px;
-        }
-      }
-      .pic {
-        line-height: 0;
-        margin: 0 0 15px;
-      }
-      .title {
-        font-size: rem(32);
-        color: $textDarken;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        line-height: 1.4;
-        @include screen('mobile') {
-          font-size: rem(22);
-        }
-      }
-      .slick-arrow {
-        width: 50px;
-        height: 50px;
-        filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
-        @include screen('tablet') {
-          display: block;
-          width: 30px;
-          height: 30px;
-        }
-        svg {
-          width: 50px;
-          height: 50px;
-          fill: #fff;
-          @include screen('tablet') {
-            width: 30px;
-            height: 30px;
-          }
-          use {
-            transform: scale(1);
-            @include screen('tablet') {
-              transform: scale(0.62);
-            }
-          }
-        }
-        &.slick-prev {
-          left: -60px;
-        }
-        &.slick-next {
-          right: -60px;
-        }
-        @include screen('tablet') {
-          &.slick-prev {
-            left: 0px;
-          }
-          &.slick-next {
-            right: 0px;
-          }
-        }
-      }
-    }
-  }
-
-  ////////////////////////////////////////////////////////////////////////////
-  .suppliersBox {
-    @include screen('tablet') {
-      .tabBar {
-        margin: 0 20px 2.5%;
-      }
-    }
-    .more {
-      width: 130px;
-      text-align: center;
-      display: block;
-      padding: 12px 15px 8px;
-      border: 1px solid $mainColor;
-      font-size: rem(22);
       color: $mainColor;
-      margin: 30px 0 0;
-      isolation: isolate;
-      position: relative;
-      @include transition(all, 0.3);
+      margin: 0 0 4%;
+      @include screen('tablet') {
+        font-size: rem(40);
+      }
       @include screen('mobile') {
-        margin: 30px auto;
-      }
-      &::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        display: block;
-        background: $mainColor;
-        z-index: -1;
-        @include transition(all, 0.3);
-      }
-      &:hover {
-        color: #fff;
-        background: #fff;
-        border-color: $mainColor;
-        &::after {
-          width: 100%;
-          left: 0;
-        }
-      }
-    }
-    // .container {
-    // width: 100%;
-    // max-width: none;
-    // padding-right: 0 !important;
-    // padding-left: 0 !important;
-    // margin: 0;
-    // }
-    .listBox {
-      & > .item {
-        padding: 3% 0 0;
-        @include screen('mobile') {
-          padding: 30px 0 0;
-        }
-        &:nth-child(even) {
-          .infoBox {
-            padding: 0 0 0 65px;
-          }
-          .pic {
-            order: -1;
-          }
-        }
-        &.active {
-          .more {
-            color: #fff;
-            background: #fff;
-            border-color: $mainColor;
-            &::after {
-              width: 100%;
-              left: 0;
-            }
-          }
-          // .bottomBox {
-          //   padding: 60px 0;
-          //   // height: 540px;
-          //   @include screen('mobile') {
-          //     padding: 30px 0;
-          //   }
-          // }
-        }
-      }
-    }
-    .tabListContentBox {
-      max-width: none;
-      padding: 0;
-    }
-    .topBox {
-      max-width: 1174px;
-      margin: 0 auto 3%;
-      padding: 0 20px;
-      display: flex;
-      cursor: pointer;
-      @include screen('mobile') {
-        flex-direction: column;
-        padding: 0 30px;
+        margin: 0 0 50px;
       }
       @include screen('xs_mobile') {
-        max-width: 390px;
-        margin: 0 auto;
+        font-size: rem(30);
+        margin: 30px 0 20px;
       }
     }
-    .infoBox {
-      flex-grow: 1;
-      padding: 0 65px 0 0;
-      @include screen('mobile') {
-        order: 1;
-        padding: 0 !important;
-      }
-      .title {
-        color: $textDarken;
-        font-size: rem(32);
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        margin: 0 0 20px;
-        @include screen('mobile') {
-          display: none;
-        }
-      }
-      .url,
-      .tel,
-      .email,
-      .address {
-        line-height: 1.8;
-        font-size: rem(24);
-        color: $textLighten;
-        @include screen('mobile') {
-          font-size: rem(22);
-        }
-        a {
-          color: $textLighten;
-          text-decoration: underline;
-        }
-      }
-      .url,
-      .email {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-      }
-      .tel {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-      }
-      .address {
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-      }
-    }
-    .pic {
+
+    ////////////////////////////////////////////////////////////////////////////
+    .indexBanner {
       isolation: isolate;
-      @include screen('mobile') {
-        order: 0;
-        margin: 0 auto 20px;
+      img {
+        width: 100%;
       }
-      .title {
+      .slogan {
         position: absolute;
         inset: 0;
-        display: none;
         z-index: 2;
         color: #fff;
-        font-size: rem(32);
-        @include screen('mobile') {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: rem(22);
-          &::before {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            background: #000;
-            opacity: 0.3;
-            display: block;
-            inset: 0;
-          }
-        }
-      }
-    }
-    .bottomBox {
-      display: none;
-      background: #dddddd;
-      // height: 0;
-      overflow: hidden;
-      // transition: all 0.5s ease-in-out;
-      .productsList {
-        max-width: 1440px;
-        padding: 60px;
-        margin: 0 auto;
-        position: relative;
-        @include screen('mobile') {
-          padding: 30px 0px;
-        }
-        @include screenWidth('550') {
-          max-width: 330px;
-        }
-      }
-      .item {
-        display: block;
-        isolation: isolate;
-        position: relative;
-        a {
-          display: block;
-          margin: 0 20px;
-          position: relative;
-          @include screen('tablet') {
-            margin: 0 10px;
-          }
-          @include screenWidth('550') {
-            margin: 0 0px;
-          }
-          &::before {
-            content: '';
-            position: absolute;
-            z-index: 2;
-            display: block;
-            inset: 70% 0 0px;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-          }
-        }
-      }
-      .title {
-        position: absolute;
-        bottom: 10px;
-        left: 15px;
-        right: 15px;
-        font-size: rem(32);
-        color: #fff;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-weight: 600;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        z-index: 3;
+        font-size: rem(75);
+        padding: 0 60px;
+        text-align: center;
         line-height: 1.4;
+        @include screen('tablet') {
+          font-size: rem(50);
+        }
         @include screen('mobile') {
-          font-size: rem(22);
-        }
-      }
-      .control {
-        top: 0;
-        width: 100%;
-        @include screen('mobile') {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .slick-arrow {
-          &.slick-prev {
-            left: 0px;
-          }
-          &.slick-next {
-            right: 0px;
-          }
-          @include screen('mobile') {
-            position: relative;
-            top: auto;
-            left: auto !important;
-            right: auto !important;
-            width: 135px;
-            height: 22px;
-            transform: translateY(0);
-            filter: none;
-            &::after {
-              content: '';
-              width: 135px;
-              height: 22px;
-              display: block;
-              background: url('../images/icon/icon_arrow3.svg') no-repeat;
-            }
-            svg {
-              display: none;
-            }
-
-            &.slick-next {
-              transform: translateY(0) scaleX(-1);
-            }
-          }
-        }
-        .count {
-          display: none;
-          top: auto;
-          bottom: auto;
-          position: relative;
-          text-align: center;
-          width: 80px;
-          @include screen('mobile') {
-            display: block;
-          }
+          font-size: rem(30);
         }
       }
       .slick-arrow {
@@ -615,55 +128,544 @@
         }
       }
     }
-  }
-  .suppliersMore {
-    width: 100%;
-    max-width: 175px;
-    text-align: center;
-    display: block;
-    padding: 12px 15px 10px;
-    border: 1px solid $mainColor;
-    background: $mainColor;
-    font-weight: rem(22);
-    color: #fff;
-    margin: 30px auto 0;
-    position: relative;
-    isolation: isolate;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @include transition(all, 0.3);
-    svg {
-      content: '';
-      width: 16px;
-      aspect-ratio: 1;
-      fill: #fff;
-      display: block;
-      margin: 0 0 0 10px;
-      @include transition(all, 0.3);
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      right: 0;
+
+    ////////////////////////////////////////////////////////////////////////////
+    .tabBar {
       top: 0;
-      bottom: 0;
-      display: block;
-      background: #fff;
-      z-index: -1;
-      @include transition(all, 0.3);
+      max-width: 1134px;
+      z-index: 5;
+      position: relative;
+      padding: 0 50px;
+      margin: 0 auto 2.5%;
+      @include screen('mobile') {
+        padding: 0 30px;
+      }
+      .item {
+        button {
+          padding: 0;
+          background: none;
+          border: 1px solid $mainColor;
+          font-size: rem(22);
+          color: $mainColor;
+          padding: 7px 10px;
+          display: block;
+          line-height: 1.5;
+          margin: 0 8px;
+        }
+        &.active button,
+        a:hover {
+          background-color: $mainColor;
+          color: #fff;
+        }
+      }
+      .slick-arrow {
+        svg {
+          width: 30px;
+          height: 30px;
+          fill: $mainColor;
+          filter: none;
+          use {
+            transform: scale(0.62);
+          }
+        }
+      }
     }
-    &:hover {
-      color: $mainColor;
+
+    .tabListContentBox {
+      max-width: 1440px;
+      margin: 0 auto;
+      position: relative;
+      @include screen('mobile') {
+        padding: 0px;
+      }
+      .tabListContent {
+        display: none;
+        &.active {
+          display: block;
+        }
+        .slick-arrow {
+          width: 50px;
+          @include screen('tablet') {
+            width: 30px;
+            height: 30px;
+          }
+          svg {
+            fill: #fff;
+          }
+          &.slick-prev {
+            left: -50px;
+          }
+          &.slick-next {
+            right: -50px;
+          }
+        }
+      }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+    .newsBox {
+      .tabListContentBox {
+        @include screen('mobile') {
+          padding: 30px 0px 0;
+        }
+        a {
+          display: block;
+          margin: 0 15px;
+          @include screen('mobile') {
+            margin: 0 5px;
+          }
+          @include screenWidth('550') {
+            margin: 0px;
+          }
+        }
+        .pic {
+          line-height: 0;
+          margin: 0 0 15px;
+        }
+        .title {
+          font-size: rem(32);
+          color: $textDarken;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          line-height: 1.4;
+          @include screen('mobile') {
+            font-size: rem(22);
+          }
+        }
+        .slick-arrow {
+          width: 50px;
+          height: 50px;
+          filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
+          @include screen('tablet') {
+            display: block;
+            width: 30px;
+            height: 30px;
+          }
+          svg {
+            width: 50px;
+            height: 50px;
+            fill: #fff;
+            @include screen('tablet') {
+              width: 30px;
+              height: 30px;
+            }
+            use {
+              transform: scale(1);
+              @include screen('tablet') {
+                transform: scale(0.62);
+              }
+            }
+          }
+          &.slick-prev {
+            left: -60px;
+          }
+          &.slick-next {
+            right: -60px;
+          }
+          @include screen('tablet') {
+            &.slick-prev {
+              left: 0px;
+            }
+            &.slick-next {
+              right: 0px;
+            }
+          }
+        }
+      }
+    }
+
+    ////////////////////////////////////////////////////////////////////////////
+    .suppliersBox {
+      @include screen('tablet') {
+        .tabBar {
+          margin: 0 20px 2.5%;
+        }
+      }
+      .more {
+        width: 130px;
+        text-align: center;
+        display: block;
+        padding: 12px 15px 8px;
+        border: 1px solid $mainColor;
+        font-size: rem(22);
+        color: $mainColor;
+        margin: 30px 0 0;
+        isolation: isolate;
+        position: relative;
+        @include transition(all, 0.3);
+        @include screen('mobile') {
+          margin: 30px auto;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          display: block;
+          background: $mainColor;
+          z-index: -1;
+          @include transition(all, 0.3);
+        }
+        &:hover {
+          color: #fff;
+          background: #fff;
+          border-color: $mainColor;
+          &::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+      // .container {
+      // width: 100%;
+      // max-width: none;
+      // padding-right: 0 !important;
+      // padding-left: 0 !important;
+      // margin: 0;
+      // }
+      .listBox {
+        & > .item {
+          padding: 3% 0 0;
+          @include screen('mobile') {
+            padding: 30px 0 0;
+          }
+          &:nth-child(even) {
+            .infoBox {
+              padding: 0 0 0 65px;
+            }
+            .pic {
+              order: -1;
+            }
+          }
+          &.active {
+            .more {
+              color: #fff;
+              background: #fff;
+              border-color: $mainColor;
+              &::after {
+                width: 100%;
+                left: 0;
+              }
+            }
+            // .bottomBox {
+            //   padding: 60px 0;
+            //   // height: 540px;
+            //   @include screen('mobile') {
+            //     padding: 30px 0;
+            //   }
+            // }
+          }
+        }
+      }
+      .tabListContentBox {
+        max-width: none;
+        padding: 0;
+      }
+      .topBox {
+        max-width: 1174px;
+        margin: 0 auto 3%;
+        padding: 0 20px;
+        display: flex;
+        cursor: pointer;
+        @include screen('mobile') {
+          flex-direction: column;
+          padding: 0 30px;
+        }
+        @include screen('xs_mobile') {
+          max-width: 390px;
+          margin: 0 auto;
+        }
+      }
+      .infoBox {
+        flex-grow: 1;
+        padding: 0 65px 0 0;
+        @include screen('mobile') {
+          order: 1;
+          padding: 0 !important;
+        }
+        .title {
+          color: $textDarken;
+          font-size: rem(32);
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          margin: 0 0 20px;
+          @include screen('mobile') {
+            display: none;
+          }
+        }
+        .url,
+        .tel,
+        .email,
+        .address {
+          line-height: 1.8;
+          font-size: rem(24);
+          color: $textLighten;
+          @include screen('mobile') {
+            font-size: rem(22);
+          }
+          a {
+            color: $textLighten;
+            text-decoration: underline;
+          }
+        }
+        .url,
+        .email {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+        .tel {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+        .address {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+      }
+      .pic {
+        isolation: isolate;
+        @include screen('mobile') {
+          order: 0;
+          margin: 0 auto 20px;
+        }
+        .title {
+          position: absolute;
+          inset: 0;
+          display: none;
+          z-index: 2;
+          color: #fff;
+          font-size: rem(32);
+          @include screen('mobile') {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: rem(22);
+            &::before {
+              content: '';
+              position: absolute;
+              z-index: -1;
+              background: #000;
+              opacity: 0.3;
+              display: block;
+              inset: 0;
+            }
+          }
+        }
+      }
+      .bottomBox {
+        display: none;
+        background: #dddddd;
+        // height: 0;
+        overflow: hidden;
+        // transition: all 0.5s ease-in-out;
+        .productsList {
+          max-width: 1440px;
+          padding: 60px;
+          margin: 0 auto;
+          position: relative;
+          @include screen('mobile') {
+            padding: 30px 0px;
+          }
+          @include screenWidth('550') {
+            max-width: 330px;
+          }
+        }
+        .item {
+          display: block;
+          isolation: isolate;
+          position: relative;
+          a {
+            display: block;
+            margin: 0 20px;
+            position: relative;
+            @include screen('tablet') {
+              margin: 0 10px;
+            }
+            @include screenWidth('550') {
+              margin: 0 0px;
+            }
+            &::before {
+              content: '';
+              position: absolute;
+              z-index: 2;
+              display: block;
+              inset: 70% 0 0px;
+              background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+            }
+          }
+        }
+        .title {
+          position: absolute;
+          bottom: 10px;
+          left: 15px;
+          right: 15px;
+          font-size: rem(32);
+          color: #fff;
+          font-weight: 600;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          z-index: 3;
+          line-height: 1.4;
+          @include screen('mobile') {
+            font-size: rem(22);
+          }
+        }
+        .control {
+          top: 0;
+          width: 100%;
+          @include screen('mobile') {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .slick-arrow {
+            &.slick-prev {
+              left: 0px;
+            }
+            &.slick-next {
+              right: 0px;
+            }
+            @include screen('mobile') {
+              position: relative;
+              top: auto;
+              left: auto !important;
+              right: auto !important;
+              width: 135px;
+              height: 22px;
+              transform: translateY(0);
+              filter: none;
+              &::after {
+                content: '';
+                width: 135px;
+                height: 22px;
+                display: block;
+                background: url('../images/icon/icon_arrow3.svg') no-repeat;
+              }
+              svg {
+                display: none;
+              }
+
+              &.slick-next {
+                transform: translateY(0) scaleX(-1);
+              }
+            }
+          }
+          .count {
+            display: none;
+            top: auto;
+            bottom: auto;
+            position: relative;
+            text-align: center;
+            width: 80px;
+            @include screen('mobile') {
+              display: block;
+            }
+          }
+        }
+        .slick-arrow {
+          width: 50px;
+          height: 50px;
+          filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
+          @include screen('tablet') {
+            display: block;
+            width: 30px;
+            height: 30px;
+          }
+          svg {
+            width: 50px;
+            height: 50px;
+            fill: #fff;
+            @include screen('tablet') {
+              width: 30px;
+              height: 30px;
+            }
+            use {
+              transform: scale(1);
+              @include screen('tablet') {
+                transform: scale(0.62);
+              }
+            }
+          }
+          &.slick-prev {
+            left: 20px;
+          }
+          &.slick-next {
+            right: 20px;
+          }
+          @include screen('tablet') {
+            &.slick-prev {
+              left: 0px;
+            }
+            &.slick-next {
+              right: 0px;
+            }
+          }
+        }
+      }
+    }
+    .suppliersMore {
+      width: 100%;
+      max-width: 175px;
+      text-align: center;
+      display: block;
+      padding: 12px 15px 10px;
+      border: 1px solid $mainColor;
+      background: $mainColor;
+      font-weight: rem(22);
+      color: #fff;
+      margin: 30px auto 0;
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include transition(all, 0.3);
       svg {
-        fill: $mainColor;
+        content: '';
+        width: 16px;
+        aspect-ratio: 1;
+        fill: #fff;
+        display: block;
+        margin: 0 0 0 10px;
+        @include transition(all, 0.3);
       }
       &::before {
-        width: 100%;
-        left: 0;
+        content: '';
+        position: absolute;
+        width: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        background: #fff;
+        z-index: -1;
+        @include transition(all, 0.3);
+      }
+      &:hover {
+        color: $mainColor;
+        svg {
+          fill: $mainColor;
+        }
+        &::before {
+          width: 100%;
+          left: 0;
+        }
       }
     }
   }
+  ////////////////////////////////////////////////////////////////////////////
 }
-////////////////////////////////////////////////////////////////////////////

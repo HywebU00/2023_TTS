@@ -1,305 +1,121 @@
-.suppliersPage {
-  .slick-arrow {
-    width: 30px;
-    height: 30px;
-    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
-    svg {
+.tts {
+  .suppliersPage {
+    .slick-arrow {
       width: 30px;
       height: 30px;
-      fill: #fff;
-      use {
-        transform: scale(0.62);
+      filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
+      svg {
+        width: 30px;
+        height: 30px;
+        fill: #fff;
+        use {
+          transform: scale(0.62);
+        }
+      }
+      &.slick-prev {
+        left: 10px;
+      }
+      &.slick-next {
+        right: 10px;
       }
     }
-    &.slick-prev {
-      left: 10px;
-    }
-    &.slick-next {
-      right: 10px;
-    }
-  }
 
-  .suppliersDetail {
-    .topBox {
-      background: #f7f7f7;
-      padding: 32px;
-      display: flex;
-      margin-bottom: 6%;
-      @include screen('tablet') {
-        flex-wrap: wrap;
-        padding: 20px;
-      }
-      @include screen('mobile') {
-        margin-bottom: 30px;
-      }
-      .picBox {
-        width: 50%;
-        max-width: 600px;
-        @include screenWidth('1200') {
-          width: 50%;
-        }
-        @include screen('mobile') {
-          width: 100%;
-        }
-        .bigPic {
-          aspect-ratio: 1;
-          margin-bottom: 28px;
-          position: relative;
-          @include screen('tablet') {
-            margin-bottom: 20px;
-          }
-          @include screen('mobile') {
-            margin-bottom: 6px;
-          }
-          .item {
-            aspect-ratio: 1;
-            display: none;
-            line-height: 0;
-            &.active {
-              display: block;
-            }
-          }
-          .pic {
-            width: 100%;
-            height: 100%;
-          }
-          .pic img,
-          iframe {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-          }
-        }
-        .picNav {
-          margin: 0 -14px;
-          @include screen('tablet') {
-            margin: 0 -10px;
-          }
-          @include screen('mobile') {
-            margin: 0 -6px;
-          }
-          .item {
-            position: relative;
-            &.youtube::before {
-              content: '';
-              position: absolute;
-              z-index: 2;
-              inset: 0;
-              display: block;
-              background: url('../images/icon/icon_play.svg') center no-repeat;
-              pointer-events: none;
-            }
-          }
-          .pic {
-            margin: 0 14px;
-            cursor: pointer;
-            @include screen('tablet') {
-              margin: 0 10px;
-            }
-            @include screen('mobile') {
-              margin: 0 6px;
-            }
-          }
-        }
-      }
-      .infoBox {
-        width: 50%;
+    .suppliersDetail {
+      .topBox {
+        background: #f7f7f7;
         padding: 32px;
+        display: flex;
+        margin-bottom: 6%;
         @include screen('tablet') {
-          width: 100%;
+          flex-wrap: wrap;
           padding: 20px;
         }
-        .title {
-          font-size: rem(32);
-          font-weight: 600;
-          position: relative;
-          overflow: hidden;
-          padding: 0;
-          margin: 0 0 40px;
-          display: -webkit-box;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-          @include screen('tablet') {
-            font-size: rem(28);
-            margin: 0 0 20px;
+        @include screen('mobile') {
+          margin-bottom: 30px;
+        }
+        .picBox {
+          width: 50%;
+          max-width: 600px;
+          @include screenWidth('1200') {
+            width: 50%;
           }
           @include screen('mobile') {
-            font-size: rem(22);
-          }
-        }
-        ul {
-          font-size: rem(28);
-          margin-bottom: 40px;
-          @include screen('tablet') {
-            font-size: rem(20);
-            margin-bottom: 20px;
-          }
-          li {
-            line-height: 1.2;
-            padding: 0 0 0 40px;
-            position: relative;
-            & + li {
-              margin-top: 12px;
-            }
-            &::before {
-              content: '';
-              width: 22px;
-              height: 22px;
-              left: 0;
-              top: 5px;
-              position: absolute;
-              @include screen('tablet') {
-                top: 0px;
-              }
-            }
-            a {
-              color: $textDarken;
-              &:hover {
-                color: $mainColor;
-              }
-            }
-          }
-        }
-        .link {
-          &::before {
-            background: url('../images/icon/icon_link.svg') center no-repeat;
-          }
-        }
-        .email {
-          &::before {
-            background: url('../images/icon/icon_email.svg') center no-repeat;
-          }
-        }
-        .tel {
-          &::before {
-            background: url('../images/icon/icon_tel.svg') center no-repeat;
-          }
-        }
-        .address {
-          &::before {
-            background: url('../images/icon/icon_address.svg') center no-repeat;
-          }
-        }
-        .description {
-          color: $textLighten;
-          font-size: rem(28);
-          padding-top: 40px;
-          border-top: $mainColor 2px solid;
-          @include screen('tablet') {
-            font-size: rem(18);
-            padding-top: 20px;
-          }
-        }
-      }
-    }
-    .subTitle {
-      font-size: rem(32);
-      font-weight: 600;
-      color: $mainColor;
-      padding-bottom: 32px;
-      margin-bottom: 40px;
-      border-bottom: 2px $mainColor solid;
-      @include screen('tablet') {
-        font-size: rem(28);
-        margin-bottom: 20px;
-      }
-      @include screen('mobile') {
-        font-size: rem(22);
-      }
-    }
-
-    .productBox {
-      margin-bottom: 8%;
-      .sliderBox {
-        margin: 0 -60px;
-        padding: 0 60px;
-        position: relative;
-
-        &:hover {
-          .item::before {
-            inset: 0 8px;
-            opacity: 0.5;
-          }
-        }
-        .item {
-          cursor: pointer;
-          position: relative;
-          &::before {
-            content: '';
-            position: absolute;
-            z-index: 9;
-            inset: 50%;
-            background: #000;
-            opacity: 0;
-            @include transition(all, 0.3);
-          }
-          &:hover {
-            &::before {
-              inset: 50%;
-              opacity: 0;
-            }
-          }
-          .pic {
-            margin: 0 8px;
-            @include screen('mobile') {
-              margin: 0 5px;
-            }
-          }
-        }
-        .slick-arrow {
-          &.slick-prev {
-            left: -60px;
-          }
-          &.slick-next {
-            right: -60px;
-          }
-        }
-      }
-    }
-    .bottomBox {
-      margin-bottom: 80px;
-      @include screen('mobile') {
-        margin-bottom: 60px;
-      }
-      .listBox {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 60px;
-        @include screen('tablet') {
-          gap: 30px;
-        }
-        .item {
-          width: 100%;
-          display: flex;
-          background: #f7f7f7;
-          position: relative;
-          @include screen('mobile') {
-            width: calc((100% - 30px) / 2);
-            flex-direction: column;
-          }
-          @include screen('xs_mobile') {
             width: 100%;
-            flex-direction: column;
           }
-          .pic {
-            width: 40%;
+          .bigPic {
+            aspect-ratio: 1;
+            margin-bottom: 28px;
+            position: relative;
+            @include screen('tablet') {
+              margin-bottom: 20px;
+            }
             @include screen('mobile') {
+              margin-bottom: 6px;
+            }
+            .item {
+              aspect-ratio: 1;
+              display: none;
+              line-height: 0;
+              &.active {
+                display: block;
+              }
+            }
+            .pic {
               width: 100%;
+              height: 100%;
+            }
+            .pic img,
+            iframe {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
             }
           }
-          .infoBox {
-            width: 60%;
-            padding: 5%;
-            @include screen('mobile') {
-              width: 100%;
-              padding: 20px;
+          .picNav {
+            margin: 0 -14px;
+            @include screen('tablet') {
+              margin: 0 -10px;
             }
+            @include screen('mobile') {
+              margin: 0 -6px;
+            }
+            .item {
+              position: relative;
+              &.youtube::before {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                inset: 0;
+                display: block;
+                background: url('../images/icon/icon_play.svg') center no-repeat;
+                pointer-events: none;
+              }
+            }
+            .pic {
+              margin: 0 14px;
+              cursor: pointer;
+              @include screen('tablet') {
+                margin: 0 10px;
+              }
+              @include screen('mobile') {
+                margin: 0 6px;
+              }
+            }
+          }
+        }
+        .infoBox {
+          width: 50%;
+          padding: 32px;
+          @include screen('tablet') {
+            width: 100%;
+            padding: 20px;
           }
           .title {
             font-size: rem(32);
             font-weight: 600;
             position: relative;
             overflow: hidden;
+            padding: 0;
             margin: 0 0 40px;
             display: -webkit-box;
             -webkit-line-clamp: 3;
@@ -312,107 +128,293 @@
               font-size: rem(22);
             }
           }
+          ul {
+            font-size: rem(28);
+            margin-bottom: 40px;
+            @include screen('tablet') {
+              font-size: rem(20);
+              margin-bottom: 20px;
+            }
+            li {
+              line-height: 1.2;
+              padding: 0 0 0 40px;
+              position: relative;
+              & + li {
+                margin-top: 12px;
+              }
+              &::before {
+                content: '';
+                width: 22px;
+                height: 22px;
+                left: 0;
+                top: 5px;
+                position: absolute;
+                @include screen('tablet') {
+                  top: 0px;
+                }
+              }
+              a {
+                color: $textDarken;
+                &:hover {
+                  color: $mainColor;
+                }
+              }
+            }
+          }
+          .link {
+            &::before {
+              background: url('../images/icon/icon_link.svg') center no-repeat;
+            }
+          }
+          .email {
+            &::before {
+              background: url('../images/icon/icon_email.svg') center no-repeat;
+            }
+          }
+          .tel {
+            &::before {
+              background: url('../images/icon/icon_tel.svg') center no-repeat;
+            }
+          }
+          .address {
+            &::before {
+              background: url('../images/icon/icon_address.svg') center no-repeat;
+            }
+          }
           .description {
             color: $textLighten;
             font-size: rem(28);
+            padding-top: 40px;
+            border-top: $mainColor 2px solid;
             @include screen('tablet') {
               font-size: rem(18);
+              padding-top: 20px;
+            }
+          }
+        }
+      }
+      .subTitle {
+        font-size: rem(32);
+        font-weight: 600;
+        color: $mainColor;
+        padding-bottom: 32px;
+        margin-bottom: 40px;
+        border-bottom: 2px $mainColor solid;
+        @include screen('tablet') {
+          font-size: rem(28);
+          margin-bottom: 20px;
+        }
+        @include screen('mobile') {
+          font-size: rem(22);
+        }
+      }
+
+      .productBox {
+        margin-bottom: 8%;
+        .sliderBox {
+          margin: 0 -60px;
+          padding: 0 60px;
+          position: relative;
+
+          &:hover {
+            .item::before {
+              inset: 0 8px;
+              opacity: 0.5;
+            }
+          }
+          .item {
+            cursor: pointer;
+            position: relative;
+            &::before {
+              content: '';
+              position: absolute;
+              z-index: 9;
+              inset: 50%;
+              background: #000;
+              opacity: 0;
+              @include transition(all, 0.3);
+            }
+            &:hover {
+              &::before {
+                inset: 50%;
+                opacity: 0;
+              }
+            }
+            .pic {
+              margin: 0 8px;
+              @include screen('mobile') {
+                margin: 0 5px;
+              }
+            }
+          }
+          .slick-arrow {
+            &.slick-prev {
+              left: -60px;
+            }
+            &.slick-next {
+              right: -60px;
+            }
+          }
+        }
+      }
+      .bottomBox {
+        margin-bottom: 80px;
+        @include screen('mobile') {
+          margin-bottom: 60px;
+        }
+        .listBox {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 60px;
+          @include screen('tablet') {
+            gap: 30px;
+          }
+          .item {
+            width: 100%;
+            display: flex;
+            background: #f7f7f7;
+            position: relative;
+            @include screen('mobile') {
+              width: calc((100% - 30px) / 2);
+              flex-direction: column;
+            }
+            @include screen('xs_mobile') {
+              width: 100%;
+              flex-direction: column;
+            }
+            .pic {
+              width: 40%;
+              @include screen('mobile') {
+                width: 100%;
+              }
+            }
+            .infoBox {
+              width: 60%;
+              padding: 5%;
+              @include screen('mobile') {
+                width: 100%;
+                padding: 20px;
+              }
+            }
+            .title {
+              font-size: rem(32);
+              font-weight: 600;
+              position: relative;
+              overflow: hidden;
+              margin: 0 0 40px;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              @include screen('tablet') {
+                font-size: rem(28);
+                margin: 0 0 20px;
+              }
+              @include screen('mobile') {
+                font-size: rem(22);
+              }
+            }
+            .description {
+              color: $textLighten;
+              font-size: rem(28);
+              @include screen('tablet') {
+                font-size: rem(18);
+              }
+            }
+          }
+        }
+      }
+      .btnBox {
+        display: flex;
+        justify-content: center;
+        button {
+          width: 100%;
+          max-width: 175px;
+          text-align: center;
+          display: block;
+          padding: 14px 15px 12px;
+          border: 1px solid $mainColor;
+          background: $mainColor;
+          font-weight: rem(22);
+          color: #fff;
+          position: relative;
+          isolation: isolate;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include transition(all, 0.3);
+          svg {
+            content: '';
+            width: 16px;
+            aspect-ratio: 1;
+            fill: #fff;
+            display: block;
+            margin: 0 10px 0 0;
+            transform: scaleX(-1);
+            @include transition(all, 0.3);
+          }
+          &::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: block;
+            background: #fff;
+            z-index: -1;
+            @include transition(all, 0.3);
+          }
+          &:hover {
+            color: $mainColor;
+            svg {
+              fill: $mainColor;
+            }
+            &::before {
+              width: 100%;
+              left: 0;
+            }
+          }
+          & + button {
+            margin: 0 0 0 20px;
+            svg {
+              margin: 0 0 0 10px;
+              transform: scaleX(1);
             }
           }
         }
       }
     }
-    .btnBox {
-      display: flex;
-      justify-content: center;
-      button {
-        width: 100%;
-        max-width: 175px;
-        text-align: center;
-        display: block;
-        padding: 14px 15px 12px;
-        border: 1px solid $mainColor;
+  }
+
+  .htmlDetail {
+    .title {
+      font-size: rem(32);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+      position: relative;
+      @include screen('tablet') {
+        font-size: rem(28);
+        margin-bottom: 20px;
+      }
+      @include screen('mobile') {
+        font-size: rem(22);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 300px;
         background: $mainColor;
-        font-weight: rem(22);
-        color: #fff;
-        position: relative;
-        isolation: isolate;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include transition(all, 0.3);
-        svg {
-          content: '';
-          width: 16px;
-          aspect-ratio: 1;
-          fill: #fff;
-          display: block;
-          margin: 0 10px 0 0;
-          transform: scaleX(-1);
-          @include transition(all, 0.3);
-        }
-        &::before {
-          content: '';
-          position: absolute;
-          width: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          display: block;
-          background: #fff;
-          z-index: -1;
-          @include transition(all, 0.3);
-        }
-        &:hover {
-          color: $mainColor;
-          svg {
-            fill: $mainColor;
-          }
-          &::before {
-            width: 100%;
-            left: 0;
-          }
-        }
-        & + button {
-          margin: 0 0 0 20px;
-          svg {
-            margin: 0 0 0 10px;
-            transform: scaleX(1);
-          }
-        }
       }
     }
-  }
-}
-
-.htmlDetail {
-  .title {
-    font-size: rem(32);
-    padding-bottom: 32px;
-    margin-bottom: 40px;
-    position: relative;
-    @include screen('tablet') {
-      font-size: rem(28);
-      margin-bottom: 20px;
-    }
-    @include screen('mobile') {
+    .description {
+      color: $textLighten;
       font-size: rem(22);
+      font-weight: normal;
+      line-height: 1.6;
+      font-weight: 400;
     }
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 300px;
-      background: $mainColor;
-    }
-  }
-  .description {
-    color: $textLighten;
-    font-size: rem(22);
-    font-weight: normal;
-    line-height: 1.6;
-    font-weight: 400;
   }
 }
