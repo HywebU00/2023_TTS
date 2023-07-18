@@ -83,19 +83,17 @@
       </footer>
     </div>
 
-    <script src="./include/Icon.js"></script>
-    <script src="./plugins/jquery.min.js"></script>
-    <script src="./plugins/slick/slick.js"></script>
-    <script src="./plugins/WOW-master/dist/wow.min.js"></script>
-    <script src="./plugins/main.js"></script>
+    <script src="./include/js.js"></script>
     <script>
-      $(`.topMenu .listBox`).slick({
-        slidesToShow: 1,
-        variableWidth: true,
-        infinite: true,
-        appendArrows: $(`.topMenu`),
-        prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
-        nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
+      $(function () {
+        $(`.topMenu .listBox`).slick({
+          slidesToShow: 1,
+          variableWidth: true,
+          infinite: true,
+          appendArrows: $(`.topMenu`),
+          prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
+          nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
+        });
       });
     </script>
   </body>

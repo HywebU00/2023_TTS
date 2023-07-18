@@ -31,11 +31,13 @@
               <div class="picBox wow fadeInLeft" data-wow-delay="0.2s">
                 <div class="bigPic">
                   <div class="listBox">
-                    <div class="item">
+                    <div class="item active">
                       <div class="pic"><img src="./images/suppliers06.jpg" alt="" /></div>
                     </div>
-                    <div class="item youtube">
-                      <iframe class="embed-player slide-media" width="980" height="520" src="https://www.youtube.com/embed/N8m2GRfqnlE?enablejsapi=1&controls=0" frameborder="0" allowfullscreen></iframe>
+                    <div class="item">
+                      <div class="pic">
+                        <iframe width="980" height="520" src="https://www.youtube.com/embed/N8m2GRfqnlE" frameborder="0" allowfullscreen></iframe>
+                      </div>
                     </div>
                     <div class="item">
                       <div class="pic"><img src="./images/suppliers06.jpg" alt="" /></div>
@@ -47,8 +49,8 @@
                     <div class="item">
                       <div class="pic"><img src="./images/suppliers06.jpg" alt="" /></div>
                     </div>
-                    <div class="item">
-                      <div class="pic"><i></i><img src="./images/suppliers08.jpg" alt="" /></div>
+                    <div class="item youtube">
+                      <div class="pic"><img src="./images/suppliers08.jpg" alt="" /></div>
                     </div>
                     <div class="item">
                       <div class="pic"><img src="./images/suppliers06.jpg" alt="" /></div>
@@ -211,6 +213,14 @@
                 </div>
               </div>
             </div>
+            <div class="btnBox">
+              <button class="prev">
+                <svg><use xlink:href="#arrow2" /></svg>PREV
+              </button>
+              <button class="next">
+                NEXT<svg><use xlink:href="#arrow2" /></svg>
+              </button>
+            </div>
           </div>
         </div>
       </main>
@@ -219,33 +229,32 @@
       </footer>
     </div>
 
-    <script src="./include/Icon.js"></script>
-    <script src="./plugins/jquery.min.js"></script>
+    <script src="./include/js.js"></script>
     <script src="./plugins/gsap/gsap-latest-beta.min.js"></script>
     <script src="./plugins/gsap/ScrollToPlugin3.min.js"></script>
-    <script src="./plugins/slick/1.8.1/slick/slick.js"></script>
-    <script src="./plugins/WOW-master/dist/wow.min.js"></script>
-    <script src="./plugins/main.js"></script>
     <script>
       (function () {
-        $('.bigPic .listBox').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: true,
-          infinite: false,
-          asNavFor: '.picNav .listBox',
-          appendArrows: $(`.bigPic`),
-          prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
-          nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
+        const bigPic = document.querySelectorAll('.bigPic .listBox .item');
+        const navPic = document.querySelectorAll('.picNav .listBox .item');
+        navPic.forEach((item, index) => {
+          item.addEventListener('click', () => [
+            bigPic.forEach((v) => {
+              v.classList.remove('active');
+            }),
+            bigPic[index].classList.add('active'),
+          ]);
         });
+      })();
 
+      $(function () {
         $('.picNav .listBox').slick({
           slidesToShow: 3,
           slidesToScroll: 1,
-          asNavFor: '.bigPic .listBox',
-          arrows: false,
+          arrows: true,
           focusOnSelect: true,
           infinite: false,
+          prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
+          nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
         });
 
         $(`.sliderBox .listBox`).slick({
@@ -288,7 +297,7 @@
             },
           ],
         });
-      })();
+      });
 
       (function () {
         document.querySelectorAll('.productBox .item').forEach((btn, index) => {

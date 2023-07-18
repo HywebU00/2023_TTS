@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("../plugins/WOW-master/css/libs/animate.css");
-@import url("../plugins/slick/1.8.1/slick/slick.css");
+@import url("../plugins/slick/slick.css");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -601,6 +601,26 @@ button:focus {
   }
 }
 
+.goTop {
+  width: 50px;
+  height: 50px;
+  background: #fa9111;
+  border-radius: 100%;
+  position: fixed;
+  bottom: 30%;
+  right: 20px;
+  overflow: hidden;
+}
+.goTop svg {
+  left: 0;
+  top: -5px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: scale(0.5) rotate(-90deg);
+  fill: #fff;
+}
+
 .slick-slide {
   line-height: 0;
 }
@@ -722,6 +742,7 @@ header {
   width: 100%;
   z-index: 99;
   background: #fff;
+  isolation: isolate;
 }
 header .container {
   display: flex;
@@ -1034,14 +1055,13 @@ header .logo a.logo_S {
   }
 }
 .topSearch .searchInput {
-  width: 300px;
+  width: 100%;
   height: 0;
-  position: absolute;
+  position: fixed;
   right: 0;
-  top: 100%;
   background: #000;
-  z-index: 50;
   overflow: hidden;
+  z-index: -1;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 1000px) {
@@ -1053,7 +1073,14 @@ header .logo a.logo_S {
 .topSearch .searchInput .content {
   padding: 5px 10px;
   display: flex;
+  justify-content: center;
   height: 100%;
+}
+.topSearch .searchInput .content input {
+  max-width: 300px;
+  background: none;
+  border: none;
+  color: #d0d0d0;
 }
 .topSearch .searchInput .close {
   background: none;
@@ -1066,12 +1093,8 @@ header .logo a.logo_S {
 }
 .topSearch .searchInput .search {
   background: none;
+  padding: 10px 10px 8px;
   color: white;
-}
-.topSearch .searchInput input {
-  background: none;
-  border: none;
-  color: #d0d0d0;
 }
 .topSearch .searchInput.active {
   height: 60px;
@@ -1281,12 +1304,20 @@ header .logo a.logo_S {
 .indexMain {
   background: url("../images/bg.jpg") center top repeat-y;
 }
+.indexMain .section {
+  margin-bottom: 6%;
+}
+@media screen and (max-width: 767px) {
+  .indexMain .section {
+    margin-bottom: 80px;
+  }
+}
 .indexMain .sectionTitle {
   text-align: center;
   font-size: 3.4375rem;
   font-weight: 600;
   color: #fa9111;
-  margin: 6% 0 4%;
+  margin: 0 0 4%;
 }
 @media screen and (max-width: 1000px) {
   .indexMain .sectionTitle {
@@ -1295,7 +1326,7 @@ header .logo a.logo_S {
 }
 @media screen and (max-width: 767px) {
   .indexMain .sectionTitle {
-    margin: 50px 0;
+    margin: 0 0 50px;
   }
 }
 @media screen and (max-width: 575px) {
@@ -1533,9 +1564,6 @@ header .logo a.logo_S {
   .indexMain .newsBox .tabListContentBox .slick-arrow.slick-next {
     right: 0px;
   }
-}
-.indexMain .suppliersBox {
-  margin: 0 0 5%;
 }
 @media screen and (max-width: 1000px) {
   .indexMain .suppliersBox .tabBar {
@@ -2146,41 +2174,23 @@ header .logo a.logo_S {
 }
 
 .suppliersPage .slick-arrow {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
 }
-@media screen and (max-width: 1000px) {
-  .suppliersPage .slick-arrow {
-    display: block;
-    width: 30px;
-    height: 30px;
-  }
-}
 .suppliersPage .slick-arrow svg {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   fill: #fff;
 }
-@media screen and (max-width: 1000px) {
-  .suppliersPage .slick-arrow svg {
-    width: 30px;
-    height: 30px;
-  }
-}
 .suppliersPage .slick-arrow svg use {
-  transform: scale(1);
-}
-@media screen and (max-width: 1000px) {
-  .suppliersPage .slick-arrow svg use {
-    transform: scale(0.62);
-  }
+  transform: scale(0.62);
 }
 .suppliersPage .slick-arrow.slick-prev {
-  left: 20px;
+  left: 10px;
 }
 .suppliersPage .slick-arrow.slick-next {
-  right: 20px;
+  right: 10px;
 }
 .suppliersPage .suppliersDetail .topBox {
   background: #f7f7f7;
@@ -2200,7 +2210,8 @@ header .logo a.logo_S {
   }
 }
 .suppliersPage .suppliersDetail .topBox .picBox {
-  width: 600px;
+  width: 50%;
+  max-width: 600px;
 }
 @media screen and (max-width: 1200px) {
   .suppliersPage .suppliersDetail .topBox .picBox {
@@ -2213,7 +2224,6 @@ header .logo a.logo_S {
   }
 }
 .suppliersPage .suppliersDetail .topBox .picBox .bigPic {
-  width: 100%;
   aspect-ratio: 1;
   margin-bottom: 28px;
   position: relative;
@@ -2230,8 +2240,17 @@ header .logo a.logo_S {
 }
 .suppliersPage .suppliersDetail .topBox .picBox .bigPic .item {
   aspect-ratio: 1;
+  display: none;
+  line-height: 0;
 }
-.suppliersPage .suppliersDetail .topBox .picBox .bigPic .pic,
+.suppliersPage .suppliersDetail .topBox .picBox .bigPic .item.active {
+  display: block;
+}
+.suppliersPage .suppliersDetail .topBox .picBox .bigPic .pic {
+  width: 100%;
+  height: 100%;
+}
+.suppliersPage .suppliersDetail .topBox .picBox .bigPic .pic img,
 .suppliersPage .suppliersDetail .topBox .picBox .bigPic iframe {
   width: 100%;
   height: 100%;
@@ -2251,13 +2270,17 @@ header .logo a.logo_S {
     margin: 0 -6px;
   }
 }
-.suppliersPage .suppliersDetail .topBox .picBox .picNav i {
+.suppliersPage .suppliersDetail .topBox .picBox .picNav .item {
+  position: relative;
+}
+.suppliersPage .suppliersDetail .topBox .picBox .picNav .item.youtube::before {
   content: "";
   position: absolute;
   z-index: 2;
   inset: 0;
   display: block;
   background: url("../images/icon/icon_play.svg") center no-repeat;
+  pointer-events: none;
 }
 .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic {
   margin: 0 14px;
@@ -2274,13 +2297,8 @@ header .logo a.logo_S {
   }
 }
 .suppliersPage .suppliersDetail .topBox .infoBox {
-  flex-grow: 1;
+  width: 50%;
   padding: 32px;
-}
-@media screen and (max-width: 1200px) {
-  .suppliersPage .suppliersDetail .topBox .infoBox {
-    width: 50%;
-  }
 }
 @media screen and (max-width: 1000px) {
   .suppliersPage .suppliersDetail .topBox .infoBox {
@@ -2433,6 +2451,14 @@ header .logo a.logo_S {
 .suppliersPage .suppliersDetail .productBox .sliderBox .slick-arrow.slick-next {
   right: -60px;
 }
+.suppliersPage .suppliersDetail .bottomBox {
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 767px) {
+  .suppliersPage .suppliersDetail .bottomBox {
+    margin-bottom: 60px;
+  }
+}
 .suppliersPage .suppliersDetail .bottomBox .listBox {
   display: flex;
   flex-wrap: wrap;
@@ -2508,6 +2534,66 @@ header .logo a.logo_S {
   .suppliersPage .suppliersDetail .bottomBox .listBox .item .description {
     font-size: 1.125rem;
   }
+}
+.suppliersPage .suppliersDetail .btnBox {
+  display: flex;
+  justify-content: center;
+}
+.suppliersPage .suppliersDetail .btnBox button {
+  width: 100%;
+  max-width: 175px;
+  text-align: center;
+  display: block;
+  padding: 14px 15px 12px;
+  border: 1px solid #fa9111;
+  background: #fa9111;
+  font-weight: 1.375rem;
+  color: #fff;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.suppliersPage .suppliersDetail .btnBox button svg {
+  content: "";
+  width: 16px;
+  aspect-ratio: 1;
+  fill: #fff;
+  display: block;
+  margin: 0 10px 0 0;
+  transform: scaleX(-1);
+  transition: all 0.3s ease;
+}
+.suppliersPage .suppliersDetail .btnBox button::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  background: #fff;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.suppliersPage .suppliersDetail .btnBox button:hover {
+  color: #fa9111;
+}
+.suppliersPage .suppliersDetail .btnBox button:hover svg {
+  fill: #fa9111;
+}
+.suppliersPage .suppliersDetail .btnBox button:hover::before {
+  width: 100%;
+  left: 0;
+}
+.suppliersPage .suppliersDetail .btnBox button + button {
+  margin: 0 0 0 20px;
+}
+.suppliersPage .suppliersDetail .btnBox button + button svg {
+  margin: 0 0 0 10px;
+  transform: scaleX(1);
 }
 
 .htmlDetail .title {

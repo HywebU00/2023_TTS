@@ -36,12 +36,16 @@ new WOW({
   const mobileBtn = document.querySelector('.mobileBtn');
   const menuClose = document.querySelector('.topSearch .close');
   const body = document.querySelector('body');
+  const header = document.querySelector('header');
+  let headerHeight = header.offsetHeight;
 
   searchBtn.addEventListener('click', () => {
     searchInput.classList.toggle('active');
     mobileBtn.classList.remove('active');
     body.classList.toggle('searchOpen');
     body.classList.remove('menuOpen');
+    headerHeight = header.offsetHeight;
+    searchInput.style.top = `${headerHeight}px`;
   });
 
   searchClose.addEventListener('click', () => {
@@ -71,6 +75,20 @@ new WOW({
     }
   });
   observer.observe(body);
+
+  const searchTop = () => {
+    headerHeight = header.offsetHeight;
+    searchInput.style.top = `${headerHeight}px`;
+    if (window.scrollY === 0) {
+      setTimeout(() => {
+        headerHeight = header.offsetHeight;
+        searchInput.style.top = `${headerHeight}px`;
+      }, 300);
+    }
+  };
+  window.addEventListener('scroll', searchTop);
+  window.addEventListener('resize', searchTop);
+  window.addEventListener('load', searchTop);
 })();
 
 //偵測位置
@@ -124,6 +142,24 @@ $(window).on('load resize', function () {
   $('.mainMenu ul').attr('style', null);
 });
 
+(function () {
+  let goTopBtn = document.querySelector('.goTop');
+
+  window.addEventListener('scroll', function () {
+    let windowScrollTop = document.documentElement.scrollTop;
+    if (windowScrollTop >= 200) {
+      goTopBtn.style.cssText = 'opacity:1';
+    } else {
+      goTopBtn.style.cssText = 'opacity:0';
+    }
+  });
+  goTopBtn.addEventListener('click', function () {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+})();
 // let slideWrapper = $('.bigPic .listBox');
 // let lazyCounter = 0;
 
