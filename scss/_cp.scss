@@ -111,7 +111,7 @@
             padding: 20px;
           }
           .title {
-            font-size: rem(32);
+            font-size: cRem(32);
             font-weight: 600;
             position: relative;
             overflow: hidden;
@@ -121,18 +121,18 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             @include screen('tablet') {
-              font-size: rem(28);
+              font-size: cRem(28);
               margin: 0 0 20px;
             }
             @include screen('mobile') {
-              font-size: rem(22);
+              font-size: cRem(22);
             }
           }
           ul {
-            font-size: rem(28);
+            font-size: cRem(28);
             margin-bottom: 40px;
             @include screen('tablet') {
-              font-size: rem(20);
+              font-size: cRem(20);
               margin-bottom: 20px;
             }
             li {
@@ -183,29 +183,29 @@
           }
           .description {
             color: $textLighten;
-            font-size: rem(28);
+            font-size: cRem(28);
             padding-top: 40px;
             border-top: $mainColor 2px solid;
             @include screen('tablet') {
-              font-size: rem(18);
+              font-size: cRem(18);
               padding-top: 20px;
             }
           }
         }
       }
       .subTitle {
-        font-size: rem(32);
+        font-size: cRem(32);
         font-weight: 600;
         color: $mainColor;
         padding-bottom: 32px;
         margin-bottom: 40px;
         border-bottom: 2px $mainColor solid;
         @include screen('tablet') {
-          font-size: rem(28);
+          font-size: cRem(28);
           margin-bottom: 20px;
         }
         @include screen('mobile') {
-          font-size: rem(22);
+          font-size: cRem(22);
         }
       }
 
@@ -297,7 +297,7 @@
               }
             }
             .title {
-              font-size: rem(32);
+              font-size: cRem(32);
               font-weight: 600;
               position: relative;
               overflow: hidden;
@@ -306,18 +306,18 @@
               -webkit-line-clamp: 3;
               -webkit-box-orient: vertical;
               @include screen('tablet') {
-                font-size: rem(28);
+                font-size: cRem(28);
                 margin: 0 0 20px;
               }
               @include screen('mobile') {
-                font-size: rem(22);
+                font-size: cRem(22);
               }
             }
             .description {
               color: $textLighten;
-              font-size: rem(28);
+              font-size: cRem(28);
               @include screen('tablet') {
-                font-size: rem(18);
+                font-size: cRem(18);
               }
             }
           }
@@ -334,7 +334,7 @@
           padding: 14px 15px 12px;
           border: 1px solid $mainColor;
           background: $mainColor;
-          font-weight: rem(22);
+          font-weight: cRem(22);
           color: #fff;
           position: relative;
           isolation: isolate;
@@ -388,16 +388,16 @@
 
   .htmlDetail {
     .title {
-      font-size: rem(32);
+      font-size: cRem(32);
       padding-bottom: 32px;
       margin-bottom: 40px;
       position: relative;
       @include screen('tablet') {
-        font-size: rem(28);
+        font-size: cRem(28);
         margin-bottom: 20px;
       }
       @include screen('mobile') {
-        font-size: rem(22);
+        font-size: cRem(22);
       }
       &::after {
         content: '';
@@ -411,7 +411,7 @@
     }
     .description {
       color: $textLighten;
-      font-size: rem(22);
+      font-size: cRem(22);
       font-weight: normal;
       line-height: 1.6;
       font-weight: 400;

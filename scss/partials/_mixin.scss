@@ -104,8 +104,8 @@ $screen-md-max: ($screen-lg-min - 1) !default;
   border-color: $arrowColor transparent transparent transparent;
 }
 
-//px轉rem 使用方式 rem(px) px直接輸入數字即可
-@function rem($n: $mainFontSize) {
+//px轉rem 使用方式 cRem(px) px直接輸入數字即可
+@function cRem($n: $mainFontSize) {
   @return calc($n / $mainFontSize * 1rem);
 }
 
@@ -121,7 +121,7 @@ $screen-md-max: ($screen-lg-min - 1) !default;
 @mixin moreComponents($moreFontSize, $moreFontColor, $moreBgColor, $moreBorder, $moreHoverBgColor, $moreHoverFontColor, $moreHoverBorder: $mainColor 1px solid) {
   color: $moreFontColor;
   font-weight: 300;
-  font-size: rem($moreFontSize);
+  font-size: cRem($moreFontSize);
   padding: 7px 10px 5px;
   z-index: 0;
   text-align: center;

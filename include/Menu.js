@@ -2,12 +2,23 @@ const MenuContent = `
         
         <div class="col-12">
           <div class="container">
+
+            <div class="topSearch">
+              <div class="searchInput">
+                <div class="content">
+                  <button type="button" class="close"></button>
+                  <input type="text" placeholder="Search" />
+                  <button class="search">Send</button>
+                </div>
+              </div>
+              <button class="searchBtn"></button>
+            </div>
             <h1 class="logo">
               <a href="#" class="logo_L"><img src="./images/logo.png" alt="" /></a>
               <a href="#" class="logo_S"><img src="./images/logo.png" alt="" /></a>
             </h1>
-            <div class="mainMenu">
               <button class="mobileBtn"></button>
+            <div class="mainMenu">
               <nav>
                 <ul>
                   <li><a href="#">Suppliers</a></li>
@@ -35,20 +46,24 @@ const MenuContent = `
                     </ul>
                   </li>
                 </ul>
-                <div class="officeLink"><a href="#">TAITRA OVERSEA OFFICE</a></div>
               </nav>
-            </div>
-            <div class="topSearch">
-              <div class="searchInput">
-                <div class="content">
-                  <button type="button" class="close"></button>
-                  <input type="text" placeholder="Search" />
-                  <button class="search">Send</button>
-                </div>
-              </div>
-              <button class="searchBtn">
-                <svg><use xlink:href="#search" /></svg>
-              </button>
+
+          <nav class="navigation have_language">
+                    <div class="language">
+                        <a href="#">Language</a>
+                        <ul style="display: none;">
+                            <li><a href="#">繁體中文</a></li>
+                            <li><a href="#">简体中文</a></li>
+                            <li><a href="#">ENGLISH</a></li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li><a href="#"><img src="images/nav_img.png" alt="">首頁</a></li>
+                        <li><a href="#">網站導覽</a></li>
+                        <li><a href="#">聯絡我們</a></li>
+                    </ul>
+                    <button class="btn btn_login">登入登入登入</button>
+                </nav>
             </div>
           </div>
         </div>`;

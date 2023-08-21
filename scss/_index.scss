@@ -45,18 +45,18 @@
 
     .sectionTitle {
       text-align: center;
-      font-size: rem(55);
+      font-size: cRem(55);
       font-weight: 600;
       color: $mainColor;
       margin: 0 0 4%;
       @include screen('tablet') {
-        font-size: rem(40);
+        font-size: cRem(40);
       }
       @include screen('mobile') {
         margin: 0 0 50px;
       }
       @include screen('xs_mobile') {
-        font-size: rem(30);
+        font-size: cRem(30);
         margin: 30px 0 20px;
       }
     }
@@ -77,15 +77,15 @@
         justify-content: center;
         align-items: center;
         font-weight: 600;
-        font-size: rem(75);
+        font-size: cRem(75);
         padding: 0 60px;
         text-align: center;
         line-height: 1.4;
         @include screen('tablet') {
-          font-size: rem(50);
+          font-size: cRem(50);
         }
         @include screen('mobile') {
-          font-size: rem(30);
+          font-size: cRem(30);
         }
       }
       .slick-arrow {
@@ -145,7 +145,7 @@
           padding: 0;
           background: none;
           border: 1px solid $mainColor;
-          font-size: rem(22);
+          font-size: cRem(22);
           color: $mainColor;
           padding: 7px 10px;
           display: block;
@@ -223,7 +223,7 @@
           margin: 0 0 15px;
         }
         .title {
-          font-size: rem(32);
+          font-size: cRem(32);
           color: $textDarken;
           overflow: hidden;
           display: -webkit-box;
@@ -231,7 +231,7 @@
           -webkit-box-orient: vertical;
           line-height: 1.4;
           @include screen('mobile') {
-            font-size: rem(22);
+            font-size: cRem(22);
           }
         }
         .slick-arrow {
@@ -289,7 +289,7 @@
         display: block;
         padding: 12px 15px 8px;
         border: 1px solid $mainColor;
-        font-size: rem(22);
+        font-size: cRem(22);
         color: $mainColor;
         margin: 30px 0 0;
         isolation: isolate;
@@ -389,7 +389,7 @@
         }
         .title {
           color: $textDarken;
-          font-size: rem(32);
+          font-size: cRem(32);
           overflow: hidden;
           display: -webkit-box;
           -webkit-line-clamp: 3;
@@ -404,10 +404,10 @@
         .email,
         .address {
           line-height: 1.8;
-          font-size: rem(24);
+          font-size: cRem(24);
           color: $textLighten;
           @include screen('mobile') {
-            font-size: rem(22);
+            font-size: cRem(22);
           }
           a {
             color: $textLighten;
@@ -446,12 +446,12 @@
           display: none;
           z-index: 2;
           color: #fff;
-          font-size: rem(32);
+          font-size: cRem(32);
           @include screen('mobile') {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: rem(22);
+            font-size: cRem(22);
             &::before {
               content: '';
               position: absolute;
@@ -511,7 +511,7 @@
           bottom: 10px;
           left: 15px;
           right: 15px;
-          font-size: rem(32);
+          font-size: cRem(32);
           color: #fff;
           font-weight: 600;
           overflow: hidden;
@@ -521,7 +521,7 @@
           z-index: 3;
           line-height: 1.4;
           @include screen('mobile') {
-            font-size: rem(22);
+            font-size: cRem(22);
           }
         }
         .control {
@@ -625,7 +625,7 @@
       padding: 12px 15px 10px;
       border: 1px solid $mainColor;
       background: $mainColor;
-      font-weight: rem(22);
+      font-weight: cRem(22);
       color: #fff;
       margin: 30px auto 0;
       position: relative;

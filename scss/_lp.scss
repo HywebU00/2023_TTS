@@ -15,7 +15,7 @@
           padding: 0;
           background: none;
           border: 1px solid $mainColor;
-          font-size: rem(22);
+          font-size: cRem(22);
           color: $mainColor;
           padding: 7px 10px;
           display: block;
@@ -42,6 +42,7 @@
     }
 
     .suppliers {
+      padding: 0 20px;
       .container {
         max-width: 1160px;
         margin: 0 auto 2.5%;
@@ -83,7 +84,7 @@
           }
         }
         .title {
-          font-size: rem(32);
+          font-size: cRem(32);
           font-weight: 600;
           position: relative;
           overflow: hidden;
@@ -92,25 +93,28 @@
           -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
           @include screen('tablet') {
-            font-size: rem(28);
+            font-size: cRem(28);
             margin: 0 0 20px;
           }
           @include screen('mobile') {
-            font-size: rem(22);
+            font-size: cRem(22);
           }
         }
         ul {
-          font-size: rem(28);
+          font-size: cRem(28);
           padding: 40px 0 0;
           border-top: $mainColor 2px solid;
           @include screen('tablet') {
-            font-size: rem(18);
+            font-size: cRem(18);
             padding-top: 20px;
           }
           li {
             position: relative;
             padding: 0 0 0 30px;
             line-height: 1.2;
+            & + li {
+              margin-top: 10px;
+            }
             &::before {
               content: '';
               width: 22px;
@@ -122,6 +126,21 @@
                 top: 0px;
               }
             }
+          }
+        }
+        .shop {
+          &::before {
+            background: url('../images/icon/icon_shop.svg') center no-repeat;
+          }
+        }
+        .cart {
+          &::before {
+            background: url('../images/icon/icon_cart.svg') center no-repeat;
+          }
+        }
+        .company {
+          &::before {
+            background: url('../images/icon/icon_company.svg') center no-repeat;
           }
         }
         .address {
@@ -136,7 +155,7 @@
           padding: 12px 15px 10px;
           border: 1px solid $mainColor;
           background: $mainColor;
-          font-weight: rem(22);
+          font-weight: cRem(22);
           color: #fff;
           margin: 30px auto 0;
           position: absolute;

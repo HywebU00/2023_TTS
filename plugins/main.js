@@ -30,7 +30,7 @@ new WOW({
 
 //手機版選單
 (function () {
-  const searchBtn = document.querySelector('.topSearch .searchBtn');
+  const searchBtn = document.querySelector('header .searchBtn');
   const searchInput = document.querySelector('.topSearch .searchInput');
   const searchClose = document.querySelector('.topSearch .close');
   const mobileBtn = document.querySelector('.mobileBtn');
@@ -270,3 +270,9 @@ $(function () {
   const nowActive = document.querySelector(`.${String(cookieCss)}`);
   nowActive?.classList.add('active');
 })();
+
+$(function () {
+  $('.language a').on('click', function () {
+    $(this).siblings('ul').slideToggle('fast');
+  });
+});
