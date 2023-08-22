@@ -130,22 +130,22 @@
         }
         .shop {
           &::before {
-            background: url('../images/icon/icon_shop.svg') center no-repeat;
+            background: url('../tts/images/icon/icon_shop.svg') center no-repeat;
           }
         }
         .cart {
           &::before {
-            background: url('../images/icon/icon_cart.svg') center no-repeat;
+            background: url('../tts/images/icon/icon_cart.svg') center no-repeat;
           }
         }
         .company {
           &::before {
-            background: url('../images/icon/icon_company.svg') center no-repeat;
+            background: url('../tts/images/icon/icon_company.svg') center no-repeat;
           }
         }
         .address {
           &::before {
-            background: url('../images/icon/icon_address.svg') center no-repeat;
+            background: url('../tts/images/icon/icon_address.svg') center no-repeat;
           }
         }
         .more {
@@ -155,7 +155,7 @@
           padding: 12px 15px 10px;
           border: 1px solid $mainColor;
           background: $mainColor;
-          font-weight: cRem(22);
+          font-size: cRem(22);
           color: #fff;
           margin: 30px auto 0;
           position: absolute;

@@ -1,5 +1,5 @@
 .tts {
-  .col-12.full {
+  .col-12-full {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -58,84 +58,89 @@
     line-height: 0;
   }
 
-  body {
-    &::before {
-      content: '';
-      position: absolute;
-      z-index: 90;
-      inset: 0;
-      background: #000;
-      opacity: 0;
-      pointer-events: none;
-      @include transition(all, 0.3);
-    }
-    &.searchOpen,
-    &.menuOpen {
-      &::before {
-        opacity: 0.5;
-        pointer-events: unset;
-      }
-    }
-    &.menuOpen {
-      .mainMenu ul {
-        width: 100%;
-        margin: 0;
-        text-align: left;
+  // body {
+  //   &::before {
+  //     content: '';
+  //     position: absolute;
+  //     z-index: 90;
+  //     inset: 0;
+  //     background: #000;
+  //     opacity: 0;
+  //     pointer-events: none;
+  //     @include transition(all, 0.3);
+  //   }
+  //   &.searchOpen,
+  //   &.menuOpen {
+  //     &::before {
+  //       opacity: 0.5;
+  //       pointer-events: unset;
+  //     }
+  //   }
+  //   &.menuOpen {
+  //     .mainMenu ul {
+  //       width: 100%;
+  //       margin: 0;
+  //       text-align: left;
 
-        li {
-          margin: 0;
-          a {
-            color: #fff !important;
-            padding: 15px 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-          }
-          ul {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            li {
-              a {
-                border: none;
-                padding: 5px 5px 5px 30px;
-              }
-              ul {
-                padding: 0;
-                border: none;
-                li a {
-                  background: lighten($mainColor, 5%);
-                  padding: 5px 5px 5px 50px;
-                }
-              }
-            }
-          }
-          &.nextLv {
-            & > a::before {
-              width: 10px;
-              height: 10px;
-              border-color: #fff;
-              border-width: 0 3px 3px 0;
-              right: 15px;
-              transform: translateY(-50%) rotate(45deg);
-            }
-            &.active {
-              & > a::before {
-                border-color: #fff;
-                transform: translateY(-50%) rotate(225deg);
-              }
-            }
-          }
-        }
-      }
-      .officeLink {
-        margin: 0;
-        a {
-          text-align: left;
-          &::after {
-            background: darken($mainColor, 20%);
-          }
-        }
-      }
-    }
-    a {
-      color: $mainColor;
+  //       li {
+  //         margin: 0;
+  //         a {
+  //           color: #fff !important;
+  //           padding: 15px 10px;
+  //           border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  //         }
+  //         ul {
+  //           border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  //           li {
+  //             a {
+  //               border: none;
+  //               padding: 5px 5px 5px 30px;
+  //             }
+  //             ul {
+  //               padding: 0;
+  //               border: none;
+  //               li a {
+  //                 background: lighten($mainColor, 5%);
+  //                 padding: 5px 5px 5px 50px;
+  //               }
+  //             }
+  //           }
+  //         }
+  //         &.nextLv {
+  //           & > a::before {
+  //             width: 10px;
+  //             height: 10px;
+  //             border-color: #fff;
+  //             border-width: 0 3px 3px 0;
+  //             right: 15px;
+  //             transform: translateY(-50%) rotate(45deg);
+  //           }
+  //           &.active {
+  //             & > a::before {
+  //               border-color: #fff;
+  //               transform: translateY(-50%) rotate(225deg);
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .officeLink {
+  //       margin: 0;
+  //       a {
+  //         text-align: left;
+  //         &::after {
+  //           background: darken($mainColor, 20%);
+  //         }
+  //       }
+  //     }
+  //   }
+  //   a {
+  //     color: $mainColor;
+  //   }
+  // }
+  .wrapper {
+    @include screen('tablet') {
+      padding-top: 60px;
     }
   }
   .pic {
@@ -190,6 +195,7 @@
     isolation: isolate;
     @include screen('tablet') {
       position: fixed;
+      top: 0;
     }
     .container {
       display: flex;
@@ -506,7 +512,7 @@
       &::before {
         width: 24px;
         height: 24px;
-        background: url(../images/icon_search_white.png) no-repeat center center;
+        background: url(../tts/images/icon_search_white.png) no-repeat center center;
         background-size: 24px;
         opacity: 1;
         content: '';
@@ -590,6 +596,9 @@
       .topSearch {
         top: 22px;
       }
+      .have_language {
+        display: none !important;
+      }
     }
   }
 
@@ -614,7 +623,7 @@
   //       height: 50px;
   //       margin: 0 auto;
   //       display: block;
-  //       mask: url('../images/logo.svg') center no-repeat;
+  //       mask: url('../tts/images/logo.svg') center no-repeat;
   //       background: #fff;
   //     }
   //   }
@@ -1133,7 +1142,7 @@
       right: 0;
       display: flex;
       align-items: center;
-      @media screen and (max-width: 1000px) {
+      @include screen('tablet') {
         max-width: 230px;
         padding: 0;
         margin: 20px auto 0;
@@ -1142,13 +1151,14 @@
         right: auto;
         display: flex;
         flex-direction: column;
+        padding: 0 20px;
       }
     }
     & > ul {
       padding: 0;
       margin: 0;
       list-style: none;
-      @media screen and (max-width: 1000px) {
+      @include screen('tablet') {
         text-align: center;
         border: 1px solid rgba(255, 255, 255, 0.3);
         margin: 10px 0;
@@ -1161,7 +1171,7 @@
     li {
       float: left;
       margin: 0 0.2em;
-      @media screen and (max-width: 1000px) {
+      @include screen('tablet') {
         width: 50%;
         margin: 0;
         &:nth-child(2) {
@@ -1178,17 +1188,17 @@
         text-decoration: none;
         color: #222;
         text-decoration: none;
-        @media screen and (max-width: 1000px) {
+        @include screen('tablet') {
           color: #fff;
           width: 100%;
         }
         &:hover,
         &:focus {
-          color: #dc5490;
+          color: $mainColor;
           cursor: pointer;
-          @media screen and (max-width: 1000px) {
+          @include screen('tablet') {
             color: #fff;
-            background: #dc5490;
+            background: $mainColor;
           }
         }
         img {
@@ -1197,7 +1207,7 @@
           display: inline-block;
           vertical-align: middle;
           margin-right: 0.2em;
-          @media screen and (max-width: 1000px) {
+          @include screen('tablet') {
             display: none;
           }
         }
@@ -1205,7 +1215,7 @@
     }
     .btn_login {
       position: relative;
-      background: #bc2769;
+      background: $mainColor;
       color: #fff;
       height: 38px;
       border: none;
@@ -1223,7 +1233,8 @@
       width: auto;
       padding: 0.3em 2em 0.7em;
       min-width: 4em;
-      @media screen and (max-width: 1000px) {
+      @include screen('tablet') {
+        width: 100%;
         padding: 0.4em 2em 0.6em;
         display: flex;
         align-items: center;
@@ -1234,7 +1245,7 @@
       }
       &:hover,
       &:focus {
-        background: #d73f82;
+        background: $secColor;
         box-shadow: none;
         border: none !important;
       }
@@ -1250,11 +1261,11 @@
     font-weight: bold;
     font-size: 0.938em;
     text-shadow: 1px 1px 2px RGBA(0, 0, 0, 0.8);
-    @media screen and (max-width: 1000px) {
+    @include screen('tablet') {
       position: relative;
       right: auto;
       top: auto;
-      width: auto;
+      width: 100%;
     }
     & > a {
       display: block;
@@ -1267,7 +1278,7 @@
       position: relative;
       transition: 0.3s ease-out;
       border: none;
-      @media screen and (max-width: 1000px) {
+      @include screen('tablet') {
         background: rgba(0, 0, 0, 0.5);
       }
       &::after {
@@ -1308,7 +1319,7 @@
       list-style: none;
       display: none;
       margin: 0;
-      @media screen and (max-width: 1000px) {
+      @include screen('tablet') {
         position: relative;
         top: 0;
       }

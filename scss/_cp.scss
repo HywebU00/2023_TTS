@@ -87,7 +87,7 @@
                 z-index: 2;
                 inset: 0;
                 display: block;
-                background: url('../images/icon/icon_play.svg') center no-repeat;
+                background: url('../tts/images/icon/icon_play.svg') center no-repeat;
                 pointer-events: none;
               }
             }
@@ -163,22 +163,22 @@
           }
           .link {
             &::before {
-              background: url('../images/icon/icon_link.svg') center no-repeat;
+              background: url('../tts/images/icon/icon_link.svg') center no-repeat;
             }
           }
           .email {
             &::before {
-              background: url('../images/icon/icon_email.svg') center no-repeat;
+              background: url('../tts/images/icon/icon_email.svg') center no-repeat;
             }
           }
           .tel {
             &::before {
-              background: url('../images/icon/icon_tel.svg') center no-repeat;
+              background: url('../tts/images/icon/icon_tel.svg') center no-repeat;
             }
           }
           .address {
             &::before {
-              background: url('../images/icon/icon_address.svg') center no-repeat;
+              background: url('../tts/images/icon/icon_address.svg') center no-repeat;
             }
           }
           .description {
@@ -334,7 +334,7 @@
           padding: 14px 15px 12px;
           border: 1px solid $mainColor;
           background: $mainColor;
-          font-weight: cRem(22);
+          font-size: cRem(22);
           color: #fff;
           position: relative;
           isolation: isolate;

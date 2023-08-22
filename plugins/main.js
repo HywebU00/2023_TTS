@@ -237,7 +237,7 @@ $(function () {
         <li class="blue" data-color="blue"></li>
         <li class="green" data-color="green"></li>
         <li class="yellow" data-color="yellow"></li>
-        <li class="cyan" data-color="cyan"></li>
+        <li class="cyan" data-color="cyanblue"></li>
         <li class="brown" data-color="brown"></li>
         <li class="purple" data-color="purple"></li>
         <li class="gray" data-color="gray"></li>

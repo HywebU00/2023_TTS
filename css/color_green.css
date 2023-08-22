@@ -1,9 +1,8 @@
 @charset "UTF-8";
-@import url("../plugins/WOW-master/css/libs/animate.css");
-@import url("../plugins/slick/slick.css");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: Jost;
+  src: url("../plugins/fonts/Jost/Jost-Regular.woff") format("woff"), url("../plugins/fonts/Jost/Jost-Light.woff") format("woff"), url("../plugins/fonts/Jost/Jost-SemiBold.woff") format("woff"), url("../plugins/fonts/Jost/Jost-Bold.woff") format("woff");
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -560,14 +559,14 @@ button:focus {
   line-height: 1.6;
 }
 
-.tts .col-12.full {
+.tts .col-12-full {
   width: 100%;
   margin: 0;
   padding: 0;
   max-width: none;
   box-sizing: border-box;
 }
-.tts .col-12.full .container {
+.tts .col-12-full .container {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -620,71 +619,10 @@ button:focus {
 .tts .slick-slide {
   line-height: 0;
 }
-.tts body::before {
-  content: "";
-  position: absolute;
-  z-index: 90;
-  inset: 0;
-  background: #000;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-.tts body.searchOpen::before, .tts body.menuOpen::before {
-  opacity: 0.5;
-  pointer-events: unset;
-}
-.tts body.menuOpen .mainMenu ul {
-  width: 100%;
-  margin: 0;
-  text-align: left;
-}
-.tts body.menuOpen .mainMenu ul li {
-  margin: 0;
-}
-.tts body.menuOpen .mainMenu ul li a {
-  color: #fff !important;
-  padding: 15px 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-.tts body.menuOpen .mainMenu ul li ul {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-.tts body.menuOpen .mainMenu ul li ul li a {
-  border: none;
-  padding: 5px 5px 5px 30px;
-}
-.tts body.menuOpen .mainMenu ul li ul li ul {
-  padding: 0;
-  border: none;
-}
-.tts body.menuOpen .mainMenu ul li ul li ul li a {
-  background: #56b128;
-  padding: 5px 5px 5px 50px;
-}
-.tts body.menuOpen .mainMenu ul li.nextLv > a::before {
-  width: 10px;
-  height: 10px;
-  border-color: #fff;
-  border-width: 0 3px 3px 0;
-  right: 15px;
-  transform: translateY(-50%) rotate(45deg);
-}
-.tts body.menuOpen .mainMenu ul li.nextLv.active > a::before {
-  border-color: #fff;
-  transform: translateY(-50%) rotate(225deg);
-}
-.tts body.menuOpen .officeLink {
-  margin: 0;
-}
-.tts body.menuOpen .officeLink a {
-  text-align: left;
-}
-.tts body.menuOpen .officeLink a::after {
-  background: #234910;
-}
-.tts body a {
-  color: #4c9c23;
+@media screen and (max-width: 1000px) {
+  .tts .wrapper {
+    padding-top: 60px;
+  }
 }
 .tts .pic {
   line-height: 0;
@@ -739,6 +677,7 @@ button:focus {
 @media screen and (max-width: 1000px) {
   .tts header {
     position: fixed;
+    top: 0;
   }
 }
 .tts header .container {
@@ -1073,7 +1012,7 @@ button:focus {
 .tts .topSearch .searchBtn::before {
   width: 24px;
   height: 24px;
-  background: url(../images/icon_search_white.png) no-repeat center center;
+  background: url(../tts/images/icon_search_white.png) no-repeat center center;
   background-size: 24px;
   opacity: 1;
   content: "";
@@ -1141,6 +1080,9 @@ button:focus {
   }
   .tts .sticky .topSearch {
     top: 22px;
+  }
+  .tts .sticky .have_language {
+    display: none !important;
   }
 }
 .tts .breadcrumbs {
@@ -1590,6 +1532,7 @@ button:focus {
     right: auto;
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
   }
 }
 .tts header .navigation > ul {
@@ -1639,13 +1582,13 @@ button:focus {
   }
 }
 .tts header .navigation li a:hover, .tts header .navigation li a:focus {
-  color: #dc5490;
+  color: #4c9c23;
   cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
   .tts header .navigation li a:hover, .tts header .navigation li a:focus {
     color: #fff;
-    background: #dc5490;
+    background: #4c9c23;
   }
 }
 .tts header .navigation li a img {
@@ -1662,7 +1605,7 @@ button:focus {
 }
 .tts header .navigation .btn_login {
   position: relative;
-  background: #bc2769;
+  background: #4c9c23;
   color: #fff;
   height: 38px;
   border: none;
@@ -1683,6 +1626,7 @@ button:focus {
 }
 @media screen and (max-width: 1000px) {
   .tts header .navigation .btn_login {
+    width: 100%;
     padding: 0.4em 2em 0.6em;
     display: flex;
     align-items: center;
@@ -1693,7 +1637,7 @@ button:focus {
   }
 }
 .tts header .navigation .btn_login:hover, .tts header .navigation .btn_login:focus {
-  background: #d73f82;
+  background: #6e990b;
   box-shadow: none;
   border: none !important;
 }
@@ -1712,7 +1656,7 @@ button:focus {
     position: relative;
     right: auto;
     top: auto;
-    width: auto;
+    width: 100%;
   }
 }
 .tts .language > a {
@@ -2034,7 +1978,7 @@ button:focus {
   opacity: 0.2;
 }
 .tts .indexMain {
-  background: url("../images/bg.jpg") center top repeat-y;
+  background: url("../tts/images/bg.jpg") center top repeat-y;
 }
 .tts .indexMain .section {
   margin-bottom: 6%;
@@ -2068,10 +2012,14 @@ button:focus {
   }
 }
 .tts .indexMain .indexBanner {
-  isolation: isolate;
+  overflow: hidden;
+  background: #fff;
 }
 .tts .indexMain .indexBanner img {
   width: 100%;
+  max-height: 580px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .indexMain .indexBanner .slogan {
   position: absolute;
@@ -2087,6 +2035,7 @@ button:focus {
   padding: 0 60px;
   text-align: center;
   line-height: 1.4;
+  pointer-events: none;
 }
 @media screen and (max-width: 1000px) {
   .tts .indexMain .indexBanner .slogan {
@@ -2589,7 +2538,7 @@ button:focus {
     width: 135px;
     height: 22px;
     display: block;
-    background: url("../images/icon/icon_arrow3.svg") no-repeat;
+    background: url("../tts/images/icon/icon_arrow3.svg") no-repeat;
   }
   .tts .indexMain .suppliersBox .bottomBox .control .slick-arrow svg {
     display: none;
@@ -2664,7 +2613,7 @@ button:focus {
   padding: 12px 15px 10px;
   border: 1px solid #4c9c23;
   background: #4c9c23;
-  font-weight: 1.375rem;
+  font-size: 1.375rem;
   color: #fff;
   margin: 30px auto 0;
   position: relative;
@@ -2852,16 +2801,16 @@ button:focus {
   }
 }
 .tts .suppliersPage .suppliers .item .shop::before {
-  background: url("../images/icon/icon_shop.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_shop.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliers .item .cart::before {
-  background: url("../images/icon/icon_cart.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_cart.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliers .item .company::before {
-  background: url("../images/icon/icon_company.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_company.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliers .item .address::before {
-  background: url("../images/icon/icon_address.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_address.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliers .item .more {
   width: 175px;
@@ -2870,7 +2819,7 @@ button:focus {
   padding: 12px 15px 10px;
   border: 1px solid #4c9c23;
   background: #4c9c23;
-  font-weight: 1.375rem;
+  font-size: 1.375rem;
   color: #fff;
   margin: 30px auto 0;
   position: absolute;
@@ -3025,7 +2974,7 @@ button:focus {
   z-index: 2;
   inset: 0;
   display: block;
-  background: url("../images/icon/icon_play.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_play.svg") center no-repeat;
   pointer-events: none;
 }
 .tts .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic {
@@ -3112,16 +3061,16 @@ button:focus {
   color: #4c9c23;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .link::before {
-  background: url("../images/icon/icon_link.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_link.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .email::before {
-  background: url("../images/icon/icon_email.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_email.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .tel::before {
-  background: url("../images/icon/icon_tel.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_tel.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .address::before {
-  background: url("../images/icon/icon_address.svg") center no-repeat;
+  background: url("../tts/images/icon/icon_address.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .description {
   color: #555;
@@ -3293,7 +3242,7 @@ button:focus {
   padding: 14px 15px 12px;
   border: 1px solid #4c9c23;
   background: #4c9c23;
-  font-weight: 1.375rem;
+  font-size: 1.375rem;
   color: #fff;
   position: relative;
   isolation: isolate;

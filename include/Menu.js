@@ -14,8 +14,8 @@ const MenuContent = `
               <button class="searchBtn"></button>
             </div>
             <h1 class="logo">
-              <a href="#" class="logo_L"><img src="./images/logo.png" alt="" /></a>
-              <a href="#" class="logo_S"><img src="./images/logo.png" alt="" /></a>
+              <a href="#" class="logo_L"><img src="./tts/images/logo.png" alt="" /></a>
+              <a href="#" class="logo_S"><img src="./tts/images/logo.png" alt="" /></a>
             </h1>
               <button class="mobileBtn"></button>
             <div class="mainMenu">
@@ -58,7 +58,7 @@ const MenuContent = `
                         </ul>
                     </div>
                     <ul>
-                        <li><a href="#"><img src="images/nav_img.png" alt="">首頁</a></li>
+                        <li><a href="#"><img src="./tts/images/nav_img.png" alt="">首頁</a></li>
                         <li><a href="#">網站導覽</a></li>
                         <li><a href="#">聯絡我們</a></li>
                     </ul>
