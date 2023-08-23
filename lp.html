@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>2023_TTS</title>
     <link rel="stylesheet" href="./plugins/WOW-master/css/libs/animate.css" />
-
+    <link rel="stylesheet" href="./plugins/slick/slick.css" />
     <link rel="stylesheet" href="css/color_red.css" id="css" />
   </head>
   <body class="tts">
@@ -152,7 +152,7 @@
         $(`.topMenu .listBox`).slick({
           slidesToShow: 1,
           variableWidth: true,
-          infinite: true,
+          infinite: false,
           appendArrows: $(`.topMenu`),
           prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
           nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
