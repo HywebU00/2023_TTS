@@ -983,7 +983,7 @@ button:focus {
   margin: 0 0 0 20px;
   z-index: 50;
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 0;
 }
 @media screen and (max-width: 1000px) {
@@ -1517,7 +1517,7 @@ button:focus {
 .tts header .navigation.have_language {
   padding-right: 13.05em;
   position: absolute;
-  top: 0;
+  top: 5px;
   right: 0;
   display: flex;
   align-items: center;
