@@ -606,6 +606,7 @@ button:focus {
   bottom: 30%;
   right: 20px;
   overflow: hidden;
+  z-index: 9;
 }
 .tts .goTop svg {
   left: 0;
@@ -3497,7 +3498,7 @@ button:focus {
   background: #f7f7f7;
   padding: 32px;
   display: flex;
-  margin-bottom: 6%;
+  margin-bottom: 30px;
 }
 @media screen and (max-width: 1000px) {
   .tts .suppliersPage .suppliersDetail .topBox {
@@ -3845,6 +3846,7 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .btnBox {
   display: flex;
   justify-content: center;
+  margin-bottom: 70px;
 }
 .tts .suppliersPage .suppliersDetail .btnBox button {
   width: 100%;
