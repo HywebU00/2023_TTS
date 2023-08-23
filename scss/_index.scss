@@ -365,6 +365,14 @@
               object-fit: cover;
             }
           }
+
+          .infoBox {
+            width: calc(100% - 330px);
+            @include screen('mobile') {
+              width: 100%;
+              padding: 0;
+            }
+          }
           &:nth-child(even) {
             .infoBox {
               padding: 0 0 0 65px;
@@ -405,10 +413,7 @@
         cursor: pointer;
         @include screen('mobile') {
           flex-direction: column;
-          padding: 0 30px;
-        }
-        @include screen('xs_mobile') {
-          max-width: 390px;
+          padding: 0 20px;
           margin: 0 auto;
         }
       }
@@ -427,6 +432,7 @@
           -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
           margin: 0 0 20px;
+          word-break: break-word;
           @include screen('mobile') {
             display: none;
           }
@@ -446,18 +452,18 @@
             text-decoration: underline;
           }
         }
-        .url,
-        .email {
+        .url {
           overflow: hidden;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
         }
-        .tel {
+        .tel a,
+        .email a {
+          white-space: nowrap;
           overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
+          display: block;
+          text-overflow: ellipsis;
         }
         .address {
           overflow: hidden;

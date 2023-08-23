@@ -2363,6 +2363,15 @@ button:focus {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.tts .indexMain .suppliersBox .listBox > .item .infoBox {
+  width: calc(100% - 330px);
+}
+@media screen and (max-width: 767px) {
+  .tts .indexMain .suppliersBox .listBox > .item .infoBox {
+    width: 100%;
+    padding: 0;
+  }
+}
 .tts .indexMain .suppliersBox .listBox > .item:nth-child(even) .infoBox {
   padding: 0 0 0 65px;
 }
@@ -2392,12 +2401,7 @@ button:focus {
 @media screen and (max-width: 767px) {
   .tts .indexMain .suppliersBox .topBox {
     flex-direction: column;
-    padding: 0 30px;
-  }
-}
-@media screen and (max-width: 575px) {
-  .tts .indexMain .suppliersBox .topBox {
-    max-width: 390px;
+    padding: 0 20px;
     margin: 0 auto;
   }
 }
@@ -2419,6 +2423,7 @@ button:focus {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   margin: 0 0 20px;
+  word-break: break-word;
 }
 @media screen and (max-width: 767px) {
   .tts .indexMain .suppliersBox .infoBox .title {
@@ -2448,18 +2453,18 @@ button:focus {
   color: #555;
   text-decoration: underline;
 }
-.tts .indexMain .suppliersBox .infoBox .url,
-.tts .indexMain .suppliersBox .infoBox .email {
+.tts .indexMain .suppliersBox .infoBox .url {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.tts .indexMain .suppliersBox .infoBox .tel {
+.tts .indexMain .suppliersBox .infoBox .tel a,
+.tts .indexMain .suppliersBox .infoBox .email a {
+  white-space: nowrap;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  display: block;
+  text-overflow: ellipsis;
 }
 .tts .indexMain .suppliersBox .infoBox .address {
   overflow: hidden;
