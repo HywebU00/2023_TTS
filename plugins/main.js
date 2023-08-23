@@ -7,6 +7,179 @@ new WOW({
   live: true, // default
 }).init();
 
+//首頁
+(function () {
+  if ($('.indexMain').length > 0) {
+    $('.suppliersBox .bottomBox .productsList').append('<div class="control"><div class="count"></div></div>');
+
+    $('.banner').slick({
+      prevArrow: '<button class="slick-prev" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
+      nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
+    });
+
+    let tab = document.querySelectorAll('.tab');
+
+    tab?.forEach((tabItem, index) => {
+      tabItem.classList.add(`tab${index}`);
+      let barItem = tabItem.querySelectorAll('.tabBar .item button');
+      barItem.forEach((item, i) => {
+        item.dataset.list = i;
+      });
+
+      $(`.tab${index} .tabBar .listBox`).slick({
+        slidesToShow: 1,
+        variableWidth: true,
+        infinite: false,
+        appendArrows: $(`.tab${index} .tabBar`),
+        prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
+        nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
+      });
+
+      let tabListContent = document.querySelectorAll(`.tab${index} .tabListContent`);
+      tabListContent.forEach((list, i) => {
+        list.classList.add(`tabListContent${i}`);
+
+        $(`.tab${index} .tabListContent${i} > .sliderListBox`).slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: false,
+          prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
+          nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
+          responsive: [
+            {
+              breakpoint: 1000,
+              settings: {
+                slidesToShow: 4,
+              },
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 550,
+              settings: {
+                slidesToShow: 1.5,
+              },
+            },
+            {
+              breakpoint: 400,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+      });
+
+      let bar = document.querySelectorAll(`.tab${index} .tabBar .item`);
+      let tabBox = document.querySelectorAll(`.tab${index} .tabListContent`);
+      let tabContentBox = document.querySelector(`.tab${index} .tabListContentBox`);
+
+      bar?.forEach((item, itemIndex) => {
+        item.addEventListener('click', function (e) {
+          const checkList = e.target.dataset.list;
+          let siblings = [...item.parentNode.children].filter((child) => child !== item);
+          siblings.forEach((v, i) => {
+            v.classList.remove('active');
+          });
+          tabBox?.forEach((v, i) => {
+            v.classList.remove('active');
+          });
+          this.classList.add('active');
+          tabBox[checkList]?.classList.add('active');
+          $(`.tab${index} .tabListContent${checkList} > .sliderListBox`).slick('refresh');
+        });
+      });
+
+      let suppliersItems = document.querySelectorAll('.suppliersBox .bottomBox');
+      suppliersItems?.forEach((item, i) => {
+        item.classList.add(`suppliers${i}`);
+
+        $(`.tab${index} .suppliers${i} .sliderListBox`).slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: false,
+          appendArrows: $(`.tab${index} .suppliers${i} .control`),
+          prevArrow: '<button class="slick-prev" id="test" aria-label="Previous" type="button" title="Previous"><svg><use xlink:href="#arrow3" /></svg></button>',
+          nextArrow: '<button class="slick-next" aria-label="Next" type="button" title="Next"><svg><use xlink:href="#arrow3" /></svg></button>',
+          responsive: [
+            {
+              breakpoint: 1000,
+              settings: {
+                slidesToShow: 4,
+              },
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 550,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+            {
+              breakpoint: 400,
+              settings: {
+                slidesToShow: 1,
+              },
+            },
+          ],
+        });
+
+        let $status = $(`.tab${index} .suppliers${i} .control .count`);
+        let $slickElement = $(`.tab${index} .suppliers${i} .sliderListBox`);
+        $slickElement.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+          let i = (currentSlide ? currentSlide : 0) + 1;
+          $status.text(i + '/' + slick.slideCount);
+        });
+      });
+    });
+
+    $('.suppliersBox .listBox .item .topBox').on('click', function () {
+      const display = $(this).siblings('.bottomBox').css('display');
+
+      $(this).parents('.listBox').find('.bottomBox').not($(this).siblings('.bottomBox')).off().slideUp('fast');
+      $(this).parents('.listBox').find('.item').not($(this).parent('.item')).removeClass('active');
+
+      if (display === 'none') {
+        $(this).parent('.item').addClass('active');
+        $(this).siblings('.bottomBox').css('display', 'block');
+        $(this).siblings('.bottomBox').find('.sliderListBox').slick('refresh');
+        let height = $(this).siblings('.bottomBox').outerHeight();
+        $(this).siblings('.bottomBox').css('height', 0);
+        $(this).siblings('.bottomBox').outerHeight();
+        $(this).siblings('.bottomBox').css('transitionProperty', 'height');
+        $(this).siblings('.bottomBox').css('transitionDuration', `300ms`);
+        $(this).siblings('.bottomBox').css('height', height);
+
+        setTimeout(() => {
+          $(this).siblings('.bottomBox').attr('style', null);
+          $(this).siblings('.bottomBox').css('display', 'block');
+        }, 350);
+      } else {
+        $(this).parent('.item').removeClass('active');
+        const height = $(this).siblings('.bottomBox').outerHeight();
+        $(this).siblings('.bottomBox').css('height', height);
+        $(this).siblings('.bottomBox').outerHeight();
+        $(this).siblings('.bottomBox').css('transitionProperty', 'height');
+        $(this).siblings('.bottomBox').css('transitionDuration', `300ms`);
+        $(this).siblings('.bottomBox').css('height', 0);
+
+        setTimeout(() => {
+          $(this).siblings('.bottomBox').attr('style', null);
+        }, 350);
+      }
+    });
+  }
+})();
+
 //選單黏著
 (function () {
   const header = document.querySelector('header');
@@ -30,7 +203,7 @@ new WOW({
 
 //手機版選單
 (function () {
-  const searchBtn = document.querySelector('header .searchBtn');
+  const searchBtn = document.querySelector('.topSearch .searchBtn');
   const searchInput = document.querySelector('.topSearch .searchInput');
   const searchClose = document.querySelector('.topSearch .close');
   const mobileBtn = document.querySelector('.mobileBtn');
@@ -178,6 +351,7 @@ $(function () {
     });
   });
 })();
+
 // let slideWrapper = $('.bigPic .listBox');
 // let lazyCounter = 0;
 
@@ -228,51 +402,3 @@ $(function () {
 //   slick = $(slick.$slider);
 //   playPauseVideo(slick, 'play');
 // });
-
-(function () {
-  const demoContent = `
-    <div class="demoBox">
-      <ul>
-        <li class="red active" data-color="red"></li>
-        <li class="blue" data-color="blue"></li>
-        <li class="green" data-color="green"></li>
-        <li class="yellow" data-color="yellow"></li>
-        <li class="cyan" data-color="cyanblue"></li>
-        <li class="brown" data-color="brown"></li>
-        <li class="purple" data-color="purple"></li>
-        <li class="gray" data-color="gray"></li>
-      </ul>
-    </div>`;
-  document.write(demoContent);
-
-  const timeCheck = new Date().getTime() + 86400000 * 3;
-
-  // const timeCheck = new Date();
-  const cookieCss = document.cookie
-    .split('; ')
-    .find((row) => row.startsWith('color='))
-    ?.split('=')[1];
-  const css = document.querySelector('#css');
-  const demo = document.querySelectorAll('.demoBox li');
-
-  css.attributes.href.nodeValue = `css/color_${cookieCss || 'red'}.css`;
-
-  demo?.forEach((item, index) => {
-    item.classList.remove('active');
-    item.addEventListener('click', () => {
-      demo.forEach((v) => v.classList.remove('active'));
-      item.classList.add('active');
-      let color = item.dataset.color;
-      document.cookie = `color=${color}; expires=${new Date(timeCheck)}`;
-      css.attributes.href.nodeValue = `css/color_${color}.css`;
-    });
-  });
-  const nowActive = document.querySelector(`.${String(cookieCss)}`);
-  nowActive?.classList.add('active');
-})();
-
-$(function () {
-  $('.language a').on('click', function () {
-    $(this).siblings('ul').slideToggle('fast');
-  });
-});

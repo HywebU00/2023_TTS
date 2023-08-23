@@ -76,8 +76,8 @@
             width: 100%;
           }
           img {
-            width: 100%;
-            height: 100%;
+            width: 100% !important;
+            height: 100% !important;
             object-fit: cover;
           }
         }
@@ -136,22 +136,22 @@
         }
         .shop {
           &::before {
-            background: url('../tts/images/icon/icon_shop.svg') center no-repeat;
+            background: url('../images/pavilion/icon/icon_shop.svg') center no-repeat;
           }
         }
         .cart {
           &::before {
-            background: url('../tts/images/icon/icon_cart.svg') center no-repeat;
+            background: url('../images/pavilion/icon/icon_cart.svg') center no-repeat;
           }
         }
         .company {
           &::before {
-            background: url('../tts/images/icon/icon_company.svg') center no-repeat;
+            background: url('../images/pavilion/icon/icon_company.svg') center no-repeat;
           }
         }
         .address {
           &::before {
-            background: url('../tts/images/icon/icon_address.svg') center no-repeat;
+            background: url('../images/pavilion/icon/icon_address.svg') center no-repeat;
           }
         }
         .more {

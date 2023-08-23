@@ -10,5 +10,47 @@
 
 @font-face {
   font-family: Jost;
-  src: url('../plugins/fonts/Jost/Jost-Regular.woff') format('woff'), url('../plugins/fonts/Jost/Jost-Light.woff') format('woff'), url('../plugins/fonts/Jost/Jost-SemiBold.woff') format('woff'), url('../plugins/fonts/Jost/Jost-Bold.woff') format('woff');
+  font-weight: 200;
+  src: url('fonts/Jost/Jost-Light.woff') format('woff');
+}
+@font-face {
+  font-family: Jost;
+  font-weight: 400;
+  src: url('fonts/Jost/Jost-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: Jost;
+  font-weight: 600;
+  src: url('fonts/Jost/Jost-SemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: Jost;
+  font-weight: 700;
+  src: url('fonts/Jost/Jost-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: Noto Sans TC;
+  font-weight: 200;
+  src: url('fonts/Noto_Serif_TC/NotoSerifTC-ExtraLight.woff') format('woff');
+}
+@font-face {
+  font-family: Noto Sans TC;
+  font-weight: 400;
+  src: url('fonts/Noto_Serif_TC/NotoSerifTC-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: Noto Sans TC;
+  font-weight: 500;
+  src: url('fonts/Noto_Serif_TC/NotoSerifTC-Medium.woff') format('woff');
+}
+@font-face {
+  font-family: Noto Sans TC;
+  font-weight: 600;
+  src: url('fonts/Noto_Serif_TC/NotoSerifTC-SemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: Noto Sans TC;
+  font-weight: 700;
+  src: url('fonts/Noto_Serif_TC/NotoSerifTC-Bold.woff') format('woff');
 }

@@ -43,7 +43,7 @@
     bottom: 30%;
     right: 20px;
     overflow: hidden;
-    z-index: 9;
+    z-index: 20;
     svg {
       left: 0;
       top: -5px;
@@ -513,7 +513,7 @@
       &::before {
         width: 24px;
         height: 24px;
-        background: url(../tts/images/icon_search_white.png) no-repeat center center;
+        background: url(../images/pavilion/icon_search_white.png) no-repeat center center;
         background-size: 24px;
         opacity: 1;
         content: '';
@@ -624,7 +624,7 @@
   //       height: 50px;
   //       margin: 0 auto;
   //       display: block;
-  //       mask: url('../tts/images/logo.svg') center no-repeat;
+  //       mask: url('../images/pavilion/logo.svg') center no-repeat;
   //       background: #fff;
   //     }
   //   }

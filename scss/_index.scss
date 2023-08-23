@@ -34,7 +34,9 @@
   }
 
   .indexMain {
-    background: url('../tts/images/bg.jpg') center top repeat-y;
+    background: url('../images/pavilion/bg.jpg') center top repeat-y;
+    position: relative;
+    z-index: 0;
 
     .section {
       margin-bottom: 6%;
@@ -225,10 +227,12 @@
         .pic {
           line-height: 0;
           margin: 0 0 15px;
+          max-width: 300px;
           aspect-ratio: 1/1;
           picture {
-            width: 100%;
-            height: 100%;
+            aspect-ratio: 1/1;
+            width: 100% !important;
+            height: 100% !important;
             max-height: 300px;
           }
           img {
@@ -349,19 +353,23 @@
           @include screen('mobile') {
             padding: 30px 0 0;
           }
+          .pic {
+            max-width: 330px;
+            aspect-ratio: 1/1;
+            img {
+              aspect-ratio: 1/1;
+              width: 100% !important;
+              height: 100% !important;
+              max-height: 330px;
+              object-fit: cover;
+            }
+          }
           &:nth-child(even) {
             .infoBox {
               padding: 0 0 0 65px;
             }
             .pic {
               order: -1;
-              aspect-ratio: 1/1;
-              img {
-                width: 100%;
-                height: 100%;
-                max-height: 330px;
-                object-fit: cover;
-              }
             }
           }
           &.active {
@@ -529,10 +537,12 @@
             }
           }
           .pic {
+            max-width: 290px;
             aspect-ratio: 1/1;
             img {
-              width: 100%;
-              height: 100%;
+              aspect-ratio: 1/1;
+              width: 100% !important;
+              height: 100% !important;
               max-height: 290px;
               object-fit: cover;
             }
@@ -588,7 +598,7 @@
                 width: 135px;
                 height: 22px;
                 display: block;
-                background: url('../tts/images/icon/icon_arrow3.svg') no-repeat;
+                background: url('../images/pavilion/icon/icon_arrow3.svg') no-repeat;
               }
               svg {
                 display: none;
@@ -1068,7 +1078,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        object-fit: cover;
+        object-fit: contain;
       }
     }
   }
