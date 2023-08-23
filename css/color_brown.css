@@ -2351,6 +2351,7 @@ button:focus {
   }
 }
 .tts .indexMain .suppliersBox .listBox > .item .pic {
+  width: 100%;
   max-width: 330px;
   aspect-ratio: 1/1;
 }
@@ -2530,6 +2531,8 @@ button:focus {
   display: block;
   margin: 0 20px;
   position: relative;
+  height: 100%;
+  aspect-ratio: 1;
 }
 @media screen and (max-width: 1000px) {
   .tts .indexMain .suppliersBox .bottomBox .item a {
@@ -2549,11 +2552,7 @@ button:focus {
   inset: 70% 0 0px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
 }
-.tts .indexMain .suppliersBox .bottomBox .item .pic {
-  max-width: 290px;
-  aspect-ratio: 1/1;
-}
-.tts .indexMain .suppliersBox .bottomBox .item .pic img {
+.tts .indexMain .suppliersBox .bottomBox .item img {
   aspect-ratio: 1/1;
   width: 100% !important;
   height: 100% !important;
@@ -3330,7 +3329,11 @@ button:focus {
   line-height: 1.5;
   margin: 0 8px;
 }
-.tts .suppliersPage .topMenu .item.active button,
+.tts .suppliersPage .topMenu .item.active a, .tts .suppliersPage .topMenu .item.active button {
+  background-color: #843612;
+  color: #fff;
+}
+.tts .suppliersPage .topMenu .item button:hover,
 .tts .suppliersPage .topMenu .item a:hover {
   background-color: #843612;
   color: #fff;

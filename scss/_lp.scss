@@ -22,7 +22,12 @@
           line-height: 1.5;
           margin: 0 8px;
         }
-        &.active button,
+        &.active a,
+        &.active button {
+          background-color: $mainColor;
+          color: #fff;
+        }
+        button:hover,
         a:hover {
           background-color: $mainColor;
           color: #fff;
