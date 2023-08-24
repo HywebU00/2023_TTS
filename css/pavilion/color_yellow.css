@@ -3957,10 +3957,10 @@ button:focus {
   width: 100%;
   left: 0;
 }
-.tts .suppliersPage .suppliersDetail .btnBox button + button {
+.tts .suppliersPage .suppliersDetail .btnBox button.next {
   margin: 0 0 0 20px;
 }
-.tts .suppliersPage .suppliersDetail .btnBox button + button svg {
+.tts .suppliersPage .suppliersDetail .btnBox button.next svg {
   margin: 0 0 0 10px;
   transform: scaleX(1);
 }
