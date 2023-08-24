@@ -351,7 +351,6 @@ $(function () {
     });
   });
 })();
-
 // let slideWrapper = $('.bigPic .listBox');
 // let lazyCounter = 0;
 
@@ -402,3 +401,9 @@ $(function () {
 //   slick = $(slick.$slider);
 //   playPauseVideo(slick, 'play');
 // });
+
+$(function () {
+  $('.language a').on('click', function () {
+    $(this).siblings('ul').slideToggle('fast');
+  });
+});
