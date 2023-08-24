@@ -410,6 +410,7 @@
         margin: 0 auto 3%;
         padding: 0 20px;
         display: flex;
+        align-items: flex-start;
         cursor: pointer;
         @include screen('mobile') {
           flex-direction: column;
