@@ -452,12 +452,7 @@
             text-decoration: underline;
           }
         }
-        .url {
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-        }
+        .url a,
         .tel a,
         .email a {
           white-space: nowrap;
@@ -468,7 +463,7 @@
         .address {
           overflow: hidden;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
         }
       }

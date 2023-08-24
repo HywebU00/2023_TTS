@@ -2453,12 +2453,7 @@ button:focus {
   color: #555;
   text-decoration: underline;
 }
-.tts .indexMain .suppliersBox .infoBox .url {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
+.tts .indexMain .suppliersBox .infoBox .url a,
 .tts .indexMain .suppliersBox .infoBox .tel a,
 .tts .indexMain .suppliersBox .infoBox .email a {
   white-space: nowrap;
@@ -2469,7 +2464,7 @@ button:focus {
 .tts .indexMain .suppliersBox .infoBox .address {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 .tts .indexMain .suppliersBox .pic {
