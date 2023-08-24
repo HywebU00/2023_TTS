@@ -467,7 +467,7 @@ a {
   transition: all 0.3s ease;
 }
 a:hover {
-  color: #006ab6;
+  color: #b92869;
 }
 
 img {
@@ -590,7 +590,7 @@ button:focus {
   padding: 3px 5px;
   color: #e7e7e7;
   display: block;
-  background: #006ab6;
+  background: #b92869;
   font-weight: 500;
   cursor: pointer;
   margin: 10px auto 0 auto;
@@ -641,7 +641,7 @@ button:focus {
 .tts .goTop {
   width: 50px;
   height: 50px;
-  background: #006ab6;
+  background: #b92869;
   border-radius: 100%;
   position: fixed;
   bottom: 30%;
@@ -679,7 +679,7 @@ button:focus {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #006ab6;
+  background-color: #b92869;
   z-index: 100;
   display: block;
   transition: all 0.5s ease-in-out;
@@ -697,7 +697,7 @@ button:focus {
   text-align: center;
   padding: 0;
   margin: 0 0 40px;
-  color: #006ab6;
+  color: #b92869;
   font-size: 2.625rem;
 }
 @media screen and (max-width: 1000px) {
@@ -794,7 +794,7 @@ button:focus {
     left: 0;
     transform: translateX(-100%);
     top: 60px;
-    background: #006ab6;
+    background: #b92869;
   }
   .tts .mainMenu * {
     flex-direction: column;
@@ -845,7 +845,7 @@ button:focus {
   }
 }
 .tts .mainMenu nav:not(.navigation) > ul > li > a:hover {
-  color: #2bb4f5;
+  color: #a548a3;
 }
 .tts .mainMenu nav:not(.navigation) > ul > li.nextLv > a::before {
   content: "";
@@ -866,7 +866,7 @@ button:focus {
   }
 }
 .tts .mainMenu nav:not(.navigation) > ul > li.nextLv.active > a::before {
-  border-color: #006ab6;
+  border-color: #b92869;
 }
 .tts .mainMenu nav:not(.navigation) > ul ul {
   display: none;
@@ -902,7 +902,7 @@ button:focus {
 }
 .tts .mainMenu nav:not(.navigation) > ul ul li a:hover {
   color: #fff;
-  background: #006ab6;
+  background: #b92869;
 }
 .tts .mainMenu nav:not(.navigation) > ul ul li.nextLv > a::before {
   content: "";
@@ -918,7 +918,7 @@ button:focus {
   opacity: 0.8;
 }
 .tts .mainMenu nav:not(.navigation) > ul ul li.nextLv.active {
-  background: #006ab6;
+  background: #b92869;
 }
 .tts .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a {
   color: #fff;
@@ -961,8 +961,8 @@ button:focus {
   transform: translate(-50%, -50%);
   width: 20px;
   height: 2px;
-  background: #006ab6;
-  box-shadow: #006ab6 0 6px 0 0, #006ab6 0 -6px 0 0;
+  background: #b92869;
+  box-shadow: #b92869 0 6px 0 0, #b92869 0 -6px 0 0;
   transition: 0.2s linear;
 }
 .tts .mobileBtn::after {
@@ -970,7 +970,7 @@ button:focus {
   content: "";
   width: 20px;
   height: 2px;
-  background: #006ab6;
+  background: #b92869;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -1000,7 +1000,7 @@ button:focus {
   padding: 10px;
   line-height: 1.8;
   color: #fff;
-  background: #006ab6;
+  background: #b92869;
   position: relative;
   isolation: isolate;
 }
@@ -1012,7 +1012,7 @@ button:focus {
   top: 0;
   bottom: 0;
   display: block;
-  background: #2bb4f5;
+  background: #a548a3;
   z-index: -1;
   transition: all 0.3s ease;
 }
@@ -1203,7 +1203,7 @@ button:focus {
 
 .tts footer {
   color: #fff;
-  background: #0b568c;
+  background: #91315c;
   box-sizing: border-box;
   text-align: left;
   font-size: 0.938em;
@@ -1256,7 +1256,7 @@ button:focus {
 }
 .tts footer a:hover,
 .tts footer a:focus {
-  color: #b6e1ff;
+  color: #fae6ef;
   cursor: pointer;
 }
 .tts footer .footer_info {
@@ -1333,7 +1333,7 @@ button:focus {
 .tts footer .footer_link li a:focus,
 .tts footer .footer_share li a:hover,
 .tts footer .footer_share li a:focus {
-  color: #006ab6;
+  color: #b92869;
   cursor: pointer;
 }
 .tts footer .footer_link li img,
@@ -1411,7 +1411,7 @@ button:focus {
   height: 30px;
   color: #fff;
   border: none;
-  background: #006ab6;
+  background: #b92869;
   position: absolute;
   right: 1%;
   z-index: 9;
@@ -1435,7 +1435,7 @@ button:focus {
 }
 .tts .fatfooter .btn-fatfooter:hover,
 .tts .fatfooter .btn-fatfooter:focus {
-  background: #006ab6;
+  background: #b92869;
   color: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -1510,7 +1510,7 @@ button:focus {
 }
 .tts .fatfooter nav ul li a:hover,
 .tts .fatfooter nav ul li a:focus {
-  color: #006ab6;
+  color: #b92869;
   cursor: pointer;
 }
 .tts .fatfooter nav ul li a:hover {
@@ -1624,13 +1624,13 @@ button:focus {
   }
 }
 .tts header .navigation li a:hover, .tts header .navigation li a:focus {
-  color: #006ab6;
+  color: #b92869;
   cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
   .tts header .navigation li a:hover, .tts header .navigation li a:focus {
     color: #fff;
-    background: #006ab6;
+    background: #b92869;
   }
 }
 .tts header .navigation li a img {
@@ -1647,7 +1647,7 @@ button:focus {
 }
 .tts header .navigation .btn_login {
   position: relative;
-  background: #006ab6;
+  background: #b92869;
   color: #fff;
   height: 38px;
   border: none;
@@ -1679,7 +1679,7 @@ button:focus {
   }
 }
 .tts header .navigation .btn_login:hover, .tts header .navigation .btn_login:focus {
-  background: #2bb4f5;
+  background: #a548a3;
   box-shadow: none;
   border: none !important;
 }
@@ -1853,14 +1853,14 @@ button:focus {
 }
 .tts .pagination .page li a:hover,
 .tts .pagination .page li a:focus {
-  background: #006ab6;
+  background: #b92869;
   color: #fff !important;
-  border: #006ab6 solid 1px;
+  border: #b92869 solid 1px;
 }
 .tts .pagination .page li.active a {
   color: #fff !important;
-  background: #006ab6;
-  border: #006ab6 solid 1px;
+  background: #b92869;
+  border: #b92869 solid 1px;
 }
 .tts .pagination .page li.first a:before,
 .tts .pagination .page li.first a:after,
@@ -1958,8 +1958,8 @@ button:focus {
 .tts .pagination .total input[type=button]:hover,
 .tts .pagination .total input[type=button]:focus {
   color: #fff !important;
-  background: #006ab6;
-  border: #006ab6 solid 1px;
+  background: #b92869;
+  border: #b92869 solid 1px;
   box-shadow: none !important;
 }
 @media screen and (max-width: 767px) {
@@ -1997,7 +1997,7 @@ button:focus {
 .tts .slick-arrow svg {
   width: 30px;
   height: 30px;
-  fill: #006ab6;
+  fill: #b92869;
   filter: none;
 }
 .tts .slick-arrow svg use {
@@ -2030,7 +2030,7 @@ button:focus {
   text-align: center;
   font-size: 3.4375rem;
   font-weight: 600;
-  color: #006ab6;
+  color: #b92869;
   margin: 0 0 4%;
 }
 @media screen and (max-width: 1000px) {
@@ -2146,9 +2146,9 @@ button:focus {
 .tts .indexMain .tabBar .item button {
   padding: 0;
   background: none;
-  border: 1px solid #006ab6;
+  border: 1px solid #b92869;
   font-size: 1.375rem;
-  color: #006ab6;
+  color: #b92869;
   padding: 7px 10px;
   display: block;
   line-height: 1.5;
@@ -2156,13 +2156,13 @@ button:focus {
 }
 .tts .indexMain .tabBar .item.active button,
 .tts .indexMain .tabBar .item a:hover {
-  background-color: #006ab6;
+  background-color: #b92869;
   color: #fff;
 }
 .tts .indexMain .tabBar .slick-arrow svg {
   width: 30px;
   height: 30px;
-  fill: #006ab6;
+  fill: #b92869;
   filter: none;
 }
 .tts .indexMain .tabBar .slick-arrow svg use {
@@ -2309,9 +2309,9 @@ button:focus {
   text-align: center;
   display: block;
   padding: 12px 15px 8px;
-  border: 1px solid #006ab6;
+  border: 1px solid #b92869;
   font-size: 1.375rem;
-  color: #006ab6;
+  color: #b92869;
   margin: 30px 0 0;
   isolation: isolate;
   position: relative;
@@ -2330,14 +2330,14 @@ button:focus {
   top: 0;
   bottom: 0;
   display: block;
-  background: #006ab6;
+  background: #b92869;
   z-index: -1;
   transition: all 0.3s ease;
 }
 .tts .indexMain .suppliersBox .more:hover {
   color: #fff;
   background: #fff;
-  border-color: #006ab6;
+  border-color: #b92869;
 }
 .tts .indexMain .suppliersBox .more:hover::after {
   width: 100%;
@@ -2382,7 +2382,7 @@ button:focus {
 .tts .indexMain .suppliersBox .listBox > .item.active .more {
   color: #fff;
   background: #fff;
-  border-color: #006ab6;
+  border-color: #b92869;
 }
 .tts .indexMain .suppliersBox .listBox > .item.active .more::after {
   width: 100%;
@@ -2692,8 +2692,8 @@ button:focus {
   text-align: center;
   display: block;
   padding: 12px 15px 10px;
-  border: 1px solid #006ab6;
-  background: #006ab6;
+  border: 1px solid #b92869;
+  background: #b92869;
   font-size: 1.375rem;
   color: #fff;
   margin: 30px auto 0;
@@ -2726,17 +2726,17 @@ button:focus {
   transition: all 0.3s ease;
 }
 .tts .indexMain .suppliersMore:hover {
-  color: #006ab6;
+  color: #b92869;
 }
 .tts .indexMain .suppliersMore:hover svg {
-  fill: #006ab6;
+  fill: #b92869;
 }
 .tts .indexMain .suppliersMore:hover::before {
   width: 100%;
   left: 0;
 }
 .tts .ex_area {
-  background: #0070c0;
+  background: #c12a6e;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -2998,10 +2998,10 @@ button:focus {
   }
 }
 .tts .parallax p a {
-  color: #006ab6;
+  color: #b92869;
 }
 .tts .parallax p a:hover, .tts .parallax p a:focus {
-  color: #18c5ff;
+  color: #ff43b7;
   cursor: pointer;
 }
 .tts .parallax h2 {
@@ -3077,8 +3077,8 @@ button:focus {
   margin: 1em auto 0.5em 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.8);
-  color: #006ab6;
-  border: 1px solid #006ab6;
+  color: #b92869;
+  border: 1px solid #b92869;
   border-radius: 0;
   transition: 0.3s ease-out;
   min-width: 12em;
@@ -3170,12 +3170,12 @@ button:focus {
 }
 .tts .table_edit table th a,
 .tts .table_edit table td a {
-  color: #004c83;
+  color: #8f1f51;
 }
 .tts .table_edit table th a:hover, .tts .table_edit table th a:focus,
 .tts .table_edit table td a:hover,
 .tts .table_edit table td a:focus {
-  color: #004c83;
+  color: #8f1f51;
 }
 .tts .grid3x3,
 .tts .grid2x2,
@@ -3228,7 +3228,7 @@ button:focus {
 .tts .grid2x2 .item a:focus:before,
 .tts .grid4x4 .item a:hover:before,
 .tts .grid4x4 .item a:focus:before {
-  box-shadow: 0px 0px 0px 4px #0088e9 inset;
+  box-shadow: 0px 0px 0px 4px #d53f82 inset;
 }
 .tts .grid3x3 .item a:hover span, .tts .grid3x3 .item a:focus span,
 .tts .grid2x2 .item a:hover span,
@@ -3322,27 +3322,27 @@ button:focus {
 .tts .suppliersPage .topMenu .item a {
   padding: 0;
   background: none;
-  border: 1px solid #006ab6;
+  border: 1px solid #b92869;
   font-size: 1.375rem;
-  color: #006ab6;
+  color: #b92869;
   padding: 7px 10px;
   display: block;
   line-height: 1.5;
   margin: 0 8px;
 }
 .tts .suppliersPage .topMenu .item.active a, .tts .suppliersPage .topMenu .item.active button {
-  background-color: #006ab6;
+  background-color: #b92869;
   color: #fff;
 }
 .tts .suppliersPage .topMenu .item button:hover,
 .tts .suppliersPage .topMenu .item a:hover {
-  background-color: #006ab6;
+  background-color: #b92869;
   color: #fff;
 }
 .tts .suppliersPage .topMenu .slick-arrow svg {
   width: 30px;
   height: 30px;
-  fill: #006ab6;
+  fill: #b92869;
   filter: none;
 }
 .tts .suppliersPage .topMenu .slick-arrow svg use {
@@ -3433,7 +3433,7 @@ button:focus {
 .tts .suppliersPage .suppliers .item ul {
   font-size: 1.75rem;
   padding: 40px 0 0;
-  border-top: #006ab6 2px solid;
+  border-top: #b92869 2px solid;
 }
 @media screen and (max-width: 1000px) {
   .tts .suppliersPage .suppliers .item ul {
@@ -3479,8 +3479,8 @@ button:focus {
   text-align: center;
   display: block;
   padding: 12px 15px 10px;
-  border: 1px solid #006ab6;
-  background: #006ab6;
+  border: 1px solid #b92869;
+  background: #b92869;
   font-size: 1.375rem;
   color: #fff;
   margin: 30px auto 0;
@@ -3520,10 +3520,10 @@ button:focus {
   transition: all 0.3s ease;
 }
 .tts .suppliersPage .suppliers .item .more:hover {
-  color: #006ab6;
+  color: #b92869;
 }
 .tts .suppliersPage .suppliers .item .more:hover svg {
-  fill: #006ab6;
+  fill: #b92869;
 }
 .tts .suppliersPage .suppliers .item .more:hover::before {
   width: 100%;
@@ -3644,6 +3644,8 @@ button:focus {
 }
 .tts .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic {
   margin: 0 14px;
+  aspect-ratio: 1;
+  overflow: hidden;
   cursor: pointer;
 }
 @media screen and (max-width: 1000px) {
@@ -3659,8 +3661,8 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox {
   width: 50%;
@@ -3729,7 +3731,7 @@ button:focus {
   color: #222;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox ul li a:hover {
-  color: #006ab6;
+  color: #b92869;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .link::before {
   background: url("../images/pavilion/icon/icon_link.svg") center no-repeat;
@@ -3747,7 +3749,7 @@ button:focus {
   color: #555;
   font-size: 1.75rem;
   padding-top: 40px;
-  border-top: #006ab6 2px solid;
+  border-top: #b92869 2px solid;
 }
 @media screen and (max-width: 1000px) {
   .tts .suppliersPage .suppliersDetail .topBox .infoBox .description {
@@ -3758,10 +3760,10 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .subTitle {
   font-size: 2rem;
   font-weight: 600;
-  color: #006ab6;
+  color: #b92869;
   padding-bottom: 32px;
   margin-bottom: 40px;
-  border-bottom: 2px #006ab6 solid;
+  border-bottom: 2px #b92869 solid;
 }
 @media screen and (max-width: 1000px) {
   .tts .suppliersPage .suppliersDetail .subTitle {
@@ -3912,8 +3914,8 @@ button:focus {
   text-align: center;
   display: block;
   padding: 14px 15px 12px;
-  border: 1px solid #006ab6;
-  background: #006ab6;
+  border: 1px solid #b92869;
+  background: #b92869;
   font-size: 1.375rem;
   color: #fff;
   position: relative;
@@ -3946,10 +3948,10 @@ button:focus {
   transition: all 0.3s ease;
 }
 .tts .suppliersPage .suppliersDetail .btnBox button:hover {
-  color: #006ab6;
+  color: #b92869;
 }
 .tts .suppliersPage .suppliersDetail .btnBox button:hover svg {
-  fill: #006ab6;
+  fill: #b92869;
 }
 .tts .suppliersPage .suppliersDetail .btnBox button:hover::before {
   width: 100%;
@@ -3986,7 +3988,7 @@ button:focus {
   left: 0;
   height: 2px;
   width: 300px;
-  background: #006ab6;
+  background: #b92869;
 }
 .tts .htmlDetail .description {
   color: #555;
@@ -3999,4 +4001,4 @@ button:focus {
 body {
   font-family: "Jost", "Noto Sans TC", Arial, "微軟正黑體", "Microsoft JhengHei", "蘋果儷中黑", "Apple LiGothic Medium", sans-serif;
   color: #222;
-}/*# sourceMappingURL=color_blue.css.map */
+}/*# sourceMappingURL=color_red.css.map */

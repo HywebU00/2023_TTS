@@ -96,6 +96,8 @@
             }
             .pic {
               margin: 0 14px;
+              aspect-ratio: 1;
+              overflow: hidden;
               cursor: pointer;
               @include screen('tablet') {
                 margin: 0 10px;
@@ -106,7 +108,7 @@
               img {
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
+                object-fit: cover;
               }
             }
           }
