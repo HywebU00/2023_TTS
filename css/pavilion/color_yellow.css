@@ -2014,7 +2014,7 @@ button:focus {
   opacity: 0.2;
 }
 .tts .indexMain {
-  background: url("../images/pavilion/bg.jpg") center top repeat-y;
+  background: url("../../images/pavilion/bg.jpg") center top repeat-y;
   position: relative;
   z-index: 0;
 }
@@ -2620,7 +2620,7 @@ button:focus {
     width: 135px;
     height: 22px;
     display: block;
-    background: url("../images/pavilion/icon/icon_arrow3.svg") no-repeat;
+    background: url("../../images/pavilion/icon/icon_arrow3.svg") no-repeat;
   }
   .tts .indexMain .suppliersBox .bottomBox .control .slick-arrow svg {
     display: none;
@@ -3464,16 +3464,16 @@ button:focus {
   }
 }
 .tts .suppliersPage .suppliers .item .shop::before {
-  background: url("../images/pavilion/icon/icon_shop.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_shop.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliers .item .cart::before {
-  background: url("../images/pavilion/icon/icon_cart.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_cart.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliers .item .company::before {
-  background: url("../images/pavilion/icon/icon_company.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_company.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliers .item .address::before {
-  background: url("../images/pavilion/icon/icon_address.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_address.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliers .item .more {
   width: 175px;
@@ -3640,7 +3640,7 @@ button:focus {
   z-index: 2;
   inset: 0;
   display: block;
-  background: url("../images/pavilion/icon/icon_play.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_play.svg") center no-repeat;
   pointer-events: none;
 }
 .tts .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic {
@@ -3735,16 +3735,16 @@ button:focus {
   color: #fa9111;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .link::before {
-  background: url("../images/pavilion/icon/icon_link.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_link.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .email::before {
-  background: url("../images/pavilion/icon/icon_email.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_email.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .tel::before {
-  background: url("../images/pavilion/icon/icon_tel.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_tel.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .address::before {
-  background: url("../images/pavilion/icon/icon_address.svg") center no-repeat;
+  background: url("../../images/pavilion/icon/icon_address.svg") center no-repeat;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .description {
   color: #555;
