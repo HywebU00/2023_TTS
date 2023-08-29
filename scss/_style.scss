@@ -274,6 +274,7 @@
         top: 0;
         right: 0;
         width: 50px;
+        height: 50px;
         display: block;
         z-index: 9;
         cursor: pointer;
@@ -364,6 +365,9 @@
                 text-align: left;
                 border-bottom: 1px solid #ccc;
                 background: #ededed;
+                .toggleBtn {
+                  height: 40px;
+                }
               }
               &:hover {
                 color: #fff;
@@ -386,9 +390,11 @@
               }
 
               &.active {
-                background: $mainColor;
                 & > a {
                   color: #fff;
+                  @include screen('tablet') {
+                    background: $mainColor;
+                  }
                   &::before {
                     border-color: #fff;
                   }
@@ -396,10 +402,18 @@
               }
             }
           }
-          ul {
-            left: 100%;
-            transform: translateX(0);
-            top: 0;
+          li {
+            ul {
+              left: 100%;
+              transform: translateX(0);
+              top: 0;
+            }
+            &:last-child {
+              ul {
+                left: auto;
+                right: 100%;
+              }
+            }
           }
         }
       }

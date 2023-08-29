@@ -806,6 +806,7 @@ button:focus {
     top: 0;
     right: 0;
     width: 50px;
+    height: 50px;
     display: block;
     z-index: 9;
     cursor: pointer;
@@ -910,6 +911,9 @@ button:focus {
     border-bottom: 1px solid #ccc;
     background: #ededed;
   }
+  .tts .mainMenu nav:not(.navigation) > ul ul li a .toggleBtn {
+    height: 40px;
+  }
 }
 .tts .mainMenu nav:not(.navigation) > ul ul li a:hover {
   color: #fff;
@@ -928,19 +932,25 @@ button:focus {
   transform: translateY(-50%) rotate(-45deg);
   opacity: 0.8;
 }
-.tts .mainMenu nav:not(.navigation) > ul ul li.nextLv.active {
-  background: #006ab6;
-}
 .tts .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a {
   color: #fff;
+}
+@media screen and (max-width: 1000px) {
+  .tts .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a {
+    background: #006ab6;
+  }
 }
 .tts .mainMenu nav:not(.navigation) > ul ul li.nextLv.active > a::before {
   border-color: #fff;
 }
-.tts .mainMenu nav:not(.navigation) > ul ul ul {
+.tts .mainMenu nav:not(.navigation) > ul ul li ul {
   left: 100%;
   transform: translateX(0);
   top: 0;
+}
+.tts .mainMenu nav:not(.navigation) > ul ul li:last-child ul {
+  left: auto;
+  right: 100%;
 }
 .tts .mobileBtn {
   width: 60px;
