@@ -737,16 +737,18 @@ button:focus {
   }
 }
 .tts header .container h1 {
-  margin: 0 auto 0 0;
+  margin: 0px auto 0px 0;
 }
 @media screen and (max-width: 1000px) {
   .tts header .container h1 {
     margin: 0 auto;
   }
 }
+.tts header .logo {
+  padding: 10px 0;
+}
 @media screen and (max-width: 1000px) {
   .tts header .logo {
-    padding: 10px 0;
     margin: 0 auto;
   }
 }
@@ -2056,8 +2058,8 @@ button:focus {
 .tts .indexMain .indexBanner img {
   width: 100%;
   max-height: 580px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .tts .indexMain .indexBanner .slogan {
   position: absolute;
@@ -2237,8 +2239,8 @@ button:focus {
   width: 100%;
   height: 100%;
   max-height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .indexMain .newsBox .tabListContentBox .title {
   font-size: 2rem;
@@ -2361,8 +2363,8 @@ button:focus {
   width: 100% !important;
   height: 100% !important;
   max-height: 330px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .indexMain .suppliersBox .listBox > .item .infoBox {
   width: calc(100% - 330px);
@@ -2559,8 +2561,8 @@ button:focus {
   width: 100% !important;
   height: 100% !important;
   max-height: 290px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .indexMain .suppliersBox .bottomBox .title {
   position: absolute;
@@ -3615,8 +3617,8 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .topBox .picBox .bigPic iframe {
   width: 100% !important;
   height: 100% !important;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .suppliersPage .suppliersDetail .topBox .picBox .picNav {
   margin: 0 -14px;
@@ -3662,8 +3664,8 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox {
   width: 50%;
@@ -3819,8 +3821,8 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .productBox .sliderBox .item .pic img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .suppliersPage .suppliersDetail .productBox .sliderBox .slick-arrow.slick-prev {
   left: -60px;
@@ -3849,8 +3851,7 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .bottomBox .listBox .item {
   width: 100%;
   display: flex;
-  align-items: flex-start;
-  background: #f7f7f7;
+  align-items: stretch;
   position: relative;
 }
 @media screen and (max-width: 767px) {
@@ -3878,12 +3879,13 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .pic img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .infoBox {
   width: 60%;
   padding: 5%;
+  background: #f7f7f7;
 }
 @media screen and (max-width: 767px) {
   .tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .infoBox {
