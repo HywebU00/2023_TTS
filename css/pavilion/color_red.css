@@ -3372,8 +3372,8 @@ button:focus {
 .tts .suppliersPage .suppliers .item {
   width: 100%;
   display: flex;
-  background: #f7f7f7;
   position: relative;
+  align-items: stretch;
 }
 @media screen and (max-width: 767px) {
   .tts .suppliersPage .suppliers .item {
@@ -3405,6 +3405,7 @@ button:focus {
 .tts .suppliersPage .suppliers .item .infoBox {
   width: 60%;
   padding: 5% 5% 5% 60px;
+  background: #f7f7f7;
 }
 @media screen and (max-width: 767px) {
   .tts .suppliersPage .suppliers .item .infoBox {
@@ -3413,6 +3414,7 @@ button:focus {
   }
 }
 .tts .suppliersPage .suppliers .item .title {
+  text-align: left;
   font-size: 2rem;
   font-weight: 600;
   position: relative;
