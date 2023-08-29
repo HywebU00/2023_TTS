@@ -23,7 +23,7 @@ const MenuContent = `
                 <ul>
                   <li><a href="#">Suppliers</a></li>
                   <li>
-                    <a href="#">Exhibition</a>
+                    <a href="https://www.google.com/">Exhibition</a>
                     <ul>
                       <li><a href="#">Suppliers</a></li>
                       <li><a href="#">Exhibition</a></li>
