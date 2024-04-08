@@ -408,3 +408,8 @@ $(function () {
     $(this).siblings('ul').slideToggle('fast');
   });
 });
+
+$('.suppliersDetail .topBox .infoBox .description button').on('click', function () {
+  $(this).parent().toggleClass('active');
+  $(this).toggleClass('active');
+});

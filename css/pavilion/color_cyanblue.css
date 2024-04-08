@@ -3685,8 +3685,8 @@ button:focus {
 .tts .suppliersPage .suppliersDetail .topBox .picBox .picNav .pic img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox {
   width: 50%;
@@ -3721,7 +3721,7 @@ button:focus {
   }
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox ul {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin-bottom: 40px;
 }
 @media screen and (max-width: 1000px) {
@@ -3743,7 +3743,7 @@ button:focus {
   width: 22px;
   height: 22px;
   left: 0;
-  top: 5px;
+  top: 3px;
   position: absolute;
 }
 @media screen and (max-width: 1000px) {
@@ -3771,15 +3771,50 @@ button:focus {
 }
 .tts .suppliersPage .suppliersDetail .topBox .infoBox .description {
   color: #555;
-  font-size: 1.75rem;
-  padding-top: 40px;
+  font-size: 1.5rem;
+  padding-top: 30px;
   border-top: #00879a 2px solid;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  position: relative;
+  margin-bottom: 30px;
+  padding-right: 50px;
 }
 @media screen and (max-width: 1000px) {
   .tts .suppliersPage .suppliersDetail .topBox .infoBox .description {
     font-size: 1.125rem;
     padding-top: 20px;
   }
+}
+.tts .suppliersPage .suppliersDetail .topBox .infoBox .description.active {
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+.tts .suppliersPage .suppliersDetail .topBox .infoBox .description button {
+  width: 30px;
+  height: 30px;
+  background: #b92869;
+  border-radius: 100%;
+  overflow: hidden;
+  z-index: 20;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.tts .suppliersPage .suppliersDetail .topBox .infoBox .description button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-width: 2px 2px 0 0;
+  transform: rotate(135deg) translate(-70%, 20%);
+}
+.tts .suppliersPage .suppliersDetail .topBox .infoBox .description button.active::before {
+  transform: rotate(-45deg) translate(50%, 10%);
 }
 .tts .suppliersPage .suppliersDetail .subTitle {
   font-size: 2rem;
@@ -3919,7 +3954,7 @@ button:focus {
   font-weight: 600;
   position: relative;
   overflow: hidden;
-  margin: 0 0 40px;
+  margin: 0 0 20px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -3934,6 +3969,59 @@ button:focus {
   .tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .title {
     font-size: 1.375rem;
   }
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox {
+  line-height: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox a,
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox button {
+  position: relative;
+  padding: 0;
+  margin: 0 10px 0 0;
+  display: block;
+  background: none;
+  border: none;
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox a::before,
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox button::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox a span,
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox button span {
+  position: absolute;
+  color: transparent;
+  display: none;
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox a.download,
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox button.download {
+  width: 20px;
+  height: 30px;
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox a.download::before,
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox button.download::before {
+  background: url("../../images/pavilion/icon/icon_pdf.svg") no-repeat;
+  background-size: contain;
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox a.video,
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox button.video {
+  width: 30px;
+  height: 20px;
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox a.video::before,
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox button.video::before {
+  background: url("../../images/pavilion/icon/icon_youtube2.svg") no-repeat;
+  background-size: contain;
+}
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox a:hover,
+.tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .buttonBox button:hover {
+  filter: brightness(0.8);
 }
 .tts .suppliersPage .suppliersDetail .bottomBox .listBox .item .description {
   color: #555;
